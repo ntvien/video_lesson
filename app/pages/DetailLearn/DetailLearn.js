@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Button, SafeAreaView, StatusBar, Dimensions, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image } from 'react-native';
 import { ImageBackground } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper1 from '../../../image/backgroundpaper1.png'
@@ -7,7 +7,6 @@ import imageGhim1 from '../../../image/ghim2.png'
 import imageBack from '../../../image/back.png'
 import imageRight from '../../../image/right.png'
 import CardLession from '../../components/CardLesson';
-import { ScrollView } from 'react-native';
 import { dataLesson } from '../../../data/dataLesson';
 import { FlatGrid } from 'react-native-super-grid';
 import { TouchableOpacity } from 'react-native';
@@ -19,16 +18,16 @@ function DetailLearn({ navigation }) {
         <SafeAreaView style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
 
+                <TouchableOpacity onPress={() => {
+                    navigation.pop();
+                }}>
+                    <Image style={styles.imageBack} source={imageBack} />
+                </TouchableOpacity>
+
                 <View style={{
                     position: "relative", width: "100%", height: "20%",
                     backgroundColor: "#00000033", zIndex: -1, flexDirection: "row"
                 }}>
-
-                    <TouchableOpacity onPress={() => {
-                        navigation.goBack()
-                    }}>
-                        <Image style={styles.imageBack} source={imageBack} />
-                    </TouchableOpacity>
 
                     <View style={{ justifyContent: "center", alignItems: "center", marginTop: -20, flexDirection: "row", marginLeft: 90 }}>
                         <Text style={{ color: "#ffffff" }}>
@@ -40,9 +39,8 @@ function DetailLearn({ navigation }) {
                         </Text>
                         <Image style={styles.imageRight} source={imageRight} />
                         <Text style={{ color: "#ffffff" }}>
-                            Theme 7 -Places and Direction
+                            Theme 7 - Places and Direction
                         </Text>
-
                     </View>
 
 
@@ -127,7 +125,8 @@ const styles = StyleSheet.create({
         height: 30,
         marginLeft: 10,
         marginTop: 10,
-        resizeMode: "cover"
+        resizeMode: "cover",
+        position: "absolute"
     },
     imageRight: {
         width: 10,

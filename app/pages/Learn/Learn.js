@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Button, SafeAreaView, StatusBar, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image } from 'react-native';
 import { ImageBackground } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper from '../../../image/backgroundpaper.png'
@@ -7,22 +7,23 @@ import imageGhim from '../../../image/ghim1.png'
 import imageBack from '../../../image/back.png'
 import imageRight from '../../../image/right.png'
 import CardLession from '../../components/CardLesson';
-import { ScrollView } from 'react-native';
 import { dataLesson } from '../../../data/dataLesson';
 import { FlatGrid } from 'react-native-super-grid';
+import ImmersiveMode from 'react-native-immersive-mode';
 
 
 const Learn = ({ navigation }) => {
+    ImmersiveMode.fullLayout(false);
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
                 <View style={{
                     position: "relative", width: "100%", height: "20%",
-                    backgroundColor: "#00000033", zIndex: -1, flexDirection: "row"
+                    backgroundColor: "#00000033", zIndex: -1, flexDirection: "row", justifyContent: "center", alignItems: "center",
                 }}>
                     <Image style={styles.imageBack} source={imageBack} />
 
-                    <View style={{ justifyContent: "center", alignItems: "center", marginTop: -20, flexDirection: "row", marginLeft: 200 }}>
+                    <View style={{ alignItems: "center", marginTop: -20, flexDirection: "row", backgroundColor: "grey" }}>
                         <Text style={{ color: "#ffffff" }}>
                             i-Learn Smart Start Grade 3
                         </Text>
@@ -77,7 +78,7 @@ const Learn = ({ navigation }) => {
             </ImageBackground>
 
 
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }
 
@@ -102,9 +103,11 @@ const styles = StyleSheet.create({
     imageBack: {
         width: 30,
         height: 30,
-        marginLeft: 10,
-        marginTop: 10,
-        resizeMode: "cover"
+        top: 10,
+        left: 10,
+        resizeMode: "cover",
+        position: "absolute",
+        zIndex: 1,
     },
     imageRight: {
         width: 10,
