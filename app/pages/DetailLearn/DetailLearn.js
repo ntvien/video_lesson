@@ -11,9 +11,11 @@ import { TouchableOpacity } from 'react-native';
 import CardItemDetail from '../../components/CardItemDetail';
 import CardLessonDetail from '../../components/CardLessonDetail';
 import { dataLessonVideo } from '../../../data/dataVideoLesson';
-
+import { useOrientation } from '../../hooks/useOrientation';
 
 function DetailLearn({ navigation }) {
+    const orientation = useOrientation();
+
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
@@ -98,7 +100,6 @@ function DetailLearn({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#B792DD",
-        paddingTop: StatusBar.currentHeight,
         flex: 1,
         height: Dimensions.get('window').height,
     },

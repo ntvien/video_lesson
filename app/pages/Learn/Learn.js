@@ -9,12 +9,18 @@ import imageRight from '../../../image/right.png'
 import CardLession from '../../components/CardLesson';
 import { dataLesson } from '../../../data/dataLesson';
 import { FlatGrid } from 'react-native-super-grid';
+import { useOrientation } from '../../hooks/useOrientation';
+import ImmersiveMode from 'react-native-immersive-mode';
 
 
 const Learn = ({ navigation }) => {
+    console.disableYellowBox = true;
+    const orientation = useOrientation();
+    // ImmersiveMode.fullLayout(true);
+
     return (
-        <SafeAreaView style={styles.container}>
-            <StatusBar backgroundColor={'transparent'} translucent={true} />
+        <SafeAreaView style={[styles.container]}>
+            <StatusBar backgroundColor='white' translucent={true} hidden={true} />
 
             <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
 
@@ -24,7 +30,7 @@ const Learn = ({ navigation }) => {
                 }}>
                     <Image style={styles.imageBack} source={imageBack} />
 
-                    <View style={{ alignItems: "center", marginTop: -20, flexDirection: "row", }}>
+                    <View style={{ alignItems: "center", marginTop: orientation.isPortrait ? -30 : -20, flexDirection: "row", }}>
                         <Text style={{ color: "#ffffff" }}>
                             i-Learn Smart Start Grade 3
                         </Text>
@@ -76,7 +82,6 @@ const Learn = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#B792DD",
-        paddingTop: StatusBar.currentHeight,
         flex: 1,
         height: Dimensions.get('window').height,
     },
