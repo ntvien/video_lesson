@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
 import imageBackgroundCard from '../../image/backgroundCard.png'
 
 
@@ -18,7 +18,7 @@ class CardLession extends Component {
         const { item, index } = this.props;
         return (
 
-            <View style={{ width: 125, height: 155, position: "relative", }}>
+            <View style={{ width: (Dimensions.get('window').width - 170) * 0.25, height: (Dimensions.get('window').height - 80) * 0.5, position: "relative", }}>
                 <TouchableOpacity style={styles.container}
                     onPress={() => {
                         this.props.navigation.navigate('DetailLearn')
@@ -27,7 +27,6 @@ class CardLession extends Component {
                         style={styles.container}
                         source={imageBackgroundCard}
                         resizeMode="stretch"
-
                     >
 
                         <View style={{ justifyContent: "space-between", alignItems: "center", flexDirection: 'row', paddingRight: 15 }}>

@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity } from 'react-native';
-import imageBackgroundCard from '../../image/backgroundCard.png'
-
+import imageVideo from '../../image/imageVideo.png'
+import imagePersonal from '../../image/personal.png'
+import imageTimeVideo from '../../image/timeVideo.png'
+import imageShare from '../../image/share.png'
+import imageProgressVideo from '../../image/progressVideo.png'
 
 class CardLessonDetail extends Component {
 
@@ -9,15 +12,50 @@ class CardLessonDetail extends Component {
         const { item, index } = this.props;
         return (
 
-            <View style={{ width: 125, height: 155, position: "relative", }}>
+            <View style={{ width: 120, height: 100, position: "relative", }}>
+                <View style={styles.container}>
+                    <View style={styles.container1}>
+                        <View style={{ width: "100%", height: "100%", flex: 1, justifyContent: "center", alignItems: "center" }}>
+                            <Image style={{ resizeMode: "stretch", width: "100%", height: "100%" }} source={imageVideo} ></Image>
+                        </View>
 
-                <ImageBackground
+                        <View style={{ width: "100%", height: "auto", justifyContent: "center", alignItems: "center" }} >
+
+                            <View style={{ justifyContent: "space-between", flexDirection: "row", alignItems: "center" }}>
+
+                                <View style={{ flex: 1, paddingLeft: "5%" }}>
+                                    <Text style={{ fontSize: 10, color: "#00557A", fontWeight: "700" }}>{item.lecture}</Text>
+
+                                    <View style={{ flexDirection: "row" }}>
+                                        <Image style={{ width: 10, height: 10, resizeMode: "contain", marginRight: "3%" }} source={imagePersonal}></Image>
+                                        <Text style={{ fontSize: 8 }}>{item.teacherName}</Text>
+                                    </View>
+                                    <View style={{ flexDirection: "row" }}>
+                                        <Image style={{ width: 10, height: 10, resizeMode: "contain", marginRight: "3%" }} source={imageTimeVideo}></Image>
+                                        <Text style={{ fontSize: 8 }}>{item.timeVideo}</Text>
+                                    </View>
+                                </View>
+
+                                <View>
+                                    <Image style={{ width: 20, height: 20, resizeMode: "contain", marginRight: "2%" }} source={imageShare}></Image>
+                                </View>
+                            </View>
+
+                            <View style={{ width: "100%" }}>
+                                <Image style={{ width: "100%", height: 10, resizeMode: "cover" }} source={imageProgressVideo}></Image>
+                            </View>
+                        </View>
+
+                    </View>
+
+
+                </View>
+
+                {/* <ImageBackground
                     style={styles.container}
                     source={imageBackgroundCard}
                     resizeMode="stretch"
-
                 >
-
                     <View style={{ justifyContent: "space-between", alignItems: "center", flexDirection: 'row', paddingRight: 15 }}>
                         <View style={{
                             width: 10, height: 10, backgroundColor: "#35ABEB", borderRadius: 10,
@@ -46,13 +84,9 @@ class CardLessonDetail extends Component {
                         <Image style={styles.imageCrown} source={require('../../image/crown.png')} />
                         <Text style={{ color: "#ffffff", fontSize: 14, fontWeight: "bold" }}>2</Text>
                     </View>
-                </ImageBackground >
+                </ImageBackground > */}
 
             </View >
-
-
-
-
         )
     };
 
@@ -62,37 +96,21 @@ const styles = StyleSheet.create({
     container: {
         width: "100%",
         height: "100%",
-        top: 0,
-        left: 0,
         position: "absolute",
-        padding: 5
+        backgroundColor: "#E8E9EA",
+        padding: 2,
+        borderRadius: 11
     },
     container1: {
-        width: 150,
-        height: 140,
-        flex: 1,
-    },
-    image: {
-        flex: 1,
-        justifyContent: "center",
-    },
-    text: {
-        color: "#036194",
-        fontSize: 8,
-        fontWeight: "bold",
-    },
-    imageLesson: {
         width: "100%",
-        height: "75%",
-        resizeMode: "contain",
+        height: "100%",
+        position: "absolute",
+        backgroundColor: "#ffffff",
+        borderRadius: 10,
+        padding: "5%",
+        justifyContent: "space-between",
+        alignItems: "center"
     },
-    imageCrown: {
-        top: -5,
-        width: 15,
-        height: 10,
-        resizeMode: "cover",
-        position: "absolute"
-    }
 });
 
-export default CardLession
+export default CardLessonDetail;

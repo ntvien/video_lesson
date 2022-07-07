@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, SafeAreaView, StatusBar, Dimensions, Image } from 'react-native';
 import { ImageBackground } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper from '../../../image/backgroundpaper.png'
@@ -9,21 +9,22 @@ import imageRight from '../../../image/right.png'
 import CardLession from '../../components/CardLesson';
 import { dataLesson } from '../../../data/dataLesson';
 import { FlatGrid } from 'react-native-super-grid';
-import ImmersiveMode from 'react-native-immersive-mode';
 
 
 const Learn = ({ navigation }) => {
-    ImmersiveMode.fullLayout(false);
     return (
         <SafeAreaView style={styles.container}>
+            <StatusBar backgroundColor={'transparent'} translucent={true} />
+
             <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
+
                 <View style={{
                     position: "relative", width: "100%", height: "20%",
                     backgroundColor: "#00000033", zIndex: -1, flexDirection: "row", justifyContent: "center", alignItems: "center",
                 }}>
                     <Image style={styles.imageBack} source={imageBack} />
 
-                    <View style={{ alignItems: "center", marginTop: -20, flexDirection: "row", backgroundColor: "grey" }}>
+                    <View style={{ alignItems: "center", marginTop: -20, flexDirection: "row", }}>
                         <Text style={{ color: "#ffffff" }}>
                             i-Learn Smart Start Grade 3
                         </Text>
@@ -39,7 +40,6 @@ const Learn = ({ navigation }) => {
                 </View>
 
                 <View style={{ width: "100%", height: "100%", position: "relative" }}>
-                    {/* <ScrollView> */}
                     <Image style={styles.imageGhim} source={imageGhim} />
                     <View style={styles.styleRectangle} />
                     <View style={styles.styleRectangle1} />
@@ -49,14 +49,6 @@ const Learn = ({ navigation }) => {
                             source={imageBackgroundPaper}
                             resizeMode="contain">
                             <View style={{ width: "100%", height: "100%", paddingHorizontal: 50, paddingTop: 20, paddingBottom: 30 }}>
-                                {/* <ScrollView>
-
-                                    <CardLession />
-                                    <CardLession />
-                                    <CardLession />
-                                    <CardLession />
-                                    <CardLession />
-                                </ScrollView> */}
                                 <FlatGrid
                                     itemDimension={120}
                                     data={dataLesson}
@@ -71,7 +63,6 @@ const Learn = ({ navigation }) => {
 
                         </ImageBackground>
                     </View>
-                    {/* </ScrollView> */}
                 </View>
 
 
@@ -92,19 +83,11 @@ const styles = StyleSheet.create({
     imageBackground: {
         flex: 1,
     },
-    image: {
-        flex: 1,
-        justifyContent: "center",
-        // backgroundColor: "white",
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-        marginTop: 100,
-    },
     imageBack: {
         width: 30,
         height: 30,
-        top: 10,
-        left: 10,
+        top: "13%",
+        left: "2%",
         resizeMode: "cover",
         position: "absolute",
         zIndex: 1,
@@ -112,24 +95,16 @@ const styles = StyleSheet.create({
     imageRight: {
         width: 10,
         height: 10,
-        marginHorizontal: 15,
+        marginHorizontal: "5%",
         resizeMode: "contain"
-    },
-    text: {
-        color: "white",
-        fontSize: 42,
-        lineHeight: 84,
-        fontWeight: "bold",
-        textAlign: "center",
-        backgroundColor: "#000000c0"
     },
     imageGhim: {
         width: 35,
         height: 35,
         resizeMode: "cover",
         position: "absolute",
-        left: 23,
-        top: -13,
+        left: "3%",
+        top: "-3%",
         zIndex: 1
     },
     styleRectangle: {
