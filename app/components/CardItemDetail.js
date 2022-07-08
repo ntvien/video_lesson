@@ -5,14 +5,45 @@ import imageRightLabel from '../../image/rightLabel.png'
 import imageLeftLabel from '../../image/leftLabel.png'
 import progressBar from '../../image/progressBar.png'
 
-const width = Dimensions.get("screen").width;
-const height = Dimensions.get("screen").height;
+const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
+const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
 
 class CardItemDetail extends Component {
+    // orientation = useOrientation();
+    constructor(props) {
+        super(props);
+        this.selectCard = this.selectCard.bind(this);
+        this.state = ({
+            screenInfo: Dimensions.get('screen'),
+            isPortrait: Dimensions.get('screen').width < Dimensions.get('screen').height
+        })
+        this.onChange = this.onChange.bind(this);
+    }
+    componentDidMount = () => {
+        Dimensions.addEventListener('change', this.onChange);
 
+    }
+    componentWillUnmount = () => {
+        Dimensions.removeEventListener('change', this.onChange);
+    }
+    onChange = (res) => {
+        this.setState({
+            screenInfo: res.screen,
+            isPortrait: res.screen.height > res.screen.width
+        })
+    };
+
+
+    selectCard = (index) => {
+        debugger;
+        this.setState({ cardActive: index });
+    }
     render() {
         return (
-            <View style={{ width: "60%", height: "50%", justifyContent: "center", alignItems: "center" }}>
+            <View style={{
+                width: this.state.isPortrait ? "70%" : "60%",
+                height: this.state.isPortrait ? "20%" : "50%", justifyContent: "center", alignItems: "center"
+            }}>
 
                 <View style={{ width: "100%", height: "100%" }}>
                     <View style={{ width: "100%", height: "100%", justifyContent: "space-between" }}>

@@ -6,8 +6,8 @@ import imageTimeVideo from '../../image/timeVideo.png'
 import imageShare from '../../image/share.png'
 import imageProgressVideo from '../../image/progressVideo.png'
 
-const width = Dimensions.get("screen").width;
-const height = Dimensions.get("screen").height;
+const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
+const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
 const widthCard = ((width - 2 * (width * 0.04))) - (width * 0.5);
 const heightCard = (height - 2 * (height * 0.04));
 

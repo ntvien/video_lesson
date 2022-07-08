@@ -13,8 +13,8 @@ import CardLessonDetail from '../../components/CardLessonDetail';
 import { dataLessonVideo } from '../../../data/dataVideoLesson';
 import { useOrientation } from '../../hooks/useOrientation';
 import { isTablet, isMoible } from '../../responsive/checkOrientation';
-const width = Dimensions.get("screen").width;
-const height = Dimensions.get("screen").height;
+const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
+const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
 
 function DetailLearn({ navigation }) {
     const orientation = useOrientation();
@@ -81,8 +81,9 @@ function DetailLearn({ navigation }) {
                         // backgroundColor: "red"
                     }}>
                         <ImageBackground style={{
-                            width: orientation.isPortrait && isTablet ? width : "100%",
-                            height: orientation.isPortrait && isTablet ? height : "100%",
+                            width: orientation.isPortrait && isTablet ? height : "100%",
+                            height: orientation.isPortrait && isTablet ? width * 0.87 : "100%",
+
                         }}
                             source={imageBackgroundPaper1}
                             resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>

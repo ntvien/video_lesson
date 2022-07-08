@@ -2,16 +2,36 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
 import imageBackgroundCard from '../../image/backgroundCard.png'
 
-const width = Dimensions.get("screen").width;
-const height = Dimensions.get("screen").height;
+const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
+const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
 const widthCard = (width - 2 * (width * 0.07 + width * 0.04)) * 0.3;
 const heightCard = (height - 2 * (height * 0.07)) * 0.6;
 
 class CardLession extends Component {
+    // orientation = useOrientation();
     constructor(props) {
         super(props);
         this.selectCard = this.selectCard.bind(this);
+        this.state = ({
+            screenInfo: Dimensions.get('screen'),
+            isPortrait: Dimensions.get('screen').width < Dimensions.get('screen').height
+        })
+        this.onChange = this.onChange.bind(this);
     }
+    componentDidMount = () => {
+        Dimensions.addEventListener('change', this.onChange);
+
+    }
+    componentWillUnmount = () => {
+        Dimensions.removeEventListener('change', this.onChange);
+    }
+    onChange = (res) => {
+        this.setState({
+            screenInfo: res.screen,
+            isPortrait: res.screen.height > res.screen.width
+        })
+    };
+
 
     selectCard = (index) => {
         debugger;
@@ -23,38 +43,57 @@ class CardLession extends Component {
         const { item, index } = this.props;
         return (
             <ImageBackground
-                style={styles.imageCard}
+                style={[styles.imageCard, {
+                    width: this.state.isPortrait ? heightCard * 0.6 : widthCard * 0.75,
+                    height: this.state.isPortrait ? widthCard * 0.9 : heightCard * 0.6,
+                    marginLeft: this.state.isPortrait ? heightCard * 0.07 : widthCard * 0.07,
+                    marginBottom: this.state.isPortrait ? widthCard * 0.05 : heightCard * 0.05
+                }]}
                 source={imageBackgroundCard}
                 resizeMode="stretch">
-                <TouchableOpacity style={styles.container}
+                <TouchableOpacity style={[styles.container, { padding: this.state.isPortrait ? width * 0.005 : width * 0.01, }]}
                     onPress={() => {
                         this.props.navigation.navigate('DetailLearn')
                     }}>
                     <View style={{ justifyContent: "space-between", alignItems: "center", flexDirection: 'row' }}>
                         <View style={{
-                            width: width * 0.009, height: width * 0.009, backgroundColor: "#35ABEB", borderRadius: width * 0.03,
+                            width: this.state.isPortrait ? width * 0.009 : width * 0.009,
+                            height: this.state.isPortrait ? width * 0.009 : width * 0.009,
+                            backgroundColor: "#35ABEB",
+                            borderRadius: width * 0.03,
                         }}>
                         </View>
-                        <View style={{ width: width * 0.009, height: width * 0.009, backgroundColor: "#35ABEB", borderRadius: width * 0.03 }}></View>
+                        <View style={{
+                            width: width * 0.009, height: width * 0.009,
+                            backgroundColor: "#35ABEB", borderRadius: width * 0.03,
+                            right: this.state.isPortrait ? -width * 0.02 : 0
+                        }}></View>
                     </View>
 
                     <View style={{
                         justifyContent: "center",
                         alignItems: "center",
                         flex: 1,
-
+                        // backgroundColor: "red"
                     }}>
-                        <Text style={styles.text}>{item.name}</Text>
+                        <Text style={[styles.text, { top: this.state.isPortrait ? -0.06 * widthCard : -0.03 * heightCard }]}>{item.name}</Text>
 
                         <View style={{}}>
-                            <Image style={styles.imageLesson}
+                            <Image style={[styles.imageLesson, {
+                                width: this.state.isPortrait ? heightCard * 0.55 : widthCard * 0.75,
+                                height: this.state.isPortrait ? widthCard * 0.45 : heightCard * 0.3,
+                                top: this.state.isPortrait ? -0.02 * widthCard : -0.02 * heightCard,
+                                left: this.state.isPortrait ? 0.05 * widthCard : 0
+                            }]}
                                 source={item.imageUrl} />
                         </View>
 
                     </View>
 
                     <View style={{
-                        width: width * 0.03, height: width * 0.03, borderRadius: width * 0.0095, top: -0.025 * heightCard, left: 0.04 * widthCard,
+                        width: width * 0.03, height: width * 0.03, borderRadius: width * 0.0095,
+                        top: this.state.isPortrait ? -0.03 * widthCard : -0.025 * heightCard,
+                        left: this.state.isPortrait ? 0.04 * heightCard : 0.04 * widthCard,
                         backgroundColor: "#036194", position: "relative", justifyContent: "center", alignItems: "center"
                     }}>
 
@@ -65,10 +104,6 @@ class CardLession extends Component {
 
             </ImageBackground >
 
-
-
-
-
         )
     };
 
@@ -78,13 +113,12 @@ const styles = StyleSheet.create({
     container: {
         width: widthCard * 0.7,
         height: heightCard * 0.6,
-        padding: width * 0.01,
+
     },
     imageCard: {
         width: widthCard * 0.75,
         height: heightCard * 0.6,
-        marginLeft: widthCard * 0.07,
-        marginBottom: heightCard * 0.05
+
     },
     image: {
         flex: 1,
@@ -94,13 +128,13 @@ const styles = StyleSheet.create({
         color: "#036194",
         fontSize: 12,
         fontWeight: "bold",
-        top: -0.03 * heightCard
+
     },
     imageLesson: {
         width: widthCard * 0.75,
         height: heightCard * 0.3,
         resizeMode: "contain",
-        top: -0.02 * heightCard
+
     },
     imageCrown: {
         top: -5,
