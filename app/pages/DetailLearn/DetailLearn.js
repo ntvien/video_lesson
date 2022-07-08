@@ -13,6 +13,9 @@ import CardLessonDetail from '../../components/CardLessonDetail';
 import { dataLessonVideo } from '../../../data/dataVideoLesson';
 import { useOrientation } from '../../hooks/useOrientation';
 
+const width = Dimensions.get("screen").width;
+const height = Dimensions.get("screen").height;
+
 function DetailLearn({ navigation }) {
     const orientation = useOrientation();
 
@@ -20,29 +23,47 @@ function DetailLearn({ navigation }) {
         <SafeAreaView style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
 
-                <TouchableOpacity onPress={() => {
+                {/* <TouchableOpacity onPress={() => {
                     navigation.pop();
                 }}>
                     <Image style={styles.imageBack} source={imageBack} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
 
                 <View style={{
-                    position: "relative", width: "100%", height: "20%",
-                    backgroundColor: "#00000033", zIndex: -1, flexDirection: "row", justifyContent: "center", alignItems: "center",
+                    position: "relative", width: "100%", height: orientation.isPortrait ? "15%" : 0.18 * height,
+                    backgroundColor: "#00000033", zIndex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center",
                 }}>
 
-                    <View style={{ alignItems: "center", marginTop: -20, flexDirection: "row" }} >
-                        <Text style={{ color: "#ffffff" }}>
-                            i-Learn Smart Start Grade 3
-                        </Text>
-                        <Image style={styles.imageRight} source={imageRight} />
-                        <Text style={{ color: "#ffffff" }}>
-                            Video Lesson
-                        </Text>
-                        <Image style={styles.imageRight} source={imageRight} />
-                        <Text style={{ color: "#ffffff" }}>
-                            Theme 7 - Places and Direction
-                        </Text>
+                    <View style={{ width: "100%", height: "100%", justifyContent: 'center', alignItems: "center", flexDirection: "row" }}>
+                        <View style={{
+                            height: "100%",
+                            top: 0,
+                            left: width * 0.02,
+                            justifyContent: "center",
+                            position: "absolute",
+                            zIndex: 1,
+                        }} >
+                            <TouchableOpacity onPress={() => {
+                                navigation.pop();
+                            }}>
+                                <Image style={styles.imageBack} source={imageBack} />
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={{ alignItems: "center", flexDirection: "row", marginTop: -0.3 * (0.2 * height) }} >
+                            <Text style={{ color: "#ffffff" }}>
+                                i-Learn Smart Start Grade 3
+                            </Text>
+                            <Image style={styles.imageRight} source={imageRight} />
+                            <Text style={{ color: "#ffffff" }}>
+                                Video Lesson
+                            </Text>
+                            <Image style={styles.imageRight} source={imageRight} />
+                            <Text style={{ color: "#ffffff" }}>
+                                Theme 7 - Places and Direction
+                            </Text>
+                        </View>
+
                     </View>
 
                     <View style={{ position: "absolute", borderTopLeftRadius: 35, borderTopRightRadius: 35, bottom: 0, width: "100%", backgroundColor: "#B792DD", height: "30%", zIndex: 1 }}></View>
@@ -51,8 +72,17 @@ function DetailLearn({ navigation }) {
 
                 <View style={{ width: "100%", height: "100%", position: "relative" }}>
 
-                    <View style={{ width: "100%", height: "100%", paddingLeft: 35, paddingRight: 35, paddingBottom: 60, top: -10 }}>
-                        <ImageBackground style={{ width: "100%", height: "100%" }}
+                    <View style={{
+                        width: "100%", height: "100%",
+                        paddingLeft: orientation.isPortrait ? 10 : width * 0.04,
+                        paddingRight: orientation.isPortrait ? 10 : width * 0.04,
+                        paddingTop: orientation.isPortrait ? 10 : 0,
+                        paddingBottom: orientation.isPortrait ? 10 : height * 0.2
+                    }}>
+                        <ImageBackground style={{
+                            width: orientation.isPortrait && isTablet ? width : "100%",
+                            height: orientation.isPortrait && isTablet ? height : "100%",
+                        }}
                             source={imageBackgroundPaper1}
                             resizeMode="contain">
 
@@ -101,7 +131,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#B792DD",
         flex: 1,
-        height: Dimensions.get('window').height,
+        height: height,
     },
     imageBackground: {
         flex: 1,
@@ -115,18 +145,15 @@ const styles = StyleSheet.create({
         marginTop: 100,
     },
     imageBack: {
-        width: 30,
-        height: 30,
-        top: 10,
-        left: 10,
+        width: 0.1 * width / 3,
+        height: 0.1 * width / 3,
         resizeMode: "cover",
-        position: "absolute",
-        zIndex: 1,
+        marginTop: -0.3 * (0.2 * height)
     },
     imageRight: {
         width: 10,
         height: 10,
-        marginHorizontal: "3%",
+        marginHorizontal: "5%",
         resizeMode: "contain"
     },
     imageGhim1: {

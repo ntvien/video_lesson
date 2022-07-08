@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Button, SafeAreaView, StatusBar, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, SafeAreaView, StatusBar, Dimensions, Image, FlatList } from 'react-native';
 import { ImageBackground } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper from '../../../image/backgroundpaper.png'
@@ -11,12 +11,19 @@ import { dataLesson } from '../../../data/dataLesson';
 import { FlatGrid } from 'react-native-super-grid';
 import { useOrientation } from '../../hooks/useOrientation';
 import ImmersiveMode from 'react-native-immersive-mode';
+import { isTablet, isMoible } from '../../responsive/checkOrientation';
 
+
+const width = Dimensions.get("screen").width;
+const height = Dimensions.get("screen").height;
 
 const Learn = ({ navigation }) => {
     console.disableYellowBox = true;
     const orientation = useOrientation();
     // ImmersiveMode.fullLayout(true);
+
+    console.log("WIDTH" + width);
+    console.log("HEIGHT" + height);
 
     return (
         <SafeAreaView style={[styles.container]}>
@@ -25,69 +32,86 @@ const Learn = ({ navigation }) => {
             <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
 
                 <View style={{
-                    position: "relative", width: "100%", height: orientation.isPortrait ? "15%" : "20%",
+                    position: "relative", width: "100%", height: orientation.isPortrait ? "15%" : 0.18 * height,
                     backgroundColor: "#00000033", zIndex: -1, flexDirection: "row", justifyContent: "center", alignItems: "center",
                 }}>
-                    <Image style={styles.imageBack} source={imageBack} />
 
-                    <View style={{ alignItems: "center", marginTop: orientation.isPortrait ? "0%" : -20, flexDirection: "row", }}>
-                        <Text style={{ color: "#ffffff" }}>
-                            i-Learn Smart Start Grade 3
-                        </Text>
-                        <Image style={styles.imageRight} source={imageRight} />
-                        <Text style={{ color: "#ffffff" }}>
-                            Video Lesson
-                        </Text>
+                    <View style={{ width: "100%", height: "100%", justifyContent: 'center', alignItems: "center", flexDirection: "row" }}>
+                        <View style={{
+                            height: "100%",
+                            top: 0,
+                            left: width * 0.02,
+                            justifyContent: "center",
+                            position: "absolute",
+                            zIndex: 1,
+                        }} >
+                            <Image style={styles.imageBack} source={imageBack} />
+                        </View>
 
+                        <View style={{ alignItems: "center", flexDirection: "row", marginTop: -0.3 * (0.2 * height) }}>
+                            <Text style={{ color: "#ffffff" }}>
+                                i-Learn Smart Start Grade 3
+                            </Text>
+                            <Image style={styles.imageRight} source={imageRight} />
+                            <Text style={{ color: "#ffffff" }}>
+                                Video Lesson
+                            </Text>
+
+                        </View>
                     </View>
-
 
                     <View style={{ position: "absolute", borderTopLeftRadius: 35, borderTopRightRadius: 35, bottom: 0, width: "100%", backgroundColor: "#B792DD", height: "30%", zIndex: 1 }}></View>
                 </View>
 
                 <View style={{ width: "100%", height: "100%", position: "relative" }}>
+
                     <Image style={[styles.imageGhim, {
-                        left: orientation.isPortrait ? "5%" : "3%",
-                        top: orientation.isPortrait ? "-3%" : "-3%",
+                        left: orientation.isPortrait ? "5%" : width * 0.02,
+                        top: orientation.isPortrait ? "-3%" : -width * 0.016,
                     }]} source={imageGhim} />
                     <View style={[styles.styleRectangle, {
-                        width: orientation.isPortrait ? 150 : 250,
-                        height: orientation.isPortrait ? 350 : 130,
-                        left: orientation.isPortrait ? "7%" : "3%",
-                        top: orientation.isPortrait ? "-3%" : "-2%"
+                        width: orientation.isPortrait ? 150 : width * 0.43,
+                        height: orientation.isPortrait ? 350 : height * 0.4,
+                        left: orientation.isPortrait ? "7%" : width * 0.0265,
+                        top: orientation.isPortrait ? "-3%" : -height * 0.03
                     }]} />
+
                     <View style={[styles.styleRectangle1, {
-                        width: orientation.isPortrait ? 200 : 200,
-                        height: orientation.isPortrait ? 350 : 180,
-                        right: orientation.isPortrait ? "8%" : 25,
-                        top: orientation.isPortrait ? "10%" : 30
+                        width: orientation.isPortrait ? 200 : width * 0.5,
+                        height: orientation.isPortrait ? 350 : height * 0.6,
+                        right: orientation.isPortrait ? "8%" : width * 0.02,
+                        top: orientation.isPortrait ? "10%" : height * 0.1
                     }]} />
 
                     <View style={{
                         width: "100%", height: "100%",
-                        paddingLeft: orientation.isPortrait ? 10 : 35,
-                        paddingRight: orientation.isPortrait ? 10 : 35,
-                        paddingBottom: 60, top: -10,
-                        // backgroundColor: "red",
+                        paddingLeft: orientation.isPortrait ? 10 : width * 0.04,
+                        paddingRight: orientation.isPortrait ? 10 : width * 0.04,
+                        paddingTop: orientation.isPortrait ? 10 : 0,
+                        paddingBottom: orientation.isPortrait ? 10 : height * 0.2,
                     }}>
                         <ImageBackground style={{
-                            width: orientation.isPortrait ? Dimensions.get('window').width : "100%",
-                            height: orientation.isPortrait ? Dimensions.get('window').height * 0.85 : "100%",
+                            width: orientation.isPortrait && isTablet ? width : "100%",
+                            height: orientation.isPortrait && isTablet ? height : "100%",
+                            // top: -height * 0.01,
                         }}
                             source={imageBackgroundPaper}
-                            resizeMode={orientation.isPortrait ? "stretch" : "contain"}>
+                            resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
 
                             <View style={{
-                                width: "100%", height: "100%",
-                                paddingHorizontal: 50,
-                                paddingTop: 20,
-                                paddingBottom: 30
+                                width: width - 2 * (width * 0.06),
+                                height: height - 2 * (height * 0.04),
+                                paddingHorizontal: width * 0.06,
+                                paddingTop: height * 0.04,
+                                paddingBottom: height * 0.2,
+                                // backgroundColor: "blue"
                             }}>
-                                <FlatGrid
-                                    itemDimension={120}
+                                <FlatList
+                                    // itemDimension={isTablet ? width * 0.2 : (isMoible ? width * 0.5 : 0)}
                                     data={dataLesson}
-                                    style={styles.gridView}
-                                    spacing={15}
+                                    numColumns={4}
+                                    keyExtractor={item => item}
+                                    // spacing={isTablet ? width * 0.02 : (isMoible ? width * 0.5 : 0)}
                                     renderItem={({ item, index }) => (
                                         <CardLession item={item} index={index} navigation={navigation} />
                                     )
@@ -117,13 +141,10 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     imageBack: {
-        width: 30,
-        height: 30,
-        top: "13%",
-        left: "2%",
+        width: 0.1 * width / 3,
+        height: 0.1 * width / 3,
         resizeMode: "cover",
-        position: "absolute",
-        zIndex: 1,
+        marginTop: -0.3 * (0.2 * height)
     },
     imageRight: {
         width: 10,
@@ -132,37 +153,28 @@ const styles = StyleSheet.create({
         resizeMode: "contain"
     },
     imageGhim: {
-        width: 35,
-        height: 35,
+        width: width * 0.06,
+        height: width * 0.06,
         resizeMode: "cover",
         position: "absolute",
-        left: "3%",
-        top: "-3%",
         zIndex: 1
     },
     styleRectangle: {
-        width: 250,
-        height: 130,
         backgroundColor: "#35ABEB",
-        borderWidth: 5,
+        borderWidth: width * 0.0075,
         borderColor: "#ffffff",
-        borderRadius: 20,
+        borderRadius: width * 0.04,
         transform: [{ rotate: '-3deg' }],
         position: 'absolute',
-        left: 27,
-        top: -10
     }, styleRectangle1: {
-        width: 200,
-        height: 180,
         backgroundColor: "#35ABEB",
-        borderWidth: 5,
+        borderWidth: width * 0.01,
         borderColor: "#ffffff",
-        borderRadius: 35,
-        transform: [{ rotate: '5deg' }],
+        borderRadius: width * 0.08,
+        transform: [{ rotate: '3.5deg' }],
         position: 'absolute',
-        right: 25,
-        top: 30
-    }
+    },
+
 });
 
 export default Learn

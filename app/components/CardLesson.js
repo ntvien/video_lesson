@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
 import imageBackgroundCard from '../../image/backgroundCard.png'
 
+const width = Dimensions.get("screen").width;
+const height = Dimensions.get("screen").height;
+const widthCard = (width - 2 * (width * 0.07 + width * 0.04)) * 0.3;
+const heightCard = (height - 2 * (height * 0.07)) * 0.6;
 
 class CardLession extends Component {
     constructor(props) {
@@ -14,53 +18,53 @@ class CardLession extends Component {
         this.setState({ cardActive: index });
     }
 
+
     render() {
         const { item, index } = this.props;
         return (
-
-            <View style={{ width: (Dimensions.get('window').width - 170) * 0.25, height: (Dimensions.get('window').height - 80) * 0.5, position: "relative", }}>
+            <ImageBackground
+                style={styles.imageCard}
+                source={imageBackgroundCard}
+                resizeMode="stretch">
                 <TouchableOpacity style={styles.container}
                     onPress={() => {
                         this.props.navigation.navigate('DetailLearn')
                     }}>
-                    <ImageBackground
-                        style={styles.container}
-                        source={imageBackgroundCard}
-                        resizeMode="stretch"
-                    >
-
-                        <View style={{ justifyContent: "space-between", alignItems: "center", flexDirection: 'row', paddingRight: 15 }}>
-                            <View style={{
-                                width: 10, height: 10, backgroundColor: "#35ABEB", borderRadius: 10,
-                            }}>
-                            </View>
-                            <View style={{ width: 10, height: 10, backgroundColor: "#35ABEB", borderRadius: 10 }}></View>
-                        </View>
-
+                    <View style={{ justifyContent: "space-between", alignItems: "center", flexDirection: 'row' }}>
                         <View style={{
-                            justifyContent: "center",
-                            alignItems: "center", flex: 1, paddingRight: 20, paddingLeft: 5
+                            width: width * 0.009, height: width * 0.009, backgroundColor: "#35ABEB", borderRadius: width * 0.03,
                         }}>
-                            <Text style={styles.text}>{item.name}</Text>
+                        </View>
+                        <View style={{ width: width * 0.009, height: width * 0.009, backgroundColor: "#35ABEB", borderRadius: width * 0.03 }}></View>
+                    </View>
 
-                            <View style={{ width: "100%", height: "100%", flex: 1, backgroundColor: "white", overflow: "hidden", borderRadius: 20 }}>
-                                <Image style={styles.imageLesson}
-                                    source={item.imageUrl} />
-                            </View>
+                    <View style={{
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flex: 1,
+
+                    }}>
+                        <Text style={styles.text}>{item.name}</Text>
+
+                        <View style={{}}>
+                            <Image style={styles.imageLesson}
+                                source={item.imageUrl} />
                         </View>
 
-                        <View style={{
-                            width: 20, height: 20, borderRadius: 5, top: -20, left: 8,
-                            backgroundColor: "#036194", position: "relative", justifyContent: "center", alignItems: "center"
-                        }}>
+                    </View>
 
-                            <Image style={styles.imageCrown} source={require('../../image/crown.png')} />
-                            <Text style={{ color: "#ffffff", fontSize: 14, fontWeight: "bold" }}>2</Text>
-                        </View>
-                    </ImageBackground >
+                    <View style={{
+                        width: width * 0.03, height: width * 0.03, borderRadius: width * 0.0095, top: -0.025 * heightCard, left: 0.04 * widthCard,
+                        backgroundColor: "#036194", position: "relative", justifyContent: "center", alignItems: "center"
+                    }}>
+
+                        <Image style={styles.imageCrown} source={require('../../image/crown.png')} />
+                        <Text style={{ color: "#ffffff", fontSize: 14, fontWeight: "bold" }}>2</Text>
+                    </View>
                 </TouchableOpacity>
 
-            </View >
+            </ImageBackground >
+
 
 
 
@@ -72,17 +76,15 @@ class CardLession extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        width: "100%",
-        height: "100%",
-        top: 0,
-        left: 0,
-        position: "absolute",
-        padding: 5
+        width: widthCard * 0.7,
+        height: heightCard * 0.6,
+        padding: width * 0.01,
     },
-    container1: {
-        width: 150,
-        height: 140,
-        flex: 1,
+    imageCard: {
+        width: widthCard * 0.75,
+        height: heightCard * 0.6,
+        marginLeft: widthCard * 0.07,
+        marginBottom: heightCard * 0.05
     },
     image: {
         flex: 1,
@@ -90,13 +92,15 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "#036194",
-        fontSize: 8,
+        fontSize: 12,
         fontWeight: "bold",
+        top: -0.03 * heightCard
     },
     imageLesson: {
-        width: "100%",
-        height: "75%",
+        width: widthCard * 0.75,
+        height: heightCard * 0.3,
         resizeMode: "contain",
+        top: -0.02 * heightCard
     },
     imageCrown: {
         top: -5,

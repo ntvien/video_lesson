@@ -30,5 +30,26 @@ export const dataLesson = [
     {
         name: 'Cities around the World',
         imageUrl: require('../image/image8.png'),
+    }, {
+        name: 'Cities around the World',
+        imageUrl: require('../image/image7.png'),
+    },
+    {
+        name: 'Cities around the World',
+        imageUrl: require('../image/image8.png'),
+    }, {
+        name: 'Cities around the World',
+        imageUrl: require('../image/image7.png'),
+    },
+    {
+        name: 'Cities around the World',
+        imageUrl: require('../image/image8.png'),
+    }, {
+        name: 'Cities around the World',
+        imageUrl: require('../image/image7.png'),
+    },
+    {
+        name: 'Cities around the World',
+        imageUrl: require('../image/image8.png'),
     },
 ]
