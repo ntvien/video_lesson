@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image, FlatList } from 'react-native';
 import { ImageBackground } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper1 from '../../../image/backgroundpaper1.png'
@@ -12,7 +12,7 @@ import CardItemDetail from '../../components/CardItemDetail';
 import CardLessonDetail from '../../components/CardLessonDetail';
 import { dataLessonVideo } from '../../../data/dataVideoLesson';
 import { useOrientation } from '../../hooks/useOrientation';
-
+import { isTablet, isMoible } from '../../responsive/checkOrientation';
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
 
@@ -77,21 +77,22 @@ function DetailLearn({ navigation }) {
                         paddingLeft: orientation.isPortrait ? 10 : width * 0.04,
                         paddingRight: orientation.isPortrait ? 10 : width * 0.04,
                         paddingTop: orientation.isPortrait ? 10 : 0,
-                        paddingBottom: orientation.isPortrait ? 10 : height * 0.2
+                        paddingBottom: orientation.isPortrait ? 10 : height * 0.2,
+                        // backgroundColor: "red"
                     }}>
                         <ImageBackground style={{
                             width: orientation.isPortrait && isTablet ? width : "100%",
                             height: orientation.isPortrait && isTablet ? height : "100%",
                         }}
                             source={imageBackgroundPaper1}
-                            resizeMode="contain">
-
+                            resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
                             <View style={{
                                 width: "100%", height: "100%",
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
                                 justifycontent: "center",
+                                // backgroundColor: "red"
                             }}>
 
                                 <View style={styles.leftColumn}>
@@ -99,22 +100,23 @@ function DetailLearn({ navigation }) {
                                 </View>
                                 <View style={styles.centerColumn} />
                                 <View style={styles.rightColumn}>
-                                    <View style={{ width: "100%", height: "100%", }}>
-                                        <FlatGrid
-                                            itemDimension={110}
-                                            data={dataLessonVideo}
-                                            style={styles.gridView}
-                                            spacing={10}
-                                            renderItem={({ item, index }) => (
-                                                <CardLessonDetail item={item} index={index} />
-                                            )
-                                            }
-                                        />
-                                    </View>
+                                    <FlatList
+                                        data={dataLessonVideo}
+                                        numColumns={3}
+                                        keyExtractor={item => item}
+                                        renderItem={({ item, index }) => (
+                                            <CardLessonDetail item={item} index={index} />
+                                        )
+                                        }
+                                    />
+
                                 </View>
                             </View>
 
-                            <Image style={styles.imageGhim1} source={imageGhim1} />
+                            <Image style={[styles.imageGhim1, {
+                                left: orientation.isPortrait ? 0 : -0.02 * width,
+                                bottom: orientation.isPortrait ? 0 : 0.06 * height,
+                            }]} source={imageGhim1} />
                         </ImageBackground>
                     </View>
 
@@ -142,7 +144,6 @@ const styles = StyleSheet.create({
         // backgroundColor: "white",
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
-        marginTop: 100,
     },
     imageBack: {
         width: 0.1 * width / 3,
@@ -157,36 +158,30 @@ const styles = StyleSheet.create({
         resizeMode: "contain"
     },
     imageGhim1: {
-        width: 35,
-        height: 35,
+        width: 0.07 * width,
+        height: 0.07 * width,
         resizeMode: "cover",
         position: "absolute",
-        left: -11,
-        bottom: 25,
         zIndex: 1
     },
     leftColumn: {
-        flex: 1.5,
-        height: "100%",
-        width: "100%",
-        borderRadius: 20,
+        flex: 1,
+        height: "80%",
         position: "relative",
         justifyContent: "center",
-        alignItems: "center"
-    },
-    centerColumn: {
-        flex: 0.011,
-        height: "70%",
-        backgroundColor: "#036194",
-        marginTop: "6%",
+        alignItems: "center",
+        borderRightColor: "#036194",
+        borderRightWidth: 2,
+        // backgroundColor: "red"
     },
     rightColumn: {
-        flex: 3,
-        width: "100%",
-        height: "100%",
-        borderRadius: 20,
-        paddingHorizontal: "2%",
-        paddingVertical: "5%"
+        flex: 2,
+        width: width,
+        height: height - height * 0.3,
+        paddingLeft: 0.05 * width,
+        paddingRight: 0.07 * width,
+        paddingTop: 0.04 * height,
+        // backgroundColor: "red"
     },
     gridView: {
         flex: 1,

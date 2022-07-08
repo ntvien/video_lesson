@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
 import imageBackgroundCard from '../../image/backgroundCard.png'
 import imageRightLabel from '../../image/rightLabel.png'
 import imageLeftLabel from '../../image/leftLabel.png'
 import progressBar from '../../image/progressBar.png'
 
+const width = Dimensions.get("screen").width;
+const height = Dimensions.get("screen").height;
+
 class CardItemDetail extends Component {
 
     render() {
         return (
-            <View style={{ width: "53%", height: "60%" }}>
+            <View style={{ width: "60%", height: "50%", justifyContent: "center", alignItems: "center" }}>
 
-                <View style={{ width: 140, height: 155 }}>
+                <View style={{ width: "100%", height: "100%" }}>
                     <View style={{ width: "100%", height: "100%", justifyContent: "space-between" }}>
                         <ImageBackground
                             style={styles.container}
@@ -19,8 +22,8 @@ class CardItemDetail extends Component {
                             resizeMode="cover">
 
                             <View style={{ justifyContent: "space-between", alignItems: "center", flexDirection: 'row', flex: 0.3, top: "-2%" }}>
-                                <Image style={{ width: 30, height: 30, resizeMode: "cover", left: "-90%" }} source={imageLeftLabel}></Image>
-                                <Image style={{ width: 30, height: 30, resizeMode: "cover", right: "-50%" }} source={imageRightLabel}></Image>
+                                <Image style={{ width: 0.04 * width, height: 0.04 * width, resizeMode: "cover", left: -0.02 * width }} source={imageLeftLabel}></Image>
+                                <Image style={{ width: 0.04 * width, height: 0.04 * width, resizeMode: "cover", right: -0.015 * width }} source={imageRightLabel}></Image>
                             </View>
 
                             <View style={{
@@ -49,13 +52,10 @@ class CardItemDetail extends Component {
                     <View style={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
                         <Text style={{ fontSize: 10, color: "#036194", fontWeight: "700" }}>100%</Text>
                         <View style={{ width: "100%" }}>
-                            <Image style={{ width: "100%", height: 15, resizeMode: "cover" }} source={progressBar}></Image>
+                            <Image style={{ width: "100%", height: 0.025 * height, resizeMode: "cover" }} source={progressBar}></Image>
                         </View>
                     </View>
                 </View>
-
-
-
 
             </View>
 
