@@ -14,13 +14,48 @@ const heightCard = (height - 2 * (height * 0.04));
 
 class CardLessonDetail extends Component {
 
+
+    constructor(props) {
+        super(props);
+        this.state = ({
+            screenInfo: Dimensions.get('screen'),
+            isPortrait: Dimensions.get('screen').width < Dimensions.get('screen').height
+        })
+        this.onChange = this.onChange.bind(this);
+    }
+    componentDidMount = () => {
+        Dimensions.addEventListener('change', this.onChange);
+
+    }
+    componentWillUnmount = () => {
+        Dimensions.removeEventListener('change', this.onChange);
+    }
+    onChange = (res) => {
+        this.setState({
+            screenInfo: res.screen,
+            isPortrait: res.screen.height > res.screen.width
+        })
+    };
+
     render() {
         const { item, index } = this.props;
         return (
 
-            <View style={styles.container}>
-                <View style={styles.container1}>
-                    <View style={{ width: "100%", height: "100%", flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <View style={[styles.container, {
+                width: this.state.isPortrait ? "42%" : "30%",
+                height: this.state.isPortrait ? widthCard * 0.41 : 0.21 * height,
+                marginRight: this.state.isPortrait ? 0.04 * width : 0.02 * width,
+            }]}>
+                <View style={[styles.container1, {
+                    width: this.state.isPortrait ? heightCard * 0.25 : "100%",
+                    height: this.state.isPortrait ? widthCard * 0.4 : 0.2 * height,
+                    padding: this.state.isPortrait ? 0.007 * width : 0.008 * width,
+                }]}>
+                    <View style={{
+                        width: this.state.isPortrait ? "100%" : "100%",
+                        height: this.state.isPortrait ? "80%" : "100%",
+                        flex: 1, justifyContent: "center", alignItems: "center"
+                    }}>
                         <Image style={{ resizeMode: "stretch", width: "100%", height: "100%" }} source={imageVideo} ></Image>
                     </View>
 
@@ -29,25 +64,25 @@ class CardLessonDetail extends Component {
                         <View style={{ justifyContent: "space-between", flexDirection: "row", alignItems: "center" }}>
 
                             <View style={{ flex: 1, paddingLeft: "5%" }}>
-                                <Text style={{ fontSize: 10, color: "#00557A", fontWeight: "700" }}>{item.lecture}</Text>
+                                <Text style={{ fontSize: this.state.isPortrait ? 13 : 13, color: "#00557A", fontWeight: "700" }}>{item.lecture}</Text>
 
                                 <View style={{ flexDirection: "row" }}>
-                                    <Image style={{ width: 10, height: 10, resizeMode: "contain", marginRight: "3%" }} source={imagePersonal}></Image>
-                                    <Text style={{ fontSize: 8 }}>{item.teacherName}</Text>
+                                    <Image style={{ width: this.state.isPortrait ? 15 : 15, height: this.state.isPortrait ? 15 : 15, resizeMode: "contain", marginRight: "3%" }} source={imagePersonal}></Image>
+                                    <Text style={{ fontSize: this.state.isPortrait ? 13 : 13 }}>{item.teacherName}</Text>
                                 </View>
                                 <View style={{ flexDirection: "row" }}>
-                                    <Image style={{ width: 10, height: 10, resizeMode: "contain", marginRight: "3%" }} source={imageTimeVideo}></Image>
-                                    <Text style={{ fontSize: 8 }}>{item.timeVideo}</Text>
+                                    <Image style={{ width: this.state.isPortrait ? 15 : 15, height: this.state.isPortrait ? 15 : 15, resizeMode: "contain", marginRight: "3%" }} source={imageTimeVideo}></Image>
+                                    <Text style={{ fontSize: this.state.isPortrait ? 13 : 13 }}>{item.timeVideo}</Text>
                                 </View>
                             </View>
 
                             <View>
-                                <Image style={{ width: 20, height: 20, resizeMode: "contain", marginRight: "2%" }} source={imageShare}></Image>
+                                <Image style={{ width: this.state.isPortrait ? 25 : 25, height: this.state.isPortrait ? 25 : 25, resizeMode: "contain", marginRight: "2%" }} source={imageShare}></Image>
                             </View>
                         </View>
 
                         <View style={{ width: "100%" }}>
-                            <Image style={{ width: "100%", height: 0.022 * height, resizeMode: "cover" }} source={imageProgressVideo}></Image>
+                            <Image style={{ width: "100%", height: 0.02 * height, resizeMode: "cover" }} source={imageProgressVideo}></Image>
                         </View>
                     </View>
 
@@ -68,7 +103,7 @@ const styles = StyleSheet.create({
         padding: 0.004 * width,
         borderRadius: 11,
         // backgroundColor: 'yellow'
-        marginRight: 0.03 * width,
+        marginRight: 0.04 * width,
         marginBottom: 0.03 * height
     },
     container1: {
@@ -76,7 +111,7 @@ const styles = StyleSheet.create({
         height: 0.2 * height,
         backgroundColor: "#ffffff",
         borderRadius: 10,
-        padding: 0.006 * width,
+        padding: 0.007 * width,
         position: "absolute",
         justifyContent: "space-between",
         alignItems: "center",

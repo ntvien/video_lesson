@@ -61,7 +61,7 @@ class CardItemDetail extends Component {
                                 justifyContent: "center",
                                 alignItems: "center", flex: 3, paddingRight: "8%", paddingLeft: "5%",
                             }}>
-                                <Text style={styles.text}>Cities around the World</Text>
+                                <Text style={[styles.text, { fontSize: this.state.isPortrait ? 13 : 13 }]}>Cities around the World</Text>
 
                                 <View style={{ width: "100%", height: "100%", flex: 1, borderRadius: 20 }}>
                                     <Image style={styles.imageLesson}
@@ -83,7 +83,7 @@ class CardItemDetail extends Component {
                     <View style={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
                         <Text style={{ fontSize: 10, color: "#036194", fontWeight: "700" }}>100%</Text>
                         <View style={{ width: "100%" }}>
-                            <Image style={{ width: "100%", height: 0.025 * height, resizeMode: "cover" }} source={progressBar}></Image>
+                            <Image style={{ width: "100%", height: this.state.isPortrait ? 0.02 * height : 0.025 * height, resizeMode: "cover" }} source={progressBar}></Image>
                         </View>
                     </View>
                 </View>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Dimensions,  } from 'react-native';
 import imageBackgroundCard from '../../image/backgroundCard.png'
 
 const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
@@ -74,16 +74,16 @@ class CardLession extends Component {
                         justifyContent: "center",
                         alignItems: "center",
                         flex: 1,
-                        // backgroundColor: "red"
                     }}>
-                        <Text style={[styles.text, { top: this.state.isPortrait ? -0.06 * widthCard : -0.03 * heightCard }]}>{item.name}</Text>
+                        <Text style={[styles.text, { fontSize: 0.025 * width / 2, top: this.state.isPortrait ? -0.06 * widthCard : -0.03 * heightCard }]}>{item.name}</Text>
 
                         <View style={{}}>
                             <Image style={[styles.imageLesson, {
                                 width: this.state.isPortrait ? heightCard * 0.55 : widthCard * 0.75,
                                 height: this.state.isPortrait ? widthCard * 0.45 : heightCard * 0.3,
                                 top: this.state.isPortrait ? -0.02 * widthCard : -0.02 * heightCard,
-                                left: this.state.isPortrait ? 0.05 * widthCard : 0
+                                left: this.state.isPortrait ? 0.05 * widthCard : 0,
+                                paddingHorizontal: this.state.isPortrait ? 0.05 * widthCard : 0,
                             }]}
                                 source={item.imageUrl} />
                         </View>
@@ -98,7 +98,7 @@ class CardLession extends Component {
                     }}>
 
                         <Image style={styles.imageCrown} source={require('../../image/crown.png')} />
-                        <Text style={{ color: "#ffffff", fontSize: 14, fontWeight: "bold" }}>2</Text>
+                        <Text style={{ color: "#ffffff", fontSize: 0.03 * width / 2, fontWeight: "bold" }}>2</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "#036194",
-        fontSize: 12,
+
         fontWeight: "bold",
 
     },

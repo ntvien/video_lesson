@@ -1,5 +1,5 @@
-import React from 'react'
-import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image, FlatList } from 'react-native';
+import React, { useState, useEffect } from 'react'
+import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image, FlatList, useWindowDimensions } from 'react-native';
 import { ImageBackground } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper1 from '../../../image/backgroundpaper1.png'
@@ -19,6 +19,21 @@ const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen")
 function DetailLearn({ navigation }) {
     const orientation = useOrientation();
 
+    const [orientation1, setOrientation] = useState("")
+    const window = useWindowDimensions()
+    const getOrientation = () => {
+        if (window.height < window.width) {
+            setOrientation("LANDSCAPE")
+        } else {
+            setOrientation("PORTRAIT")
+        }
+        return orientation1
+    }
+
+    useEffect(() => {
+        getOrientation()
+    })
+
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
@@ -30,15 +45,15 @@ function DetailLearn({ navigation }) {
                 </TouchableOpacity> */}
 
                 <View style={{
-                    position: "relative", width: "100%", height: orientation.isPortrait ? "15%" : 0.18 * height,
+                    position: "relative", width: "100%", height: orientation.isPortrait ? 0.17 * height : 0.18 * height,
                     backgroundColor: "#00000033", zIndex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center",
                 }}>
 
                     <View style={{ width: "100%", height: "100%", justifyContent: 'center', alignItems: "center", flexDirection: "row" }}>
                         <View style={{
                             height: "100%",
-                            top: 0,
-                            left: width * 0.02,
+                            top: orientation.isPortrait ? height * 0.015 : 0,
+                            left: orientation.isPortrait ? height * 0.03 : width * 0.02,
                             justifyContent: "center",
                             position: "absolute",
                             zIndex: 1,
@@ -50,18 +65,39 @@ function DetailLearn({ navigation }) {
                             </TouchableOpacity>
                         </View>
 
-                        <View style={{ alignItems: "center", flexDirection: "row", marginTop: -0.3 * (0.2 * height) }} >
-                            <Text style={{ color: "#ffffff" }}>
-                                i-Learn Smart Start Grade 3
-                            </Text>
-                            <Image style={styles.imageRight} source={imageRight} />
-                            <Text style={{ color: "#ffffff" }}>
-                                Video Lesson
-                            </Text>
-                            <Image style={styles.imageRight} source={imageRight} />
-                            <Text style={{ color: "#ffffff" }}>
-                                Theme 7 - Places and Direction
-                            </Text>
+                        <View style={{ alignItems: "center", marginTop: orientation.isPortrait ? -0.15 * (0.2 * height) : -0.3 * (0.2 * height) }} >
+
+                            {orientation.isPortrait ? <View style={{ alignItems: "center" }}>
+                                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                                    <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                        i-Learn Smart Start Grade 3
+                                    </Text>
+                                    <Image style={styles.imageRight} source={imageRight} />
+                                    <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                        Video Lesson
+                                    </Text>
+                                    <Image style={styles.imageRight} source={imageRight} />
+                                </View>
+
+                                <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                    Theme 7 - Places and Direction
+                                </Text>
+                            </View> : <View style={{ alignItems: "center", flexDirection: "row" }}>
+                                <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                    i-Learn Smart Start Grade 3
+                                </Text>
+                                <Image style={styles.imageRight} source={imageRight} />
+                                <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                    Video Lesson
+                                </Text>
+                                <Image style={styles.imageRight} source={imageRight} />
+                                <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                    Theme 7 - Places and Direction
+                                </Text>
+                            </View>}
+
+
+
                         </View>
 
                     </View>
@@ -74,15 +110,15 @@ function DetailLearn({ navigation }) {
 
                     <View style={{
                         width: "100%", height: "100%",
-                        paddingLeft: orientation.isPortrait ? 10 : width * 0.04,
-                        paddingRight: orientation.isPortrait ? 10 : width * 0.04,
+                        paddingLeft: orientation.isPortrait ? height * 0.04 : width * 0.04,
+                        paddingRight: orientation.isPortrait ? -height * 0.05 : width * 0.04,
+                        marginRight: orientation.isPortrait ? -height * 0.5 : 0,
                         paddingTop: orientation.isPortrait ? 10 : 0,
                         paddingBottom: orientation.isPortrait ? 10 : height * 0.2,
-                        // backgroundColor: "red"
                     }}>
                         <ImageBackground style={{
-                            width: orientation.isPortrait && isTablet ? height : "100%",
-                            height: orientation.isPortrait && isTablet ? width * 0.87 : "100%",
+                            width: orientation.isPortrait && isTablet ? height * 0.925 : "100%",
+                            height: orientation.isPortrait && isTablet ? width * 0.86 : "100%",
 
                         }}
                             source={imageBackgroundPaper1}
@@ -100,11 +136,19 @@ function DetailLearn({ navigation }) {
                                     <CardItemDetail />
                                 </View>
                                 <View style={styles.centerColumn} />
-                                <View style={styles.rightColumn}>
+                                <View style={[styles.rightColumn, {
+                                    width: orientation.isPortrait ? width : width,
+                                    height: orientation.isPortrait ? height : height - height * 0.3,
+                                    paddingLeft: orientation.isPortrait ? 0.03 * width : 0.05 * width,
+                                    paddingRight: orientation.isPortrait ? 0.02 * width : 0.07 * width,
+                                    paddingTop: orientation.isPortrait ? 0.04 * height : 0.04 * height,
+                                    // backgroundColor: "#000000"
+                                }]}>
                                     <FlatList
                                         data={dataLessonVideo}
-                                        numColumns={3}
+                                        numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
                                         keyExtractor={item => item}
+                                        key={orientation1}
                                         renderItem={({ item, index }) => (
                                             <CardLessonDetail item={item} index={index} />
                                         )
@@ -127,7 +171,7 @@ function DetailLearn({ navigation }) {
 
 
 
-        </SafeAreaView>)
+        </SafeAreaView >)
 }
 
 const styles = StyleSheet.create({
@@ -155,7 +199,7 @@ const styles = StyleSheet.create({
     imageRight: {
         width: 10,
         height: 10,
-        marginHorizontal: "5%",
+        marginHorizontal: 0.03 * width,
         resizeMode: "contain"
     },
     imageGhim1: {
