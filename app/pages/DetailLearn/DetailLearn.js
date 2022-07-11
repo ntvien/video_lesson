@@ -135,8 +135,6 @@ function DetailLearn({ navigation }) {
                         <ImageBackground style={{
                             width: orientation.isPortrait && isTablet ? height * 0.925 : "100%",
                             height: orientation.isPortrait && isTablet ? width * 0.86 : "100%",
-
-
                         }}
                             source={imageBackgroundPaper1}
                             resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
@@ -152,7 +150,10 @@ function DetailLearn({ navigation }) {
                                 <View style={styles.leftColumn}>
                                     <CardItemDetail />
                                 </View>
-                                <View style={styles.centerColumn} />
+                                <View style={[styles.centerColumn, {
+                                    height: "82%",
+                                    marginTop: orientation.isPortrait ? 0.18 * height : 0.1 * height,
+                                }]} />
                                 <View style={[styles.rightColumn, {
                                     width: orientation.isPortrait ? width : width,
                                     height: orientation.isPortrait ? height : height - height * 0.2,
@@ -232,10 +233,10 @@ const styles = StyleSheet.create({
         height: "80%",
         position: "relative",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center"
+    }, centerColumn: {
         borderRightColor: "#036194",
         borderRightWidth: 2,
-        // backgroundColor: "red"
     },
     rightColumn: {
         flex: 2,

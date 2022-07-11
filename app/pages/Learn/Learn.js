@@ -86,14 +86,15 @@ const Learn = ({ navigation }) => {
                 <View style={{ width: "100%", height: "100%", position: "relative" }}>
 
                     <Image style={[styles.imageGhim, {
-                        left: orientation.isPortrait ? height * 0.007 : width * 0.018,
+                        left: orientation.isPortrait ? height * 0.008 : width * 0.018,
                         top: orientation.isPortrait ? -width * 0.013 : -width * 0.016,
                     }]} source={imageGhim} />
                     <View style={[styles.styleRectangle, {
                         width: orientation.isPortrait ? height * 0.4 : width * 0.43,
                         height: orientation.isPortrait ? width * 0.5 : height * 0.33,
-                        left: orientation.isPortrait ? height * 0.035 : width * 0.028,
-                        top: orientation.isPortrait ? -width * 0.01 : -height * 0.03
+                        left: orientation.isPortrait ? height * 0.03 : width * 0.028,
+                        top: orientation.isPortrait ? -width * 0.005 : -height * 0.03,
+                        transform: orientation.isPortrait ? [{ rotate: '-2deg' }] : [{ rotate: '-3deg' }],
                     }]} />
 
                     <View style={[styles.styleRectangle1, {

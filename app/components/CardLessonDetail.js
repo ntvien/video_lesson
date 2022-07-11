@@ -74,32 +74,36 @@ class CardLessonDetail extends Component {
 
                                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                                     <Image style={{
-                                        width: this.state.isPortrait ? 0.02 * widthCard : 0.02 * widthCard,
-                                        height: this.state.isPortrait ? 0.02 * widthCard : 0.02 * widthCard, resizeMode: "contain", marginRight: "3%"
+                                        width: this.state.isPortrait ? 0.018 * widthCard : 0.015 * widthCard,
+                                        height: this.state.isPortrait ? 0.018 * widthCard : 0.015 * widthCard, resizeMode: "contain", marginRight: "3%"
                                     }} source={imagePersonal}></Image>
-                                    <Text style={{ fontSize: this.state.isPortrait ? 0.02 * widthCard : 0.02 * widthCard }}>{item.teacherName}</Text>
+                                    <Text style={{ fontSize: this.state.isPortrait ? 0.018 * widthCard : 0.015 * widthCard }}>{item.teacherName}</Text>
                                 </View>
                                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                                     <Image style={{
-                                        width: this.state.isPortrait ? 0.02 * widthCard : 0.02 * widthCard,
-                                        height: this.state.isPortrait ? 0.02 * widthCard : 0.02 * widthCard, resizeMode: "contain", marginRight: "3%"
+                                        width: this.state.isPortrait ? 0.018 * widthCard : 0.015 * widthCard,
+                                        height: this.state.isPortrait ? 0.018 * widthCard : 0.015 * widthCard, resizeMode: "contain", marginRight: "3%"
                                     }} source={imageTimeVideo}></Image>
-                                    <Text style={{ fontSize: this.state.isPortrait ? 0.02 * widthCard : 0.02 * widthCard }}>{item.timeVideo}</Text>
+                                    <Text style={{ fontSize: this.state.isPortrait ? 0.018 * widthCard : 0.015 * widthCard }}>{item.timeVideo}</Text>
                                 </View>
                             </View>
 
                             <View>
                                 <Image style={{
-                                    width: this.state.isPortrait ? 0.05 * widthCard : 0.05 * widthCard,
-                                    height: this.state.isPortrait ? 0.05 * widthCard : 0.05 * widthCard,
+                                    width: this.state.isPortrait ? 0.06 * widthCard : 0.06 * widthCard,
+                                    height: this.state.isPortrait ? 0.06 * widthCard : 0.06 * widthCard,
                                     resizeMode: "contain",
                                     marginRight: "2%"
                                 }} source={imageShare}></Image>
                             </View>
                         </View>
 
-                        <View style={{ width: "100%" }}>
-                            <Image style={{ width: "100%", height: this.state.isPortrait ? 0.023 * height : 0.023 * heightCard, resizeMode: "cover" }} source={imageProgressVideo}></Image>
+                        <View style={{ width: "100%", paddingBottom: this.state.isPortrait ? 0 : 0.01 * widthCard }}>
+                            <Image style={{
+                                width: "100%",
+                                height: this.state.isPortrait ? 0.023 * height : 0.023 * heightCard,
+                                resizeMode: "cover"
+                            }} source={imageProgressVideo}></Image>
                         </View>
                     </View>
 
