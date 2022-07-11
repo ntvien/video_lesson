@@ -85,10 +85,14 @@ class CardItemDetail extends Component {
 
                                 <Image style={[styles.imageCrown, {
                                     top: "-25%",
-                                    width: this.state.isPortrait ? 0.01 * width : 0.02 * width,
-                                    height: this.state.isPortrait ? 0.005 * width : 0.012 * width,
+                                    width: this.state.isPortrait ? 0.013 * width : 0.02 * width,
+                                    height: this.state.isPortrait ? 0.008 * width : 0.012 * width,
                                 }]} source={require('../../image/crown.png')} />
-                                <Text style={{ color: "#ffffff", fontSize: this.state.isPortrait ? 0.01 * width : 0.02 * width, fontWeight: "bold" }}>2</Text>
+                                <Text style={{
+                                    color: "#ffffff",
+                                    fontSize: this.state.isPortrait ? 0.013 * width : 0.02 * width,
+                                    fontWeight: "bold"
+                                }}>2</Text>
                             </View>
                         </ImageBackground>
                     </View >

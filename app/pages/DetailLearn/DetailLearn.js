@@ -88,7 +88,7 @@ function DetailLearn({ navigation }) {
                                 </View>
 
                                 <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
-                                    Theme 7 - Places and Direction
+                                    Theme 7 - Places and Directions
                                 </Text>
                             </View> : <View style={{ alignItems: "center", flexDirection: "row" }}>
                                 <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
@@ -107,7 +107,7 @@ function DetailLearn({ navigation }) {
                                     height: orientation.isPortrait ? 0.015 * width : 0.015 * width,
                                 }]} source={imageRight} />
                                 <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
-                                    Theme 7 - Places and Direction
+                                    Theme 7 - Places and Directions
                                 </Text>
                             </View>}
 
@@ -155,10 +155,11 @@ function DetailLearn({ navigation }) {
                                 <View style={styles.centerColumn} />
                                 <View style={[styles.rightColumn, {
                                     width: orientation.isPortrait ? width : width,
-                                    height: orientation.isPortrait ? height : height - height * 0.3,
+                                    height: orientation.isPortrait ? height : height - height * 0.2,
                                     paddingLeft: orientation.isPortrait ? 0.03 * width : 0.05 * width,
                                     paddingRight: orientation.isPortrait ? 0.02 * width : 0.07 * width,
-                                    paddingTop: orientation.isPortrait ? 0 : 0.04 * height,
+                                    paddingTop: orientation.isPortrait ? 0 : 0.094 * height,
+                                    paddingBottom: orientation.isPortrait ? 0 : 0.02 * height,
                                     // backgroundColor: "#000000"
                                 }]}>
                                     <FlatList

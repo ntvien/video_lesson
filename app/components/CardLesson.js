@@ -119,10 +119,10 @@ class CardLession extends Component {
 
                         <Image style={[styles.imageCrown, {
                             top: this.state.isPortrait ? -0.02 * widthCard : -0.02 * widthCard,
-                            width: this.state.isPortrait ? 0.065 * widthCard : 0.07 * widthCard,
-                            height: this.state.isPortrait ? 0.032 * widthCard : 0.035 * widthCard,
+                            width: this.state.isPortrait ? 0.065 * widthCard : 0.075 * widthCard,
+                            height: this.state.isPortrait ? 0.032 * widthCard : 0.045 * widthCard,
                         }]} source={require('../../image/crown.png')} />
-                        <Text style={{ color: "#ffffff", fontSize: 0.03 * width / 2, fontWeight: "bold" }}>2</Text>
+                        <Text style={{ color: "#ffffff", fontSize: 0.035 * width / 2, fontWeight: "bold" }}>2</Text>
                     </View>
                 </TouchableOpacity>
 

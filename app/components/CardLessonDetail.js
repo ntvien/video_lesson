@@ -49,7 +49,7 @@ class CardLessonDetail extends Component {
                 <View style={[styles.container1, {
                     width: this.state.isPortrait ? "100%" : "100%",
                     height: this.state.isPortrait ? widthCard * 0.38 : 0.249 * heightCard,
-                    padding: this.state.isPortrait ? 0.007 * width : 0.008 * widthCard,
+                    padding: this.state.isPortrait ? 0.007 * width : 0.0075 * widthCard,
                 }]}>
                     <View style={{
                         width: this.state.isPortrait ? "100%" : "100%",
