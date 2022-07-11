@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Dimensions, } from 'react-native';
 import imageBackgroundCard from '../../image/backgroundCard.png'
+import { isTablet } from '../../app/responsive/checkOrientation';
 
 const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
 const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
@@ -41,7 +42,7 @@ class CardLession extends Component {
 
     render() {
         const { item, index } = this.props;
-        return (
+        return isTablet() ?
             <ImageBackground
                 style={[styles.imageCard, {
                     width: this.state.isPortrait ? heightCard * 0.6 : widthCard * 0.75,
@@ -127,8 +128,94 @@ class CardLession extends Component {
                 </TouchableOpacity>
 
             </ImageBackground >
+            :
+            <ImageBackground
+                style={[styles.imageCard, {
+                    width: this.state.isPortrait ? heightCard * 0.65 : widthCard * 0.75,
+                    height: this.state.isPortrait ? widthCard * 0.7 : heightCard * 0.75,
+                    marginLeft: this.state.isPortrait ? heightCard * 0.03 : widthCard * 0.07,
+                    marginBottom: this.state.isPortrait ? widthCard * 0.05 : heightCard * 0.05,
+                    justifyContent: "center",
+                    alignItems: "center",
+                }]}
+                source={imageBackgroundCard}
+                resizeMode="stretch">
+                <TouchableOpacity style={[styles.container, {
+                    // padding: this.state.isPortrait ? width * 0.005 : width * 0.01,
+                }]}
+                    onPress={() => {
+                        this.props.navigation.navigate('DetailLearn')
+                    }}>
+                    <View style={{
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        flexDirection: 'row',
+                        marginTop: this.state.isPortrait ? 0 : -0.03 * widthCard
+                    }}>
+                        <View style={{
+                            width: this.state.isPortrait ? widthCard * 0.04 : widthCard * 0.04,
+                            height: this.state.isPortrait ? widthCard * 0.04 : widthCard * 0.04,
+                            backgroundColor: "#35ABEB",
+                            borderRadius: width * 0.03,
+                            left: this.state.isPortrait ? 0.05 * widthCard : 0.01 * widthCard
+                        }}>
+                        </View>
+                        <View style={{
+                            width: this.state.isPortrait ? widthCard * 0.04 : widthCard * 0.04,
+                            height: this.state.isPortrait ? widthCard * 0.04 : widthCard * 0.04,
+                            backgroundColor: "#35ABEB",
+                            borderRadius: width * 0.03,
+                            right: this.state.isPortrait ? 0.07 * widthCard : 0.035 * widthCard
+                        }}></View>
+                    </View>
 
-        )
+                    <View style={{
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flex: 1,
+                        // backgroundColor: "red",
+                        right: this.state.isPortrait ? 0.015 * widthCard : 0.013 * widthCard
+
+                    }}>
+                        <Text style={[styles.text, {
+                            fontSize: this.state.isPortrait ? 0.022 * width / 2 : 0.025 * width / 2,
+                            top: this.state.isPortrait ? -0.001 * widthCard : -0.02 * heightCard
+                        }]}>{item.name}</Text>
+
+                        <View style={{}}>
+                            <Image style={[styles.imageLesson, {
+                                width: this.state.isPortrait ? heightCard * 0.55 : widthCard * 0.75,
+                                height: this.state.isPortrait ? widthCard * 0.45 : heightCard * 0.38,
+                                top: this.state.isPortrait ? -0.03 * widthCard : -0.01 * heightCard,
+                                // left: this.state.isPortrait ? 0.05 * widthCard : 0,
+                                paddingHorizontal: this.state.isPortrait ? 0.05 * widthCard : 0,
+                            }]}
+                                source={item.imageUrl} />
+                        </View>
+
+                    </View>
+
+                    <View style={{
+                        width: this.state.isPortrait ? heightCard * 0.095 : widthCard * 0.1,
+                        height: this.state.isPortrait ? heightCard * 0.1 : widthCard * 0.1,
+                        borderRadius: this.state.isPortrait ? width * 0.007 : width * 0.005,
+                        top: this.state.isPortrait ? -0.03 * widthCard : -0.01 * heightCard,
+                        left: this.state.isPortrait ? 0.06 * heightCard : 0.06 * widthCard,
+                        backgroundColor: "#036194", position: "relative", justifyContent: "center",
+                        alignItems: "center"
+                    }}>
+
+                        <Image style={[styles.imageCrown, {
+                            top: this.state.isPortrait ? -0.02 * widthCard : -0.02 * widthCard,
+                            width: this.state.isPortrait ? 0.065 * widthCard : 0.075 * widthCard,
+                            height: this.state.isPortrait ? 0.032 * widthCard : 0.045 * widthCard,
+                        }]} source={require('../../image/crown.png')} />
+                        <Text style={{ color: "#ffffff", fontSize: 0.035 * width / 2, fontWeight: "bold" }}>2</Text>
+                    </View>
+                </TouchableOpacity>
+
+            </ImageBackground >
+
     };
 
 }

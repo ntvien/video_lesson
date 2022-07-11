@@ -5,6 +5,7 @@ import imagePersonal from '../../image/personal.png'
 import imageTimeVideo from '../../image/timeVideo.png'
 import imageShare from '../../image/share.png'
 import imageProgressVideo from '../../image/progressVideo.png'
+import { isTablet } from '../../app/responsive/checkOrientation';
 
 const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
 const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
@@ -39,8 +40,7 @@ class CardLessonDetail extends Component {
 
     render() {
         const { item, index } = this.props;
-        return (
-
+        return isTablet() ?
             <View style={[styles.container, {
                 width: this.state.isPortrait ? "45%" : "30%",
                 height: this.state.isPortrait ? widthCard * 0.4 : 0.26 * heightCard,
@@ -110,8 +110,79 @@ class CardLessonDetail extends Component {
                 </View>
 
 
+            </View> :
+            <View style={[styles.container, {
+                width: this.state.isPortrait ? "45%" : "30%",
+                height: this.state.isPortrait ? widthCard * 0.3 : 0.26 * heightCard,
+                marginRight: this.state.isPortrait ? 0.04 * widthCard : 0.06 * widthCard,
+            }]}>
+                <View style={[styles.container1, {
+                    width: this.state.isPortrait ? "100%" : "100%",
+                    height: this.state.isPortrait ? widthCard * 0.28 : 0.249 * heightCard,
+                    padding: this.state.isPortrait ? 0.007 * width : 0.0075 * widthCard,
+                }]}>
+                    <View style={{
+                        width: this.state.isPortrait ? "100%" : "100%",
+                        height: this.state.isPortrait ? "100%" : "100%",
+                        flex: 1, justifyContent: "center", alignItems: "center",
+                        paddingHorizontal: this.state.isPortrait ? 0.002 * widthCard : 0.01 * widthCard,
+                        paddingVertical: this.state.isPortrait ? 0.002 * widthCard : 0.01 * widthCard,
+                    }}>
+                        <Image style={{ resizeMode: "stretch", width: "100%", height: "100%" }}
+                            source={imageVideo} ></Image>
+                    </View>
+
+                    <View style={{
+                        width: "100%", height: "auto", justifyContent: "center",
+                        alignItems: "center"
+                    }} >
+
+                        <View style={{ justifyContent: "space-between", flexDirection: "row", alignItems: "center" }}>
+
+                            <View style={{ flex: 1, paddingLeft: "5%" }}>
+                                <Text style={{ fontSize: this.state.isPortrait ? 0.028 * widthCard : 0.028 * widthCard, color: "#00557A", fontWeight: "700" }}>{item.lecture}</Text>
+
+                                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                                    <Image style={{
+                                        width: this.state.isPortrait ? 0.018 * widthCard : 0.017 * widthCard,
+                                        height: this.state.isPortrait ? 0.018 * widthCard : 0.017 * widthCard, resizeMode: "contain", marginRight: "3%"
+                                    }} source={imagePersonal}></Image>
+                                    <Text style={{ fontSize: this.state.isPortrait ? 0.018 * widthCard : 0.017 * widthCard }}>{item.teacherName}</Text>
+                                </View>
+                                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                                    <Image style={{
+                                        width: this.state.isPortrait ? 0.018 * widthCard : 0.017 * widthCard,
+                                        height: this.state.isPortrait ? 0.018 * widthCard : 0.017 * widthCard, resizeMode: "contain", marginRight: "3%"
+                                    }} source={imageTimeVideo}></Image>
+                                    <Text style={{
+                                        fontSize: this.state.isPortrait ? 0.018 * widthCard : 0.017 * widthCard
+                                    }}>{item.timeVideo}</Text>
+                                </View>
+                            </View>
+
+                            <View>
+                                <Image style={{
+                                    width: this.state.isPortrait ? 0.06 * widthCard : 0.06 * widthCard,
+                                    height: this.state.isPortrait ? 0.06 * widthCard : 0.06 * widthCard,
+                                    resizeMode: "contain",
+                                    marginRight: "2%"
+                                }} source={imageShare}></Image>
+                            </View>
+                        </View>
+
+                        <View style={{ width: "100%", paddingBottom: this.state.isPortrait ? 0 : 0.01 * widthCard }}>
+                            <Image style={{
+                                width: "100%",
+                                height: this.state.isPortrait ? 0.02 * height : 0.027 * heightCard,
+                                resizeMode: "cover"
+                            }} source={imageProgressVideo}></Image>
+                        </View>
+                    </View>
+
+                </View>
+
+
             </View>
-        )
     };
 
 }

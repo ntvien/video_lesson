@@ -12,8 +12,8 @@ import CardItemDetail from '../../components/CardItemDetail';
 import CardLessonDetail from '../../components/CardLessonDetail';
 import { dataLessonVideo } from '../../../data/dataVideoLesson';
 import { useOrientation } from '../../hooks/useOrientation';
-import { isTablet, isMoible } from '../../responsive/checkOrientation';
 import { ScrollView } from 'react-native';
+import { isTablet } from '../../responsive/checkOrientation';
 
 const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
 const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
@@ -63,190 +63,193 @@ function DetailLearn({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
 
-                {/* <TouchableOpacity onPress={() => {
+            {
+                isTablet() ?
+                    <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
+
+                        {/* <TouchableOpacity onPress={() => {
                     navigation.pop();
                 }}>
                     <Image style={styles.imageBack} source={imageBack} />
                 </TouchableOpacity> */}
 
-                <View style={{
-                    position: "relative", width: "100%", height: orientation.isPortrait ? 0.17 * height : 0.18 * height,
-                    backgroundColor: "#00000033", zIndex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center",
-                }}>
-
-                    <View style={{ width: "100%", height: "100%", justifyContent: 'center', alignItems: "center", flexDirection: "row" }}>
                         <View style={{
-                            height: "100%",
-                            top: orientation.isPortrait ? height * 0.015 : 0,
-                            left: orientation.isPortrait ? height * 0.03 : width * 0.02,
-                            justifyContent: "center",
-                            position: "absolute",
-                            zIndex: 1,
-                        }} >
-                            <TouchableOpacity onPress={() => {
-                                navigation.pop();
-                            }}>
-                                <Image style={styles.imageBack} source={imageBack} />
-                            </TouchableOpacity>
-                        </View>
+                            position: "relative", width: "100%", height: orientation.isPortrait ? 0.17 * height : 0.18 * height,
+                            backgroundColor: "#00000033", zIndex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center",
+                        }}>
 
-                        <View style={{ alignItems: "center", marginTop: orientation.isPortrait ? -0.15 * (0.2 * height) : -0.3 * (0.2 * height) }} >
-
-                            {orientation.isPortrait ? <View style={{ alignItems: "center" }}>
-                                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                                    <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
-                                        i-Learn Smart Start Grade 3
-                                    </Text>
-                                    <Image style={[styles.imageRight, {
-                                        width: orientation.isPortrait ? 0.012 * width : 0.015 * width,
-                                        height: orientation.isPortrait ? 0.012 * width : 0.015 * width,
-                                        marginHorizontal: 0.02 * width,
-                                    }]} source={imageRight} />
-                                    <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
-                                        Video Lesson
-                                    </Text>
-                                    <Image style={[styles.imageRight, {
-                                        width: orientation.isPortrait ? 0.012 * width : 0.015 * width,
-                                        height: orientation.isPortrait ? 0.012 * width : 0.015 * width,
-                                        marginHorizontal: 0.02 * width,
-                                    }]} source={imageRight} />
+                            <View style={{ width: "100%", height: "100%", justifyContent: 'center', alignItems: "center", flexDirection: "row" }}>
+                                <View style={{
+                                    height: "100%",
+                                    top: orientation.isPortrait ? height * 0.015 : 0,
+                                    left: orientation.isPortrait ? height * 0.03 : width * 0.02,
+                                    justifyContent: "center",
+                                    position: "absolute",
+                                    zIndex: 1,
+                                }} >
+                                    <TouchableOpacity onPress={() => {
+                                        navigation.pop();
+                                    }}>
+                                        <Image style={styles.imageBack} source={imageBack} />
+                                    </TouchableOpacity>
                                 </View>
 
-                                <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
-                                    Theme 7 - Places and Directions
-                                </Text>
-                            </View> : <View style={{ alignItems: "center", flexDirection: "row" }}>
-                                <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
-                                    i-Learn Smart Start Grade 3
-                                </Text>
-                                <Image style={[styles.imageRight, {
-                                    width: orientation.isPortrait ? 0.015 * width : 0.015 * width,
-                                    height: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                                <View style={{ alignItems: "center", marginTop: orientation.isPortrait ? -0.15 * (0.2 * height) : -0.3 * (0.2 * height) }} >
 
-                                }]} source={imageRight} />
-                                <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
-                                    Video Lesson
-                                </Text>
-                                <Image style={[styles.imageRight, {
-                                    width: orientation.isPortrait ? 0.015 * width : 0.015 * width,
-                                    height: orientation.isPortrait ? 0.015 * width : 0.015 * width,
-                                }]} source={imageRight} />
-                                <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
-                                    Theme 7 - Places and Directions
-                                </Text>
-                            </View>}
+                                    {orientation.isPortrait ? <View style={{ alignItems: "center" }}>
+                                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                                            <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
+                                                i-Learn Smart Start Grade 3
+                                            </Text>
+                                            <Image style={[styles.imageRight, {
+                                                width: orientation.isPortrait ? 0.012 * width : 0.015 * width,
+                                                height: orientation.isPortrait ? 0.012 * width : 0.015 * width,
+                                                marginHorizontal: 0.02 * width,
+                                            }]} source={imageRight} />
+                                            <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
+                                                Video Lesson
+                                            </Text>
+                                            <Image style={[styles.imageRight, {
+                                                width: orientation.isPortrait ? 0.012 * width : 0.015 * width,
+                                                height: orientation.isPortrait ? 0.012 * width : 0.015 * width,
+                                                marginHorizontal: 0.02 * width,
+                                            }]} source={imageRight} />
+                                        </View>
+
+                                        <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
+                                            Theme 7 - Places and Directions
+                                        </Text>
+                                    </View> : <View style={{ alignItems: "center", flexDirection: "row" }}>
+                                        <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
+                                            i-Learn Smart Start Grade 3
+                                        </Text>
+                                        <Image style={[styles.imageRight, {
+                                            width: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                                            height: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+
+                                        }]} source={imageRight} />
+                                        <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
+                                            Video Lesson
+                                        </Text>
+                                        <Image style={[styles.imageRight, {
+                                            width: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                                            height: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                                        }]} source={imageRight} />
+                                        <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
+                                            Theme 7 - Places and Directions
+                                        </Text>
+                                    </View>}
 
 
 
+                                </View>
+
+                            </View>
+
+                            <View style={{ position: "absolute", borderTopLeftRadius: 35, borderTopRightRadius: 35, bottom: 0, width: "100%", backgroundColor: "#B792DD", height: "30%", zIndex: 1 }}></View>
                         </View>
 
-                    </View>
 
-                    <View style={{ position: "absolute", borderTopLeftRadius: 35, borderTopRightRadius: 35, bottom: 0, width: "100%", backgroundColor: "#B792DD", height: "30%", zIndex: 1 }}></View>
-                </View>
+                        <View style={{ width: "100%", height: "100%", position: "relative" }}>
 
-
-                <View style={{ width: "100%", height: "100%", position: "relative" }}>
-
-                    <View style={{
-                        width: "100%", height: "100%",
-                        paddingLeft: orientation.isPortrait ? height * 0.04 : width * 0.04,
-                        paddingRight: orientation.isPortrait ? -height * 0.05 : width * 0.04,
-                        marginRight: orientation.isPortrait ? -height * 0.5 : 0,
-                        paddingTop: orientation.isPortrait ? 10 : 0,
-                        paddingBottom: orientation.isPortrait ? 10 : height * 0.2,
-                        // backgroundColor: "red"
-                    }}>
-                        <ImageBackground style={{
-                            width: orientation.isPortrait && isTablet ? height * 0.925 : "100%",
-                            height: orientation.isPortrait && isTablet ? width * 0.86 : "100%",
-                        }}
-                            source={imageBackgroundPaper1}
-                            resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
                             <View style={{
                                 width: "100%", height: "100%",
-                                display: "flex",
-                                flexDirection: "row",
-                                alignItems: "center",
-                                justifycontent: "center",
+                                paddingLeft: orientation.isPortrait ? height * 0.04 : width * 0.04,
+                                paddingRight: orientation.isPortrait ? -height * 0.05 : width * 0.04,
+                                marginRight: orientation.isPortrait ? -height * 0.5 : 0,
+                                paddingTop: orientation.isPortrait ? 10 : 0,
+                                paddingBottom: orientation.isPortrait ? 10 : height * 0.2,
                                 // backgroundColor: "red"
                             }}>
+                                <ImageBackground style={{
+                                    width: orientation.isPortrait && isTablet ? height * 0.925 : "100%",
+                                    height: orientation.isPortrait && isTablet ? width * 0.86 : "100%",
+                                }}
+                                    source={imageBackgroundPaper1}
+                                    resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
+                                    <View style={{
+                                        width: "100%", height: "100%",
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        alignItems: "center",
+                                        justifycontent: "center",
+                                        // backgroundColor: "red"
+                                    }}>
 
-                                <View style={styles.leftColumn}>
-                                    <CardItemDetail />
-                                </View>
-                                <View style={[styles.centerColumn, {
-                                    height: "82%",
-                                    marginTop: orientation.isPortrait ? 0.18 * height : 0.1 * height,
-                                }]} />
-                                <View style={[styles.rightColumn, {
-                                    width: orientation.isPortrait ? width : width,
-                                    height: orientation.isPortrait ? height : height - height * 0.2,
-                                    paddingLeft: orientation.isPortrait ? 0.03 * width : 0.05 * width,
-                                    paddingRight: orientation.isPortrait ? 0.02 * width : 0.07 * width,
-                                    paddingTop: orientation.isPortrait ? 0 : 0.094 * height,
-                                    paddingBottom: orientation.isPortrait ? 0 : 0.02 * height,
-                                    flexDirection: 'row',
-                                    // backgroundColor: "#000000"
-                                }]}>
+                                        <View style={styles.leftColumn}>
+                                            <CardItemDetail />
+                                        </View>
+                                        <View style={[styles.centerColumn, {
+                                            height: "82%",
+                                            marginTop: orientation.isPortrait ? 0.18 * height : 0.1 * height,
+                                        }]} />
+                                        <View style={[styles.rightColumn, {
+                                            width: orientation.isPortrait ? width : width,
+                                            height: orientation.isPortrait ? height : height - height * 0.2,
+                                            paddingLeft: orientation.isPortrait ? 0.03 * width : 0.05 * width,
+                                            paddingRight: orientation.isPortrait ? 0.02 * width : 0.07 * width,
+                                            paddingTop: orientation.isPortrait ? 0 : 0.094 * height,
+                                            paddingBottom: orientation.isPortrait ? 0 : 0.02 * height,
+                                            flexDirection: 'row',
+                                            // backgroundColor: "#000000"
+                                        }]}>
 
-                                    <ScrollView
-                                        contentContainerStyle={{ paddingRight: 0 }}
-                                        showsVerticalScrollIndicator={false}
-                                        scrollEventThrottle={16}
-                                        onContentSizeChange={(_, height) => {
-                                            setCompleteScrollBarHeight(height);
-                                        }}
-                                        onLayout={({
-                                            nativeEvent: {
-                                                layout: { height }
-                                            }
-                                        }) => {
-                                            setVisibleScrollBarHeight(height);
-                                        }}
-                                        onScroll={Animated.event(
-                                            [{ nativeEvent: { contentOffset: { y: scrollIndicator } } }],
-                                            { useNativeDriver: false }
-                                        )}
-                                    >
-                                        {/* {dataLesson.map((item, index) => {
+                                            <ScrollView
+                                                contentContainerStyle={{ paddingRight: 0 }}
+                                                showsVerticalScrollIndicator={false}
+                                                scrollEventThrottle={16}
+                                                onContentSizeChange={(_, height) => {
+                                                    setCompleteScrollBarHeight(height);
+                                                }}
+                                                onLayout={({
+                                                    nativeEvent: {
+                                                        layout: { height }
+                                                    }
+                                                }) => {
+                                                    setVisibleScrollBarHeight(height);
+                                                }}
+                                                onScroll={Animated.event(
+                                                    [{ nativeEvent: { contentOffset: { y: scrollIndicator } } }],
+                                                    { useNativeDriver: false }
+                                                )}
+                                            >
+                                                {/* {dataLesson.map((item, index) => {
                                             return (
                                                 <CardLession item={item} index={index} key={index} navigation={navigation} />)
                                         })} */}
 
-                                        <FlatList
-                                            data={dataLessonVideo}
-                                            numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
-                                            keyExtractor={item => item}
-                                            key={orientation1}
-                                            renderItem={({ item, index }) => (
-                                                <CardLessonDetail item={item} index={index} />
-                                            )
-                                            }
-                                        />
-                                    </ScrollView>
-                                    <View
-                                        style={{
-                                            height: '100%',
-                                            width: 10,
-                                            backgroundColor: '#9FBECC99',
-                                            borderRadius: 8
-                                        }}
-                                    >
-                                        <Animated.View
-                                            style={{
-                                                width: 10,
-                                                borderRadius: 8,
-                                                backgroundColor: '#036194E6',
-                                                height: scrollIndicatorSize,
-                                                transform: [{ translateY: scrollIndicatorPosition }]
-                                            }}
-                                        />
-                                    </View>
+                                                <FlatList
+                                                    data={dataLessonVideo}
+                                                    numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
+                                                    keyExtractor={item => item}
+                                                    key={orientation1}
+                                                    renderItem={({ item, index }) => (
+                                                        <CardLessonDetail item={item} index={index} />
+                                                    )
+                                                    }
+                                                />
+                                            </ScrollView>
+                                            <View
+                                                style={{
+                                                    height: '100%',
+                                                    width: 10,
+                                                    backgroundColor: '#9FBECC99',
+                                                    borderRadius: 8
+                                                }}
+                                            >
+                                                <Animated.View
+                                                    style={{
+                                                        width: 10,
+                                                        borderRadius: 8,
+                                                        backgroundColor: '#036194E6',
+                                                        height: scrollIndicatorSize,
+                                                        transform: [{ translateY: scrollIndicatorPosition }]
+                                                    }}
+                                                />
+                                            </View>
 
-                                    {/* <FlatList
+                                            {/* <FlatList
                                         data={dataLessonVideo}
                                         numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
                                         keyExtractor={item => item}
@@ -257,19 +260,207 @@ function DetailLearn({ navigation }) {
                                         }
                                     /> */}
 
-                                </View>
+                                        </View>
+                                    </View>
+
+                                    <Image style={[styles.imageGhim1, {
+                                        left: orientation.isPortrait ? -0.02 * width : -0.022 * width,
+                                        bottom: orientation.isPortrait ? 0.04 * height : 0.05 * height,
+                                    }]} source={imageGhim1} />
+                                </ImageBackground>
                             </View>
 
-                            <Image style={[styles.imageGhim1, {
-                                left: orientation.isPortrait ? -0.02 * width : -0.022 * width,
-                                bottom: orientation.isPortrait ? 0.04 * height : 0.05 * height,
-                            }]} source={imageGhim1} />
-                        </ImageBackground>
-                    </View>
+                            {/* </ScrollView> */}
+                        </View>
+                    </ImageBackground> :
+                    <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
 
-                    {/* </ScrollView> */}
-                </View>
-            </ImageBackground>
+                        <View style={{
+                            position: "relative", width: "100%", height: orientation.isPortrait ? 0.18 * height : 0.18 * height,
+                            backgroundColor: "#00000033", zIndex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center",
+                        }}>
+
+                            <View style={{ width: "100%", height: "100%", justifyContent: 'center', alignItems: "center", flexDirection: "row" }}>
+                                <View style={{
+                                    height: "100%",
+                                    top: orientation.isPortrait ? height * 0.015 : 0,
+                                    left: orientation.isPortrait ? height * 0.03 : width * 0.02,
+                                    justifyContent: "center",
+                                    position: "absolute",
+                                    zIndex: 1,
+                                }} >
+                                    <TouchableOpacity onPress={() => {
+                                        navigation.pop();
+                                    }}>
+                                        <Image style={styles.imageBack} source={imageBack} />
+                                    </TouchableOpacity>
+                                </View>
+
+                                <View style={{ alignItems: "center", marginTop: orientation.isPortrait ? -0.15 * (0.2 * height) : -0.3 * (0.2 * height) }} >
+
+                                    {orientation.isPortrait ? <View style={{ alignItems: "center" }}>
+                                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                                            <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
+                                                i-Learn Smart Start Grade 3
+                                            </Text>
+                                            <Image style={[styles.imageRight, {
+                                                width: orientation.isPortrait ? 0.01 * width : 0.012 * width,
+                                                height: orientation.isPortrait ? 0.01 * width : 0.012 * width,
+                                                marginHorizontal: 0.01 * width,
+                                            }]} source={imageRight} />
+                                            <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
+                                                Video Lesson
+                                            </Text>
+                                            <Image style={[styles.imageRight, {
+                                                width: orientation.isPortrait ? 0.01 * width : 0.012 * width,
+                                                height: orientation.isPortrait ? 0.01 * width : 0.012 * width,
+                                                marginHorizontal: 0.01 * width,
+                                            }]} source={imageRight} />
+                                        </View>
+
+                                        <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
+                                            Theme 7 - Places and Directions
+                                        </Text>
+                                    </View> : <View style={{ alignItems: "center", flexDirection: "row" }}>
+                                        <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
+                                            i-Learn Smart Start Grade 3
+                                        </Text>
+                                        <Image style={[styles.imageRight, {
+                                            width: orientation.isPortrait ? 0.015 * width : 0.012 * width,
+                                            height: orientation.isPortrait ? 0.015 * width : 0.012 * width,
+
+                                        }]} source={imageRight} />
+                                        <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
+                                            Video Lesson
+                                        </Text>
+                                        <Image style={[styles.imageRight, {
+                                            width: orientation.isPortrait ? 0.015 * width : 0.012 * width,
+                                            height: orientation.isPortrait ? 0.015 * width : 0.012 * width,
+                                        }]} source={imageRight} />
+                                        <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
+                                            Theme 7 - Places and Directions
+                                        </Text>
+                                    </View>}
+                                </View>
+
+                            </View>
+
+                            <View style={{
+                                position: "absolute", borderTopLeftRadius: 35, borderTopRightRadius: 35, bottom: 0, width: "100%", backgroundColor: "#B792DD",
+                                height: orientation.isPortrait ? "25%" : "30%", zIndex: 1
+                            }}></View>
+                        </View>
+
+
+                        <View style={{ width: "100%", height: "100%", position: "relative" }}>
+
+                            <View style={{
+                                width: "100%", height: "100%",
+                                paddingLeft: orientation.isPortrait ? height * 0.04 : width * 0.04,
+                                paddingRight: orientation.isPortrait ? -height * 0.05 : width * 0.04,
+                                marginRight: orientation.isPortrait ? -height * 0.5 : 0,
+                                paddingTop: orientation.isPortrait ? 10 : 0,
+                                paddingBottom: orientation.isPortrait ? 10 : height * 0.2,
+                                // backgroundColor: "red"
+                            }}>
+                                <ImageBackground style={{
+                                    width: orientation.isPortrait && isTablet ? height * 0.925 : "100%",
+                                    height: orientation.isPortrait && isTablet ? width * 0.86 : "100%",
+                                }}
+                                    source={imageBackgroundPaper1}
+                                    resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
+                                    <View style={{
+                                        width: "100%", height: "100%",
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        alignItems: "center",
+                                        justifycontent: "center",
+                                        // backgroundColor: "red"
+                                    }}>
+
+                                        <View style={[styles.leftColumn, { height: orientation.isPortrait ? "80%" : "80%", }]}>
+                                            <CardItemDetail />
+                                        </View>
+                                        <View style={[styles.centerColumn, {
+                                            height: "82%",
+                                            marginTop: orientation.isPortrait ? 0.18 * height : 0.1 * height,
+                                        }]} />
+                                        <View style={[styles.rightColumn, {
+                                            width: orientation.isPortrait ? width : width,
+                                            height: orientation.isPortrait ? height : height - height * 0.2,
+                                            paddingLeft: orientation.isPortrait ? 0.01 * width : 0.05 * width,
+                                            paddingRight: orientation.isPortrait ? 0.01 * width : 0.07 * width,
+                                            paddingTop: orientation.isPortrait ? 0 : 0.094 * height,
+                                            paddingBottom: orientation.isPortrait ? 0 : 0.02 * height,
+                                            flexDirection: 'row',
+                                            // backgroundColor: "#000000"
+                                        }]}>
+
+                                            <ScrollView
+                                                contentContainerStyle={{ paddingRight: 0 }}
+                                                showsVerticalScrollIndicator={false}
+                                                scrollEventThrottle={16}
+                                                onContentSizeChange={(_, height) => {
+                                                    setCompleteScrollBarHeight(height);
+                                                }}
+                                                onLayout={({
+                                                    nativeEvent: {
+                                                        layout: { height }
+                                                    }
+                                                }) => {
+                                                    setVisibleScrollBarHeight(height);
+                                                }}
+                                                onScroll={Animated.event(
+                                                    [{ nativeEvent: { contentOffset: { y: scrollIndicator } } }],
+                                                    { useNativeDriver: false }
+                                                )}
+                                            >
+
+                                                <FlatList
+                                                    data={dataLessonVideo}
+                                                    numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
+                                                    keyExtractor={item => item}
+                                                    key={orientation1}
+                                                    renderItem={({ item, index }) => (
+                                                        <CardLessonDetail item={item} index={index} />
+                                                    )
+                                                    }
+                                                />
+                                            </ScrollView>
+                                            <View
+                                                style={{
+                                                    height: '100%',
+                                                    width: 7,
+                                                    backgroundColor: '#9FBECC99',
+                                                    borderRadius: 8
+                                                }}
+                                            >
+                                                <Animated.View
+                                                    style={{
+                                                        width: 7,
+                                                        borderRadius: 8,
+                                                        backgroundColor: '#036194E6',
+                                                        height: scrollIndicatorSize,
+                                                        transform: [{ translateY: scrollIndicatorPosition }]
+                                                    }}
+                                                />
+                                            </View>
+
+                                        </View>
+                                    </View>
+
+                                    <Image style={[styles.imageGhim1, {
+                                        left: orientation.isPortrait ? -0.02 * width : -0.025 * width,
+                                        bottom: orientation.isPortrait ? 0.04 * height : 0.04 * height,
+                                    }]} source={imageGhim1} />
+                                </ImageBackground>
+                            </View>
+
+                            {/* </ScrollView> */}
+                        </View>
+                    </ImageBackground>
+            }
+
 
 
 

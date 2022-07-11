@@ -15,15 +15,11 @@ console.log(SCREEN_HEIGHT)
 // export const isTablet = DeviceInfo.getDeviceType() !== 'Handset';
 
 export const isTablet = () => {
-    if (SCREEN_WIDTH / SCREEN_HEIGHT < 16 / 9) {
-        return true;
-    }
+    return SCREEN_WIDTH / SCREEN_HEIGHT < 16 / 9;
 }
 
 export const isMoible = () => {
-    if (SCREEN_WIDTH / SCREEN_HEIGHT > 16 / 9) {
-        return true;
-    }
+    return SCREEN_WIDTH / SCREEN_HEIGHT > 16 / 9;
 }
 
 // export const scaleWidth = (width) => {
