@@ -206,7 +206,7 @@ const Learn = ({ navigation }) => {
                                         style={{
                                             width: 10,
                                             borderRadius: 8,
-                                            backgroundColor: '#036194',
+                                            backgroundColor: '#036194E6',
                                             height: scrollIndicatorSize,
                                             transform: [{ translateY: scrollIndicatorPosition }]
                                         }}
