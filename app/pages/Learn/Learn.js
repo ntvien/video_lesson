@@ -66,11 +66,14 @@ const Learn = ({ navigation }) => {
                         </View>
 
                         <View style={{ alignItems: "center", flexDirection: "row", marginTop: orientation.isPortrait ? -0.15 * (0.2 * height) : -0.3 * (0.2 * height) }}>
-                            <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                            <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
                                 i-Learn Smart Start Grade 3
                             </Text>
-                            <Image style={styles.imageRight} source={imageRight} />
-                            <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                            <Image style={[styles.imageRight, {
+                                width: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                                height: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                            }]} source={imageRight} />
+                            <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
                                 Video Lesson
                             </Text>
 
@@ -83,20 +86,20 @@ const Learn = ({ navigation }) => {
                 <View style={{ width: "100%", height: "100%", position: "relative" }}>
 
                     <Image style={[styles.imageGhim, {
-                        left: orientation.isPortrait ? height * 0.015 : width * 0.02,
+                        left: orientation.isPortrait ? height * 0.007 : width * 0.018,
                         top: orientation.isPortrait ? -width * 0.013 : -width * 0.016,
                     }]} source={imageGhim} />
                     <View style={[styles.styleRectangle, {
                         width: orientation.isPortrait ? height * 0.4 : width * 0.43,
-                        height: orientation.isPortrait ? width * 0.5 : height * 0.4,
-                        left: orientation.isPortrait ? height * 0.035 : width * 0.0265,
+                        height: orientation.isPortrait ? width * 0.5 : height * 0.33,
+                        left: orientation.isPortrait ? height * 0.035 : width * 0.028,
                         top: orientation.isPortrait ? -width * 0.01 : -height * 0.03
                     }]} />
 
                     <View style={[styles.styleRectangle1, {
                         width: orientation.isPortrait ? width * 0.5 : width * 0.5,
                         height: orientation.isPortrait ? height * 0.8 : height * 0.6,
-                        right: orientation.isPortrait ? width * 0.02 : width * 0.02,
+                        right: orientation.isPortrait ? width * 0.015 : width * 0.02,
                         top: orientation.isPortrait ? height * 0.1 : height * 0.1
                     }]} />
 
@@ -119,7 +122,7 @@ const Learn = ({ navigation }) => {
                             <View style={{
                                 width: orientation.isPortrait ? height * 0.98 : width - 2 * (width * 0.06),
                                 height: orientation.isPortrait ? width * 0.9 : height - 2 * (height * 0.04),
-                                paddingHorizontal: orientation.isPortrait ? height * 0.11 : width * 0.06,
+                                paddingHorizontal: orientation.isPortrait ? height * 0.11 : width * 0.055,
                                 paddingTop: orientation.isPortrait ? width * 0.03 : height * 0.04,
                                 paddingBottom: height * 0.2,
                                 // backgroundColor: "blue"
@@ -183,7 +186,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#35ABEB",
         borderWidth: width * 0.0075,
         borderColor: "#ffffff",
-        borderRadius: width * 0.04,
+        borderRadius: width * 0.035,
         transform: [{ rotate: '-3deg' }],
         position: 'absolute',
     }, styleRectangle1: {

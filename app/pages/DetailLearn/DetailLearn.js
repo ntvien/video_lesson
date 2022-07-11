@@ -69,29 +69,44 @@ function DetailLearn({ navigation }) {
 
                             {orientation.isPortrait ? <View style={{ alignItems: "center" }}>
                                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                                    <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                    <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
                                         i-Learn Smart Start Grade 3
                                     </Text>
-                                    <Image style={styles.imageRight} source={imageRight} />
-                                    <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                    <Image style={[styles.imageRight, {
+                                        width: orientation.isPortrait ? 0.012 * width : 0.015 * width,
+                                        height: orientation.isPortrait ? 0.012 * width : 0.015 * width,
+                                        marginHorizontal: 0.02 * width,
+                                    }]} source={imageRight} />
+                                    <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
                                         Video Lesson
                                     </Text>
-                                    <Image style={styles.imageRight} source={imageRight} />
+                                    <Image style={[styles.imageRight, {
+                                        width: orientation.isPortrait ? 0.012 * width : 0.015 * width,
+                                        height: orientation.isPortrait ? 0.012 * width : 0.015 * width,
+                                        marginHorizontal: 0.02 * width,
+                                    }]} source={imageRight} />
                                 </View>
 
-                                <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.03 * width / 2 : 0.035 * width / 2 }}>
                                     Theme 7 - Places and Direction
                                 </Text>
                             </View> : <View style={{ alignItems: "center", flexDirection: "row" }}>
-                                <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
                                     i-Learn Smart Start Grade 3
                                 </Text>
-                                <Image style={styles.imageRight} source={imageRight} />
-                                <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                <Image style={[styles.imageRight, {
+                                    width: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                                    height: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+
+                                }]} source={imageRight} />
+                                <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
                                     Video Lesson
                                 </Text>
-                                <Image style={styles.imageRight} source={imageRight} />
-                                <Text style={{ color: "#ffffff", fontSize: 0.04 * width / 2 }}>
+                                <Image style={[styles.imageRight, {
+                                    width: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                                    height: orientation.isPortrait ? 0.015 * width : 0.015 * width,
+                                }]} source={imageRight} />
+                                <Text style={{ color: "#ffffff", fontSize: orientation.isPortrait ? 0.035 * width / 2 : 0.035 * width / 2 }}>
                                     Theme 7 - Places and Direction
                                 </Text>
                             </View>}
@@ -115,10 +130,12 @@ function DetailLearn({ navigation }) {
                         marginRight: orientation.isPortrait ? -height * 0.5 : 0,
                         paddingTop: orientation.isPortrait ? 10 : 0,
                         paddingBottom: orientation.isPortrait ? 10 : height * 0.2,
+                        // backgroundColor: "red"
                     }}>
                         <ImageBackground style={{
                             width: orientation.isPortrait && isTablet ? height * 0.925 : "100%",
                             height: orientation.isPortrait && isTablet ? width * 0.86 : "100%",
+
 
                         }}
                             source={imageBackgroundPaper1}
@@ -141,7 +158,7 @@ function DetailLearn({ navigation }) {
                                     height: orientation.isPortrait ? height : height - height * 0.3,
                                     paddingLeft: orientation.isPortrait ? 0.03 * width : 0.05 * width,
                                     paddingRight: orientation.isPortrait ? 0.02 * width : 0.07 * width,
-                                    paddingTop: orientation.isPortrait ? 0.04 * height : 0.04 * height,
+                                    paddingTop: orientation.isPortrait ? 0 : 0.04 * height,
                                     // backgroundColor: "#000000"
                                 }]}>
                                     <FlatList
@@ -159,8 +176,8 @@ function DetailLearn({ navigation }) {
                             </View>
 
                             <Image style={[styles.imageGhim1, {
-                                left: orientation.isPortrait ? 0 : -0.02 * width,
-                                bottom: orientation.isPortrait ? 0 : 0.06 * height,
+                                left: orientation.isPortrait ? -0.02 * width : -0.022 * width,
+                                bottom: orientation.isPortrait ? 0.04 * height : 0.05 * height,
                             }]} source={imageGhim1} />
                         </ImageBackground>
                     </View>

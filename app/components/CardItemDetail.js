@@ -41,10 +41,9 @@ class CardItemDetail extends Component {
     render() {
         return (
             <View style={{
-                width: this.state.isPortrait ? "70%" : "60%",
+                width: this.state.isPortrait ? "70%" : "70%",
                 height: this.state.isPortrait ? "20%" : "50%", justifyContent: "center", alignItems: "center"
             }}>
-
                 <View style={{ width: "100%", height: "100%" }}>
                     <View style={{ width: "100%", height: "100%", justifyContent: "space-between" }}>
                         <ImageBackground
@@ -52,16 +51,25 @@ class CardItemDetail extends Component {
                             source={imageBackgroundCard}
                             resizeMode="cover">
 
-                            <View style={{ justifyContent: "space-between", alignItems: "center", flexDirection: 'row', flex: 0.3, top: "-2%" }}>
-                                <Image style={{ width: 0.04 * width, height: 0.04 * width, resizeMode: "cover", left: -0.02 * width }} source={imageLeftLabel}></Image>
-                                <Image style={{ width: 0.04 * width, height: 0.04 * width, resizeMode: "cover", right: -0.015 * width }} source={imageRightLabel}></Image>
+                            <View style={{
+                                justifyContent: "space-between", alignItems: "center", flexDirection: 'row', flex: 0.3,
+                                top: this.state.isPortrait ? "-2%" : "-1%"
+                            }}>
+                                <Image style={{
+                                    width: 0.04 * width, height: 0.04 * width, resizeMode: "cover",
+                                    left: this.state.isPortrait ? -0.016 * width : -0.017 * width
+                                }} source={imageLeftLabel}></Image>
+                                <Image style={{
+                                    width: 0.04 * width, height: 0.04 * width, resizeMode: "cover",
+                                    right: this.state.isPortrait ? -0.013 * width : -0.007 * width
+                                }} source={imageRightLabel}></Image>
                             </View>
 
                             <View style={{
                                 justifyContent: "center",
                                 alignItems: "center", flex: 3, paddingRight: "8%", paddingLeft: "5%",
                             }}>
-                                <Text style={[styles.text, { fontSize: this.state.isPortrait ? 13 : 13 }]}>Cities around the World</Text>
+                                <Text style={[styles.text, { fontSize: this.state.isPortrait ? 0.032 * width / 4 : 0.043 * width / 4 }]}>Cities around the World</Text>
 
                                 <View style={{ width: "100%", height: "100%", flex: 1, borderRadius: 20 }}>
                                     <Image style={styles.imageLesson}
@@ -70,12 +78,17 @@ class CardItemDetail extends Component {
                             </View>
 
                             <View style={{
-                                width: "17%", height: "15%", borderRadius: 5, top: "-12%", left: "10%",
-                                backgroundColor: "#036194", position: "relative", justifyContent: "center", alignItems: "center"
+                                width: "17%", height: "15%", borderRadius: 7, top: "-12%", left: "10%",
+                                backgroundColor: "#036194", position: "relative", justifyContent: "center",
+                                alignItems: "center"
                             }}>
 
-                                <Image style={styles.imageCrown} source={require('../../image/crown.png')} />
-                                <Text style={{ color: "#ffffff", fontSize: 14, fontWeight: "bold" }}>2</Text>
+                                <Image style={[styles.imageCrown, {
+                                    top: "-25%",
+                                    width: this.state.isPortrait ? 0.01 * width : 0.02 * width,
+                                    height: this.state.isPortrait ? 0.005 * width : 0.012 * width,
+                                }]} source={require('../../image/crown.png')} />
+                                <Text style={{ color: "#ffffff", fontSize: this.state.isPortrait ? 0.01 * width : 0.02 * width, fontWeight: "bold" }}>2</Text>
                             </View>
                         </ImageBackground>
                     </View >
@@ -83,7 +96,7 @@ class CardItemDetail extends Component {
                     <View style={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
                         <Text style={{ fontSize: 10, color: "#036194", fontWeight: "700" }}>100%</Text>
                         <View style={{ width: "100%" }}>
-                            <Image style={{ width: "100%", height: this.state.isPortrait ? 0.02 * height : 0.025 * height, resizeMode: "cover" }} source={progressBar}></Image>
+                            <Image style={{ width: "100%", height: this.state.isPortrait ? 0.02 * height : 0.03 * height, resizeMode: "cover" }} source={progressBar}></Image>
                         </View>
                     </View>
                 </View>
