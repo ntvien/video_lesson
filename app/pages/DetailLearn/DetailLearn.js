@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image, FlatList, useWindowDimensions } from 'react-native';
-import { ImageBackground } from 'react-native';
+import { ImageBackground, Animated } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper1 from '../../../image/backgroundpaper1.png'
 import imageGhim1 from '../../../image/ghim2.png'
@@ -13,6 +13,8 @@ import CardLessonDetail from '../../components/CardLessonDetail';
 import { dataLessonVideo } from '../../../data/dataVideoLesson';
 import { useOrientation } from '../../hooks/useOrientation';
 import { isTablet, isMoible } from '../../responsive/checkOrientation';
+import { ScrollView } from 'react-native';
+
 const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
 const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
 
@@ -33,6 +35,31 @@ function DetailLearn({ navigation }) {
     useEffect(() => {
         getOrientation()
     })
+
+    const [completeScrollBarHeight, setCompleteScrollBarHeight] = useState(1);
+    const [visibleScrollBarHeight, setVisibleScrollBarHeight] = useState(0);
+
+    const scrollIndicator = useRef(new Animated.Value(0)).current;
+
+    const scrollIndicatorSize =
+        completeScrollBarHeight > visibleScrollBarHeight
+            ? (visibleScrollBarHeight * visibleScrollBarHeight) /
+            completeScrollBarHeight
+            : visibleScrollBarHeight;
+
+    const difference =
+        visibleScrollBarHeight > scrollIndicatorSize
+            ? visibleScrollBarHeight - scrollIndicatorSize
+            : 1;
+
+    const scrollIndicatorPosition = Animated.multiply(
+        scrollIndicator,
+        visibleScrollBarHeight / completeScrollBarHeight
+    ).interpolate({
+        inputRange: [0, difference],
+        outputRange: [0, difference],
+        extrapolate: 'clamp'
+    });
 
     return (
         <SafeAreaView style={styles.container}>
@@ -161,9 +188,65 @@ function DetailLearn({ navigation }) {
                                     paddingRight: orientation.isPortrait ? 0.02 * width : 0.07 * width,
                                     paddingTop: orientation.isPortrait ? 0 : 0.094 * height,
                                     paddingBottom: orientation.isPortrait ? 0 : 0.02 * height,
+                                    flexDirection: 'row',
                                     // backgroundColor: "#000000"
                                 }]}>
-                                    <FlatList
+
+                                    <ScrollView
+                                        contentContainerStyle={{ paddingRight: 0 }}
+                                        showsVerticalScrollIndicator={false}
+                                        scrollEventThrottle={16}
+                                        onContentSizeChange={(_, height) => {
+                                            setCompleteScrollBarHeight(height);
+                                        }}
+                                        onLayout={({
+                                            nativeEvent: {
+                                                layout: { height }
+                                            }
+                                        }) => {
+                                            setVisibleScrollBarHeight(height);
+                                        }}
+                                        onScroll={Animated.event(
+                                            [{ nativeEvent: { contentOffset: { y: scrollIndicator } } }],
+                                            { useNativeDriver: false }
+                                        )}
+                                    >
+                                        {/* {dataLesson.map((item, index) => {
+                                            return (
+                                                <CardLession item={item} index={index} key={index} navigation={navigation} />)
+                                        })} */}
+
+                                        <FlatList
+                                            data={dataLessonVideo}
+                                            numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
+                                            keyExtractor={item => item}
+                                            key={orientation1}
+                                            renderItem={({ item, index }) => (
+                                                <CardLessonDetail item={item} index={index} />
+                                            )
+                                            }
+                                        />
+                                    </ScrollView>
+                                    <View
+                                        style={{
+                                            height: '100%',
+                                            width: 10,
+                                            backgroundColor: '#9FBECC99',
+                                            borderRadius: 8
+                                        }}
+                                    >
+                                        <Animated.View
+                                            style={{
+                                                width: 10,
+                                                borderRadius: 8,
+                                                backgroundColor: '#036194',
+                                                height: scrollIndicatorSize,
+                                                transform: [{ translateY: scrollIndicatorPosition }]
+                                            }}
+                                        />
+                                    </View>
+
+                                    {/* <FlatList
                                         data={dataLessonVideo}
                                         numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
                                         keyExtractor={item => item}
@@ -172,7 +255,7 @@ function DetailLearn({ navigation }) {
                                             <CardLessonDetail item={item} index={index} />
                                         )
                                         }
-                                    />
+                                    /> */}
 
                                 </View>
                             </View>

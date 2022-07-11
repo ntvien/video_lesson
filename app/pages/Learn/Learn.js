@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { StyleSheet, Text, View, Button, SafeAreaView, StatusBar, Dimensions, Image, FlatList, useWindowDimensions } from 'react-native';
-import { ImageBackground } from 'react-native';
+import { ImageBackground, Animated } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper from '../../../image/backgroundpaper.png'
 import imageGhim from '../../../image/ghim1.png'
@@ -12,6 +12,7 @@ import { FlatGrid } from 'react-native-super-grid';
 import { useOrientation } from '../../hooks/useOrientation';
 import ImmersiveMode from 'react-native-immersive-mode';
 import { isTablet, isMoible } from '../../responsive/checkOrientation';
+import { ScrollView } from 'react-native';
 
 
 const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
@@ -39,6 +40,31 @@ const Learn = ({ navigation }) => {
     useEffect(() => {
         getOrientation()
     })
+
+    const [completeScrollBarHeight, setCompleteScrollBarHeight] = useState(1);
+    const [visibleScrollBarHeight, setVisibleScrollBarHeight] = useState(0);
+
+    const scrollIndicator = useRef(new Animated.Value(0)).current;
+
+    const scrollIndicatorSize =
+        completeScrollBarHeight > visibleScrollBarHeight
+            ? (visibleScrollBarHeight * visibleScrollBarHeight) /
+            completeScrollBarHeight
+            : visibleScrollBarHeight;
+
+    const difference =
+        visibleScrollBarHeight > scrollIndicatorSize
+            ? visibleScrollBarHeight - scrollIndicatorSize
+            : 1;
+
+    const scrollIndicatorPosition = Animated.multiply(
+        scrollIndicator,
+        visibleScrollBarHeight / completeScrollBarHeight
+    ).interpolate({
+        inputRange: [0, difference],
+        outputRange: [0, difference],
+        extrapolate: 'clamp'
+    });
 
     return (
         <SafeAreaView style={[styles.container]}>
@@ -123,12 +149,80 @@ const Learn = ({ navigation }) => {
                             <View style={{
                                 width: orientation.isPortrait ? height * 0.98 : width - 2 * (width * 0.06),
                                 height: orientation.isPortrait ? width * 0.9 : height - 2 * (height * 0.04),
-                                paddingHorizontal: orientation.isPortrait ? height * 0.11 : width * 0.055,
+                                paddingRight: orientation.isPortrait ? height * 0.11 : 0,
+                                paddingLeft: orientation.isPortrait ? height * 0.11 : width * 0.07,
                                 paddingTop: orientation.isPortrait ? width * 0.03 : height * 0.04,
                                 paddingBottom: height * 0.2,
+                                flexDirection: 'row',
                                 // backgroundColor: "blue"
                             }}>
-                                <FlatList
+
+                                <ScrollView
+                                    contentContainerStyle={{ paddingRight: 0 }}
+                                    showsVerticalScrollIndicator={false}
+                                    scrollEventThrottle={16}
+                                    onContentSizeChange={(_, height) => {
+                                        setCompleteScrollBarHeight(height);
+                                    }}
+                                    onLayout={({
+                                        nativeEvent: {
+                                            layout: { height }
+                                        }
+                                    }) => {
+                                        setVisibleScrollBarHeight(height);
+                                    }}
+                                    onScroll={Animated.event(
+                                        [{ nativeEvent: { contentOffset: { y: scrollIndicator } } }],
+                                        { useNativeDriver: false }
+                                    )}
+                                >
+                                    {/* {dataLesson.map((item, index) => {
+                                            return (
+                                                <CardLession item={item} index={index} key={index} navigation={navigation} />)
+                                        })} */}
+
+                                    <FlatList
+                                        // itemDimension={isTablet ? width * 0.2 : (isMoible ? width * 0.5 : 0)}
+                                        data={dataLesson}
+                                        numColumns={orientation1 == "LANDSCAPE" ? 4 : 2}
+                                        keyExtractor={item => item}
+                                        key={orientation1}
+                                        // spacing={isTablet ? width * 0.02 : (isMoible ? width * 0.5 : 0)}
+                                        renderItem={({ item, index }) => (
+                                            <CardLession item={item} index={index} navigation={navigation} />
+                                        )
+                                        }
+                                    />
+                                </ScrollView>
+                                <View
+                                    style={{
+                                        height: '100%',
+                                        width: 10,
+                                        backgroundColor: '#9FBECC99',
+                                        borderRadius: 8
+                                    }}
+                                >
+                                    <Animated.View
+                                        style={{
+                                            width: 10,
+                                            borderRadius: 8,
+                                            backgroundColor: '#036194',
+                                            height: scrollIndicatorSize,
+                                            transform: [{ translateY: scrollIndicatorPosition }]
+                                        }}
+                                    />
+                                </View>
+
+
+
+                                {/* <ScrollView style={{ width: "100%", height: "100%" }}>
+                                    {dataLesson.map((item, index) => {
+                                        return (
+                                            <CardLession item={item} index={index} key={index} navigation={navigation} />)
+                                    })}
+                                </ScrollView> */}
+
+                                {/* <FlatList
                                     // itemDimension={isTablet ? width * 0.2 : (isMoible ? width * 0.5 : 0)}
                                     data={dataLesson}
                                     numColumns={orientation1 == "LANDSCAPE" ? 4 : 2}
@@ -139,8 +233,7 @@ const Learn = ({ navigation }) => {
                                         <CardLession item={item} index={index} navigation={navigation} />
                                     )
                                     }
-
-                                />
+                                /> */}
                             </View>
 
                         </ImageBackground>

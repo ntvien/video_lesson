@@ -101,7 +101,7 @@ class CardLessonDetail extends Component {
                         <View style={{ width: "100%", paddingBottom: this.state.isPortrait ? 0 : 0.01 * widthCard }}>
                             <Image style={{
                                 width: "100%",
-                                height: this.state.isPortrait ? 0.023 * height : 0.023 * heightCard,
+                                height: this.state.isPortrait ? 0.02 * height : 0.023 * heightCard,
                                 resizeMode: "cover"
                             }} source={imageProgressVideo}></Image>
                         </View>
