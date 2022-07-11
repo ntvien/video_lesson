@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image, Fla
 import { ImageBackground, Animated } from 'react-native';
 import image from '../../../image/eduhome.png'
 import imageBackgroundPaper1 from '../../../image/backgroundpaper1.png'
+import imageBackgroundPaper2 from '../../../image/backgroundpaper2.png'
+import hook from '../../../image/hook.png'
+
 import imageGhim1 from '../../../image/ghim2.png'
 import imageBack from '../../../image/back.png'
 import imageRight from '../../../image/right.png'
@@ -68,11 +71,6 @@ function DetailLearn({ navigation }) {
                 isTablet() ?
                     <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
 
-                        {/* <TouchableOpacity onPress={() => {
-                    navigation.pop();
-                }}>
-                    <Image style={styles.imageBack} source={imageBack} />
-                </TouchableOpacity> */}
 
                         <View style={{
                             position: "relative", width: "100%", height: orientation.isPortrait ? 0.17 * height : 0.18 * height,
@@ -163,10 +161,23 @@ function DetailLearn({ navigation }) {
                                 // backgroundColor: "red"
                             }}>
                                 <ImageBackground style={{
+                                    width: orientation.isPortrait && isTablet ? height * 0.85 : width * 0.83,
+                                    height: orientation.isPortrait && isTablet ? width * 0.025 : height * 0.05,
+                                    position: "absolute",
+                                    zIndex: 1,
+                                    left: orientation.isPortrait ? 0.07 * height : 0.09 * width,
+                                    top: orientation.isPortrait ? -0.002 * width : -0.0135 * width,
+                                }}
+                                    source={hook}
+                                    resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
+
+                                </ImageBackground>
+
+                                <ImageBackground style={{
                                     width: orientation.isPortrait && isTablet ? height * 0.925 : "100%",
                                     height: orientation.isPortrait && isTablet ? width * 0.86 : "100%",
                                 }}
-                                    source={imageBackgroundPaper1}
+                                    source={imageBackgroundPaper2}
                                     resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
                                     <View style={{
                                         width: "100%", height: "100%",
@@ -363,11 +374,25 @@ function DetailLearn({ navigation }) {
                                 paddingBottom: orientation.isPortrait ? 10 : height * 0.2,
                                 // backgroundColor: "red"
                             }}>
+
+                                <ImageBackground style={{
+                                    width: orientation.isPortrait && isTablet ? height * 0.85 : width * 0.78,
+                                    height: orientation.isPortrait && isTablet ? width * 0.02 : height * 0.06,
+                                    position: "absolute",
+                                    zIndex: 1,
+                                    left: orientation.isPortrait ? 0.07 * height : 0.082 * width,
+                                    top: orientation.isPortrait ? 0.0035 * width : -0.013 * width,
+                                }}
+                                    source={hook}
+                                    resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
+
+                                </ImageBackground>
+
                                 <ImageBackground style={{
                                     width: orientation.isPortrait && isTablet ? height * 0.925 : "100%",
                                     height: orientation.isPortrait && isTablet ? width * 0.86 : "100%",
                                 }}
-                                    source={imageBackgroundPaper1}
+                                    source={imageBackgroundPaper2}
                                     resizeMode={orientation.isPortrait ? "stretch" : "stretch"}>
                                     <View style={{
                                         width: "100%", height: "100%",
