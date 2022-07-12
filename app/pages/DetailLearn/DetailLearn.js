@@ -2,14 +2,12 @@ import React, { useState, useEffect, useRef } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, StatusBar, Dimensions, Image, FlatList, useWindowDimensions } from 'react-native';
 import { ImageBackground, Animated } from 'react-native';
 import image from '../../../image/eduhome.png'
-import imageBackgroundPaper1 from '../../../image/backgroundpaper1.png'
 import imageBackgroundPaper2 from '../../../image/backgroundpaper2.png'
 import hook from '../../../image/hook.png'
 
 import imageGhim1 from '../../../image/ghim2.png'
 import imageBack from '../../../image/back.png'
 import imageRight from '../../../image/right.png'
-import { FlatGrid } from 'react-native-super-grid';
 import { TouchableOpacity } from 'react-native';
 import CardItemDetail from '../../components/CardItemDetail';
 import CardLessonDetail from '../../components/CardLessonDetail';
@@ -21,7 +19,10 @@ import { isTablet } from '../../responsive/checkOrientation';
 const width = Math.max(Dimensions.get("screen").width, Dimensions.get("screen").height);
 const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen").height);
 
-function DetailLearn({ navigation }) {
+function DetailLearn({route, navigation }) {
+
+    // const { state} = route.params;
+    console.log("state", route.params)
     const orientation = useOrientation();
 
     const [orientation1, setOrientation] = useState("")
@@ -66,7 +67,6 @@ function DetailLearn({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
-
             {
                 isTablet() ?
                     <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
@@ -189,7 +189,7 @@ function DetailLearn({ navigation }) {
                                     }}>
 
                                         <View style={styles.leftColumn}>
-                                            <CardItemDetail />
+                                            <CardItemDetail item={route.params} />
                                         </View>
                                         <View style={[styles.centerColumn, {
                                             height: "82%",
@@ -225,13 +225,9 @@ function DetailLearn({ navigation }) {
                                                     { useNativeDriver: false }
                                                 )}
                                             >
-                                                {/* {dataLesson.map((item, index) => {
-                                            return (
-                                                <CardLession item={item} index={index} key={index} navigation={navigation} />)
-                                        })} */}
-
+                            
                                                 <FlatList
-                                                    data={dataLessonVideo}
+                                                    data={route.params}
                                                     numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
                                                     keyExtractor={item => item}
                                                     key={orientation1}
@@ -259,17 +255,6 @@ function DetailLearn({ navigation }) {
                                                     }}
                                                 />
                                             </View>
-
-                                            {/* <FlatList
-                                        data={dataLessonVideo}
-                                        numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
-                                        keyExtractor={item => item}
-                                        key={orientation1}
-                                        renderItem={({ item, index }) => (
-                                            <CardLessonDetail item={item} index={index} />
-                                        )
-                                        }
-                                    /> */}
 
                                         </View>
                                     </View>
@@ -442,7 +427,7 @@ function DetailLearn({ navigation }) {
                                             >
 
                                                 <FlatList
-                                                    data={dataLessonVideo}
+                                                    data={route.params}
                                                     numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
                                                     keyExtractor={item => item}
                                                     key={orientation1}
