@@ -21,7 +21,8 @@ const height = Math.min(Dimensions.get("screen").width, Dimensions.get("screen")
 
 function DetailLearn({route, navigation }) {
 
-    // const { state} = route.params;
+    const itemLesson = route.params.item;
+    const indexLesson=route.params.index;
     console.log("state", route.params)
     const orientation = useOrientation();
 
@@ -64,6 +65,9 @@ function DetailLearn({route, navigation }) {
         outputRange: [0, difference],
         extrapolate: 'clamp'
     });
+
+    console.log("visibleScrollBarHeight",visibleScrollBarHeight)
+    console.log("completeScrollBarHeight",completeScrollBarHeight)
 
     return (
         <SafeAreaView style={styles.container}>
@@ -189,7 +193,7 @@ function DetailLearn({route, navigation }) {
                                     }}>
 
                                         <View style={styles.leftColumn}>
-                                            <CardItemDetail item={route.params} />
+                                            <CardItemDetail item={itemLesson}  index={indexLesson} />
                                         </View>
                                         <View style={[styles.centerColumn, {
                                             height: "82%",
@@ -227,12 +231,12 @@ function DetailLearn({route, navigation }) {
                                             >
                             
                                                 <FlatList
-                                                    data={route.params}
+                                                    data={itemLesson.DataLesson}
                                                     numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
                                                     keyExtractor={item => item}
                                                     key={orientation1}
                                                     renderItem={({ item, index }) => (
-                                                        <CardLessonDetail item={item} index={index} />
+                                                        <CardLessonDetail item={item} index={index} navigation={navigation} />
                                                     )
                                                     }
                                                 />
@@ -389,7 +393,7 @@ function DetailLearn({route, navigation }) {
                                     }}>
 
                                         <View style={[styles.leftColumn, { height: orientation.isPortrait ? "80%" : "80%", }]}>
-                                            <CardItemDetail />
+                                            <CardItemDetail item={itemLesson}index={indexLesson}/>
                                         </View>
                                         <View style={[styles.centerColumn, {
                                             height: "82%",
@@ -427,12 +431,12 @@ function DetailLearn({route, navigation }) {
                                             >
 
                                                 <FlatList
-                                                    data={route.params}
+                                                    data={itemLesson.DataLesson}
                                                     numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
                                                     keyExtractor={item => item}
                                                     key={orientation1}
                                                     renderItem={({ item, index }) => (
-                                                        <CardLessonDetail item={item} index={index} />
+                                                        <CardLessonDetail item={item} index={index} navigation={navigation} />
                                                     )
                                                     }
                                                 />

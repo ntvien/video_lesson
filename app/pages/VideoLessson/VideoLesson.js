@@ -25,6 +25,7 @@ import ImmersiveMode from "react-native-immersive-mode";
 import { isTablet } from "../../responsive/checkOrientation";
 import { ScrollView } from "react-native";
 import { dataTheme } from "../../../data/dataTheme";
+import Video from "react-native-video";
 
 const width = Math.max(
   Dimensions.get("screen").width,
@@ -58,31 +59,6 @@ const VideoLesson = ({ navigation }) => {
     getOrientation();
   });
 
-  const [completeScrollBarHeight, setCompleteScrollBarHeight] = useState(1);
-  const [visibleScrollBarHeight, setVisibleScrollBarHeight] = useState(0);
-
-  const scrollIndicator = useRef(new Animated.Value(0)).current;
-
-  const scrollIndicatorSize =
-    completeScrollBarHeight > visibleScrollBarHeight
-      ? (visibleScrollBarHeight * visibleScrollBarHeight) /
-        completeScrollBarHeight
-      : visibleScrollBarHeight;
-
-  const difference =
-    visibleScrollBarHeight > scrollIndicatorSize
-      ? visibleScrollBarHeight - scrollIndicatorSize
-      : 1;
-
-  const scrollIndicatorPosition = Animated.multiply(
-    scrollIndicator,
-    visibleScrollBarHeight / completeScrollBarHeight
-  ).interpolate({
-    inputRange: [0, difference],
-    outputRange: [0, difference],
-    extrapolate: "clamp",
-  });
-  console.log("isTablet()", isTablet());
   return (
     <SafeAreaView style={[styles.container]}>
       <StatusBar backgroundColor="white" translucent={true} hidden={true} />
@@ -272,63 +248,12 @@ const VideoLesson = ({ navigation }) => {
                     // backgroundColor: "blue"
                   }}
                 >
-                  <ScrollView
-                    contentContainerStyle={{ paddingRight: 0 }}
-                    showsVerticalScrollIndicator={false}
-                    scrollEventThrottle={16}
-                    onContentSizeChange={(_, height) => {
-                      setCompleteScrollBarHeight(height);
-                    }}
-                    onLayout={({
-                      nativeEvent: {
-                        layout: { height },
-                      },
-                    }) => {
-                      setVisibleScrollBarHeight(height);
-                    }}
-                    onScroll={Animated.event(
-                      [
-                        {
-                          nativeEvent: {
-                            contentOffset: { y: scrollIndicator },
-                          },
-                        },
-                      ],
-                      { useNativeDriver: false }
-                    )}
-                  >
-                    <FlatList
-                      data={dataTheme}
-                      numColumns={orientation1 == "LANDSCAPE" ? 4 : 2}
-                      keyExtractor={(item) => item}
-                      key={orientation1}
-                      renderItem={({ item, index }) => (
-                        <CardLession
-                          item={item}
-                          index={index}
-                          navigation={navigation}
-                        />
-                      )}
-                    />
-                  </ScrollView>
-                  <View
-                    style={{
-                      height: "100%",
-                      width: 10,
-                      backgroundColor: "#9FBECC99",
-                      borderRadius: 8,
-                    }}
-                  >
-                    <Animated.View
-                      style={{
-                        width: 10,
-                        borderRadius: 8,
-                        backgroundColor: "#036194E6",
-                        height: scrollIndicatorSize,
-                        transform: [{ translateY: scrollIndicatorPosition }],
-                      }}
-                    />
-                  </View>
+                  <Video
+                    source={{uri:"https://media.dtponline.vn/opt/video/TA1/ISS1U1L1P4.mp4"}}
+                    paused={false}
+                    style={styles.backgroundVideo}
+                    repeat={true}
+                  ></Video>
                 </View>
               </ImageBackground>
             </View>
@@ -523,67 +448,7 @@ const VideoLesson = ({ navigation }) => {
                     flexDirection: "row",
                     // backgroundColor: "blue"
                   }}
-                >
-                  <ScrollView
-                    contentContainerStyle={{ paddingRight: 0 }}
-                    showsVerticalScrollIndicator={false}
-                    scrollEventThrottle={16}
-                    onContentSizeChange={(_, height) => {
-                      setCompleteScrollBarHeight(height);
-                    }}
-                    onLayout={({
-                      nativeEvent: {
-                        layout: { height },
-                      },
-                    }) => {
-                      setVisibleScrollBarHeight(height);
-                    }}
-                    onScroll={Animated.event(
-                      [
-                        {
-                          nativeEvent: {
-                            contentOffset: { y: scrollIndicator },
-                          },
-                        },
-                      ],
-                      { useNativeDriver: false }
-                    )}
-                  >
-                    
-
-                    <FlatList
-                      data={dataLesson}
-                      numColumns={orientation1 == "LANDSCAPE" ? 4 : 2}
-                      keyExtractor={(item) => item}
-                      key={orientation1}
-                      renderItem={({ item, index }) => (
-                        <CardLession
-                          item={item}
-                          index={index}
-                          navigation={navigation}
-                        />
-                      )}
-                    />
-                  </ScrollView>
-                  <View
-                    style={{
-                      height: "100%",
-                      width: 7,
-                      backgroundColor: "#9FBECC99",
-                      borderRadius: 8,
-                    }}
-                  >
-                    <Animated.View
-                      style={{
-                        width: 7,
-                        borderRadius: 8,
-                        backgroundColor: "#036194E6",
-                        height: scrollIndicatorSize,
-                        transform: [{ translateY: scrollIndicatorPosition }],
-                      }}
-                    />
-                  </View>
-                </View>
+                ></View>
               </ImageBackground>
             </View>
           </View>
@@ -636,6 +501,13 @@ const styles = StyleSheet.create({
     borderRadius: width * 0.08,
     transform: [{ rotate: "3.5deg" }],
     position: "absolute",
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
 });
 

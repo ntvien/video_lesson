@@ -68,7 +68,7 @@ class CardLessonDetail extends Component {
                             paddingVertical: this.state.isPortrait ? 0.002 * widthCard : 0.01 * widthCard,
                         }}>
                             <Image style={{ resizeMode: "stretch", width: "100%", height: "100%" }}
-                                source={imageVideo} ></Image>
+                                source={item.ThumbnailUrl} ></Image>
                         </View>
 
                         <View style={{
@@ -139,7 +139,7 @@ class CardLessonDetail extends Component {
                         paddingVertical: this.state.isPortrait ? 0.002 * widthCard : 0.01 * widthCard,
                     }}>
                         <Image style={{ resizeMode: "stretch", width: "100%", height: "100%" }}
-                            source={imageVideo} ></Image>
+                            source={item.ThumbnailUrl} ></Image>
                     </View>
 
                     <View style={{
