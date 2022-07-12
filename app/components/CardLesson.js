@@ -362,15 +362,15 @@ class CardLession extends Component {
                 styles.text,
                 {
                   fontSize: this.state.isPortrait
-                    ? (0.022 * width) / 2
-                    : (0.025 * width) / 2,
+                    ? (0.025 * width) / 2
+                    : (0.03 * width) / 2,
                   top: this.state.isPortrait
                     ? -0.001 * widthCard
                     : -0.02 * heightCard,
                 },
               ]}
             >
-              {item.name}
+              {item.Title}
             </Text>
 
             <View style={{}}>
@@ -393,7 +393,29 @@ class CardLession extends Component {
                       : 0,
                   },
                 ]}
-                source={item.imageUrl}
+                source={item.ImageBackground}
+              />
+              <Image
+                style={[
+                  styles.imageLesson,
+                  {
+                    width: this.state.isPortrait
+                      ? heightCard * 0.55
+                      : widthCard * 0.75,
+                    height: this.state.isPortrait
+                      ? widthCard * 0.45
+                      : heightCard * 0.38,
+                    top: this.state.isPortrait
+                      ? -0.03 * widthCard
+                      : -0.01 * heightCard,
+                    // left: this.state.isPortrait ? 0.05 * widthCard : 0,
+                    paddingHorizontal: this.state.isPortrait
+                      ? 0.05 * widthCard
+                      : 0,
+                    position: "absolute",
+                  },
+                ]}
+                source={item.Image}
               />
             </View>
           </View>
@@ -403,19 +425,19 @@ class CardLession extends Component {
               style={{
                 width: this.state.isPortrait
                   ? heightCard * 0.095
-                  : widthCard * 0.125,
+                  : widthCard * 0.1,
                 height: this.state.isPortrait
                   ? heightCard * 0.1
-                  : widthCard * 0.13,
+                  : widthCard * 0.1,
                 borderRadius: this.state.isPortrait
-                  ? width * 0.009
-                  : width * 0.0092,
+                  ? width * 0.007
+                  : width * 0.005,
                 top: this.state.isPortrait
-                  ? -0.06 * widthCard
-                  : -0.06 * heightCard,
+                  ? -0.03 * widthCard
+                  : -0.01 * heightCard,
                 left: this.state.isPortrait
-                  ? 0.01 * heightCard
-                  : 0.04 * widthCard,
+                  ? 0.06 * heightCard
+                  : 0.06 * widthCard,
                 position: "relative",
                 justifyContent: "center",
                 alignItems: "center",
@@ -426,19 +448,19 @@ class CardLession extends Component {
               style={{
                 width: this.state.isPortrait
                   ? heightCard * 0.095
-                  : widthCard * 0.125,
+                  : widthCard * 0.1,
                 height: this.state.isPortrait
                   ? heightCard * 0.1
-                  : widthCard * 0.13,
+                  : widthCard * 0.1,
                 borderRadius: this.state.isPortrait
-                  ? width * 0.009
-                  : width * 0.0092,
+                  ? width * 0.007
+                  : width * 0.005,
                 top: this.state.isPortrait
-                  ? -0.06 * widthCard
-                  : -0.06 * heightCard,
+                  ? -0.03 * widthCard
+                  : -0.01 * heightCard,
                 left: this.state.isPortrait
-                  ? 0.01 * heightCard
-                  : 0.04 * widthCard,
+                  ? 0.06 * heightCard
+                  : 0.06 * widthCard,
                 backgroundColor: "#036194",
                 position: "relative",
                 justifyContent: "center",

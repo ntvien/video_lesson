@@ -549,10 +549,9 @@ const Learn = ({ navigation }) => {
                       { useNativeDriver: false }
                     )}
                   >
-                    
-
+                
                     <FlatList
-                      data={dataLesson}
+                      data={dataTheme}
                       numColumns={orientation1 == "LANDSCAPE" ? 4 : 2}
                       keyExtractor={(item) => item}
                       key={orientation1}
