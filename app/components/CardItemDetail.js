@@ -125,7 +125,9 @@ class CardItemDetail extends Component {
                       fontSize: this.state.isPortrait
                         ? (0.05 * width) / 4
                         : (0.055 * width) / 4,
-                        top:this.state.isPortrait?-0.003*width:-0.007*width
+                      top: this.state.isPortrait
+                        ? -0.003 * width
+                        : -0.007 * width,
                     },
                   ]}
                 >
@@ -137,8 +139,10 @@ class CardItemDetail extends Component {
                     width: "100%",
                     height: "100%",
                     flex: 1,
-                    borderRadius: 20,top:this.state.isPortrait?-0.003*width:-0.006*width
-
+                    borderRadius: 20,
+                    top: this.state.isPortrait
+                      ? -0.003 * width
+                      : -0.006 * width,
                   }}
                 >
                   <Image
@@ -152,55 +156,61 @@ class CardItemDetail extends Component {
                 </View>
               </View>
 
-             {index ==0?<View style={{
-                  width: "17%",
-                  height: "15%",
-                  borderRadius: 7,
-                  top: "-12%",
-                  left: "10%",
-                  position: "relative",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}></View>: <View
-                style={{
-                  width: "17%",
-                  height: "15%",
-                  borderRadius: 7,
-                  top: "-12%",
-                  left: "10%",
-                  backgroundColor: "#036194",
-                  position: "relative",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  style={[
-                    styles.imageCrown,
-                    {
-                      top: "-25%",
-                      width: this.state.isPortrait
-                        ? 0.013 * width
-                        : 0.02 * width,
-                      height: this.state.isPortrait
-                        ? 0.008 * width
-                        : 0.012 * width,
-                    },
-                  ]}
-                  source={require("../../image/crown.png")}
-                />
-                <Text
+              {index == 0 ? (
+                <View
                   style={{
-                    color: "#ffffff",
-                    fontSize: this.state.isPortrait
-                      ? 0.013 * width
-                      : 0.02 * width,
-                    fontWeight: "bold",
+                    width: "17%",
+                    height: "15%",
+                    borderRadius: 7,
+                    top: "-12%",
+                    left: "10%",
+                    position: "relative",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                ></View>
+              ) : (
+                <View
+                  style={{
+                    width: "17%",
+                    height: "15%",
+                    borderRadius: 7,
+                    top: "-12%",
+                    left: "10%",
+                    backgroundColor: "#036194",
+                    position: "relative",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  {index}
-                </Text>
-              </View>}
+                  <Image
+                    style={[
+                      styles.imageCrown,
+                      {
+                        top: "-25%",
+                        width: this.state.isPortrait
+                          ? 0.013 * width
+                          : 0.02 * width,
+                        height: this.state.isPortrait
+                          ? 0.008 * width
+                          : 0.012 * width,
+                      },
+                    ]}
+                    source={require("../../image/crown.png")}
+                  />
+                  <Text
+                    style={{
+                      color: "#ffffff",
+                      fontSize: this.state.isPortrait
+                        ? 0.013 * width
+                        : 0.02 * width,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {index}
+                  </Text>
+                </View>
+              )}
             </ImageBackground>
           </View>
 
@@ -312,7 +322,10 @@ class CardItemDetail extends Component {
                     borderRadius: 20,
                   }}
                 >
-                  <Image style={styles.imageLesson} source={item.ImageBackground} />
+                  <Image
+                    style={styles.imageLesson}
+                    source={item.ImageBackground}
+                  />
                   <Image
                     style={[styles.imageLesson, { position: "absolute" }]}
                     source={item.Image}
@@ -320,55 +333,61 @@ class CardItemDetail extends Component {
                 </View>
               </View>
 
-              {index==0?<View style={{
-                  width: this.state.isPortrait ? "23%" : "17%",
-                  height: this.state.isPortrait ? "17%" : "17%",
-                  borderRadius: 6,
-                  top: "-10%",
-                  left: "10%",
-                  position: "relative",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}></View>:<View
-                style={{
-                  width: this.state.isPortrait ? "23%" : "17%",
-                  height: this.state.isPortrait ? "17%" : "17%",
-                  borderRadius: 6,
-                  top: "-10%",
-                  left: "10%",
-                  backgroundColor: "#036194",
-                  position: "relative",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  style={[
-                    styles.imageCrown,
-                    {
-                      top: "-25%",
-                      width: this.state.isPortrait
-                        ? 0.012 * width
-                        : 0.02 * width,
-                      height: this.state.isPortrait
-                        ? 0.008 * width
-                        : 0.012 * width,
-                    },
-                  ]}
-                  source={require("../../image/crown.png")}
-                />
-                <Text
+              {index == 0 ? (
+                <View
                   style={{
-                    color: "#ffffff",
-                    fontSize: this.state.isPortrait
-                      ? 0.013 * width
-                      : 0.02 * width,
-                    fontWeight: "bold",
+                    width: this.state.isPortrait ? "23%" : "17%",
+                    height: this.state.isPortrait ? "17%" : "17%",
+                    borderRadius: 6,
+                    top: "-10%",
+                    left: "10%",
+                    position: "relative",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                ></View>
+              ) : (
+                <View
+                  style={{
+                    width: this.state.isPortrait ? "23%" : "17%",
+                    height: this.state.isPortrait ? "17%" : "17%",
+                    borderRadius: 6,
+                    top: "-10%",
+                    left: "10%",
+                    backgroundColor: "#036194",
+                    position: "relative",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  {index}
-                </Text>
-              </View>}
+                  <Image
+                    style={[
+                      styles.imageCrown,
+                      {
+                        top: "-25%",
+                        width: this.state.isPortrait
+                          ? 0.012 * width
+                          : 0.02 * width,
+                        height: this.state.isPortrait
+                          ? 0.008 * width
+                          : 0.012 * width,
+                      },
+                    ]}
+                    source={require("../../image/crown.png")}
+                  />
+                  <Text
+                    style={{
+                      color: "#ffffff",
+                      fontSize: this.state.isPortrait
+                        ? 0.013 * width
+                        : 0.02 * width,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {index}
+                  </Text>
+                </View>
+              )}
             </ImageBackground>
           </View>
 

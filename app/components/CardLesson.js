@@ -303,7 +303,7 @@ class CardLession extends Component {
             },
           ]}
           onPress={() => {
-            this.props.navigation.navigate("DetailLearn", { item });
+            this.props.navigation.navigate("DetailLearn", { item , index});
           }}
         >
           <View
