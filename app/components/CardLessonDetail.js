@@ -227,8 +227,8 @@ class CardLessonDetail extends Component {
                   style={{
                     width: "100%",
                     height: this.state.isPortrait
-                      ? 0.02 * height
-                      : 0.023 * heightCard,
+                      ? 0.022 * height
+                      : 0.026 * heightCard,
                     resizeMode: "cover",
                   }}
                   source={imageProgressVideo}
@@ -408,8 +408,8 @@ class CardLessonDetail extends Component {
                   style={{
                     width: "100%",
                     height: this.state.isPortrait
-                      ? 0.02 * height
-                      : 0.027 * heightCard,
+                      ? 0.0203 * height
+                      : 0.0276 * heightCard,
                     resizeMode: "cover",
                   }}
                   source={imageProgressVideo}
