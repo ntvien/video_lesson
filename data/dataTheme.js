@@ -5,7 +5,7 @@ export const dataTheme = [
         Title: "Getting Started",
         Image: require('../image/image1.gif'),
         ImageBackground: require('../image/bg1.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -13,9 +13,9 @@ export const dataTheme = [
                 ThumbnailUrl: require('../image/imageVideo.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/eduhome_videolesson/App564/634b6fa4-1208-4059-badf-bde6723326b5.mp4",
                 TeacherName: "Bùi Thị Huyền",
-                Duration: "00:12:45",
+                Duration: "00:15:07",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -23,9 +23,9 @@ export const dataTheme = [
                 ThumbnailUrl: require('../image/imageVideo.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L1P3.mp4",
                 TeacherName: "Bùi Thị Huyền",
-                Duration: "00:38:39",
+                Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -34,7 +34,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -43,7 +43,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -52,7 +52,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -61,7 +61,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -70,7 +70,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -79,7 +79,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "9",
@@ -89,7 +89,7 @@ export const dataTheme = [
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "10",
@@ -99,7 +99,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:34:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     },
@@ -109,7 +109,7 @@ export const dataTheme = [
         Title: "Family",
         Image: require('../image/image2.gif'),
         ImageBackground: require('../image/bg2.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -119,7 +119,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -129,7 +129,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:38:39",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -138,7 +138,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -147,7 +147,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -156,7 +156,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -165,7 +165,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -174,7 +174,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -183,7 +183,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "9",
@@ -193,7 +193,7 @@ export const dataTheme = [
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "10",
@@ -203,7 +203,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:36:42",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "11",
@@ -213,7 +213,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn E",
                 Duration: "00:24:12",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "12",
@@ -223,7 +223,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn F",
                 Duration: "00:37:12",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "13",
@@ -233,7 +233,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:39:35",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "14",
@@ -243,7 +243,7 @@ export const dataTheme = [
                 TeacherName: "Hồ Xuân F",
                 Duration: "00:37:54",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "15",
@@ -253,7 +253,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:54:54",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     },
@@ -263,7 +263,7 @@ export const dataTheme = [
         Title: "School",
         Image: require('../image/image3.gif'),
         ImageBackground: require('../image/bg3.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -273,7 +273,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -283,7 +283,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:38:39",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -292,7 +292,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -301,7 +301,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -310,7 +310,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -319,7 +319,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -328,7 +328,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -337,7 +337,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "9",
@@ -347,7 +347,7 @@ export const dataTheme = [
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "10",
@@ -357,7 +357,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:34:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     }, {
@@ -366,7 +366,7 @@ export const dataTheme = [
         Title: "Colors",
         Image: require('../image/image4.gif'),
         ImageBackground: require('../image/bg4.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -376,7 +376,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -386,7 +386,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:38:39",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -395,7 +395,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -404,7 +404,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -413,7 +413,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -422,7 +422,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -431,7 +431,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -440,7 +440,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "9",
@@ -450,7 +450,7 @@ export const dataTheme = [
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "10",
@@ -460,7 +460,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:34:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     }, {
@@ -469,7 +469,7 @@ export const dataTheme = [
         Title: "My body",
         Image: require('../image/image5.gif'),
         ImageBackground: require('../image/bg5.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -479,7 +479,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -489,7 +489,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -498,7 +498,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -507,7 +507,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -516,7 +516,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -525,7 +525,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -534,7 +534,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -543,7 +543,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "9",
@@ -553,7 +553,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "10",
@@ -563,7 +563,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     },
@@ -573,7 +573,7 @@ export const dataTheme = [
         Title: "Animals",
         Image: require('../image/image6.gif'),
         ImageBackground: require('../image/bg6.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -583,7 +583,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -593,7 +593,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -602,7 +602,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -611,7 +611,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }
         ]
     }, {
@@ -620,7 +620,7 @@ export const dataTheme = [
         Title: "Activities",
         Image: require('../image/image7.gif'),
         ImageBackground: require('../image/bg7.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -630,7 +630,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -640,7 +640,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:38:39",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -649,7 +649,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -658,7 +658,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -667,7 +667,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -676,7 +676,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -685,7 +685,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -694,7 +694,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "9",
@@ -704,7 +704,7 @@ export const dataTheme = [
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "10",
@@ -714,7 +714,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:34:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     },
@@ -724,7 +724,7 @@ export const dataTheme = [
         Title: "Numbers",
         Image: require('../image/image8.gif'),
         ImageBackground: require('../image/image8.gif'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -734,7 +734,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -744,7 +744,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:38:39",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -753,7 +753,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -762,7 +762,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -771,7 +771,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -780,7 +780,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -789,7 +789,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -798,7 +798,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "9",
@@ -808,7 +808,7 @@ export const dataTheme = [
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "10",
@@ -818,7 +818,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:34:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     },{
@@ -827,7 +827,7 @@ export const dataTheme = [
         Title: "Food",
         Image: require('../image/image9.gif'),
         ImageBackground: require('../image/bg9.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -837,7 +837,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -847,7 +847,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -856,7 +856,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -865,7 +865,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -874,7 +874,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -883,7 +883,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -892,7 +892,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -901,7 +901,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }
         ]
     },{
@@ -910,7 +910,7 @@ export const dataTheme = [
         Title: "Toys",
         Image: require('../image/image10.gif'),
         ImageBackground: require('../image/bg10.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -920,7 +920,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -930,7 +930,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:38:39",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -939,7 +939,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -948,7 +948,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -957,7 +957,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -966,7 +966,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -975,7 +975,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     },{
@@ -984,7 +984,7 @@ export const dataTheme = [
         Title: "Myhouse",
         Image: require('../image/image11.gif'),
         ImageBackground: require('../image/bg11.png'),
-        Percent: "0",
+        Percent: "30",
         DataLesson: [
             {
                 Id: "1",
@@ -994,7 +994,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv1",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "2",
@@ -1004,7 +1004,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:38:39",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "3",
                 Name: "Lesson 3",
@@ -1013,7 +1013,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "4",
                 Name: "Lesson 4",
@@ -1022,7 +1022,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "5",
                 Name: "Lesson 5",
@@ -1031,7 +1031,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "6",
                 Name: "Lesson 6",
@@ -1040,7 +1040,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "7",
                 Name: "Lesson 7",
@@ -1049,7 +1049,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             }, {
                 Id: "8",
                 Name: "Lesson 8",
@@ -1058,7 +1058,7 @@ export const dataTheme = [
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "9",
@@ -1068,7 +1068,7 @@ export const dataTheme = [
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "10",
@@ -1078,7 +1078,7 @@ export const dataTheme = [
                 TeacherName: "Lê Văn D",
                 Duration: "00:34:45",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },{
                 Id: "11",
                 Name: "Lesson 11",
@@ -1087,7 +1087,7 @@ export const dataTheme = [
                 TeacherName: "Trần D",
                 Duration: "01:24:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "12",
@@ -1097,7 +1097,7 @@ export const dataTheme = [
                 TeacherName: "Lê Thế F",
                 Duration: "02:54:23",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "13",
@@ -1107,7 +1107,7 @@ export const dataTheme = [
                 TeacherName: "Huỳnh Văn D",
                 Duration: "01:32:14",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
             {
                 Id: "14",
@@ -1117,7 +1117,7 @@ export const dataTheme = [
                 TeacherName: "Nguyễn Trần Khánh Quỳnh",
                 Duration: "01:00:24",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },{
                 Id: "15",
                 Name: "Lesson 15",
@@ -1126,7 +1126,7 @@ export const dataTheme = [
                 TeacherName: "Lê Trần Bảo",
                 Duration: "03:14:52",
                 LinkShare: "http://dtplnk.com/edhv100",
-                Process: "0"
+                Process: "30"
             },
         ]
     },
