@@ -10,7 +10,7 @@ export const dataTheme = [
             {
                 Id: "1",
                 Name: "Lesson 1",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                ThumbnailUrl: require('../image/U0L1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/eduhome_videolesson/App564/634b6fa4-1208-4059-badf-bde6723326b5.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:15:07",
@@ -20,7 +20,7 @@ export const dataTheme = [
             {
                 Id: "2",
                 Name: "Lesson 2",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                ThumbnailUrl: require('../image/U0L1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L1P3.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
@@ -28,8 +28,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "3",
-                Name: "Lesson 3",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 1 (1)",
+                ThumbnailUrl: require('../image/U1L1-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L1P4.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
@@ -37,8 +37,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "4",
-                Name: "Lesson 4",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 1 (2)",
+                ThumbnailUrl: require('../image/U1L1-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L2P5.mp4",
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
@@ -46,8 +46,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "5",
-                Name: "Lesson 5",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 2 (1)",
+                ThumbnailUrl: require('../image/U1L2-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L2P6.mp4",
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
@@ -55,8 +55,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "6",
-                Name: "Lesson 6",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 2 (2)",
+                ThumbnailUrl: require('../image/U1L2-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L3P7.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
@@ -64,8 +64,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "7",
-                Name: "Lesson 7",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (1)",
+                ThumbnailUrl: require('../image/U1L3-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L3P8.mp4",
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
@@ -73,8 +73,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "8",
-                Name: "Lesson 8",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (2)",
+                ThumbnailUrl: require('../image/U1L3-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L1P43.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
@@ -83,8 +83,8 @@ export const dataTheme = [
             },
             {
                 Id: "9",
-                Name: "Lesson 9",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 1 (2)",
+                ThumbnailUrl: require('../image/U1L2-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P45.mp4",
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
@@ -93,8 +93,8 @@ export const dataTheme = [
             },
             {
                 Id: "10",
-                Name: "Lesson 10",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 2 (1)",
+                ThumbnailUrl: require('../image/U1L2-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
                 TeacherName: "Lê Văn D",
                 Duration: "00:34:45",
@@ -114,26 +114,26 @@ export const dataTheme = [
             {
                 Id: "1",
                 Name: "Lesson 1",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                ThumbnailUrl: require('../image/U2L1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/eduhome_videolesson/App564/634b6fa4-1208-4059-badf-bde6723326b5.mp4",
                 TeacherName: "Bùi Thị Huyền",
-                Duration: "00:12:45",
+                Duration: "00:15:07",
                 LinkShare: "http://dtplnk.com/edhv1",
                 Process: "30"
             },
             {
                 Id: "2",
-                Name: "Lesson 2",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 1",
+                ThumbnailUrl: require('../image/U2L1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L1P3.mp4",
                 TeacherName: "Bùi Thị Huyền",
-                Duration: "00:38:39",
+                Duration: "00:12:45",
                 LinkShare: "http://dtplnk.com/edhv100",
                 Process: "30"
             }, {
                 Id: "3",
-                Name: "Lesson 3",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 1",
+                ThumbnailUrl: require('../image/U2L1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L1P4.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
@@ -141,8 +141,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "4",
-                Name: "Lesson 4",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 1 (2)",
+                ThumbnailUrl: require('../image/U2L1-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L2P5.mp4",
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
@@ -150,8 +150,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "5",
-                Name: "Lesson 5",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 2 (1)",
+                ThumbnailUrl: require('../image/U2L2-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L2P6.mp4",
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
@@ -159,8 +159,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "6",
-                Name: "Lesson 6",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 2 (2)",
+                ThumbnailUrl: require('../image/U2L2-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L3P7.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
@@ -168,8 +168,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "7",
-                Name: "Lesson 7",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (1)",
+                ThumbnailUrl: require('../image/U1L3-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L3P8.mp4",
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
@@ -177,8 +177,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "8",
-                Name: "Lesson 8",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Rewiew 1",
+                ThumbnailUrl: require('../image/U2R1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L1P43.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
@@ -187,8 +187,8 @@ export const dataTheme = [
             },
             {
                 Id: "9",
-                Name: "Lesson 9",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Review 2",
+                ThumbnailUrl: require('../image/U2R2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P45.mp4",
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
@@ -197,61 +197,21 @@ export const dataTheme = [
             },
             {
                 Id: "10",
-                Name: "Lesson 10",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 2 (1)",
+                ThumbnailUrl: require('../image/U2L2-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
                 TeacherName: "Lê Văn D",
-                Duration: "00:36:42",
+                Duration: "00:34:45",
                 LinkShare: "http://dtplnk.com/edhv100",
                 Process: "30"
             },
             {
                 Id: "11",
-                Name: "Lesson 11",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 2 (1)",
+                ThumbnailUrl: require('../image/U2L2-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
-                TeacherName: "Lê Văn E",
-                Duration: "00:24:12",
-                LinkShare: "http://dtplnk.com/edhv100",
-                Process: "30"
-            },
-            {
-                Id: "12",
-                Name: "Lesson 12",
-                ThumbnailUrl: require('../image/imageVideo.png'),
-                VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
-                TeacherName: "Lê Văn F",
-                Duration: "00:37:12",
-                LinkShare: "http://dtplnk.com/edhv100",
-                Process: "30"
-            },
-            {
-                Id: "13",
-                Name: "Lesson 13",
-                ThumbnailUrl: require('../image/imageVideo.png'),
-                VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
-                TeacherName: "Lê Văn D",
-                Duration: "00:39:35",
-                LinkShare: "http://dtplnk.com/edhv100",
-                Process: "30"
-            },
-            {
-                Id: "14",
-                Name: "Lesson 14",
-                ThumbnailUrl: require('../image/imageVideo.png'),
-                VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
-                TeacherName: "Hồ Xuân F",
-                Duration: "00:37:54",
-                LinkShare: "http://dtplnk.com/edhv100",
-                Process: "30"
-            },
-            {
-                Id: "15",
-                Name: "Lesson 15",
-                ThumbnailUrl: require('../image/imageVideo.png'),
-                VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
-                TeacherName: "Lê Văn D",
-                Duration: "00:54:54",
+                TeacherName: "Lê Thế D",
+                Duration: "00:37:45",
                 LinkShare: "http://dtplnk.com/edhv100",
                 Process: "30"
             },
@@ -267,8 +227,8 @@ export const dataTheme = [
         DataLesson: [
             {
                 Id: "1",
-                Name: "Lesson 1",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 1 (1)",
+                ThumbnailUrl: require('../image/U3L1-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/eduhome_videolesson/App564/634b6fa4-1208-4059-badf-bde6723326b5.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:12:45",
@@ -277,8 +237,8 @@ export const dataTheme = [
             },
             {
                 Id: "2",
-                Name: "Lesson 2",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 1 (1)",
+                ThumbnailUrl: require('../image/U3L1-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L1P3.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:38:39",
@@ -286,8 +246,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "3",
-                Name: "Lesson 3",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (1)",
+                ThumbnailUrl: require('../image/U3L3-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L1P4.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:19:50",
@@ -295,8 +255,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "4",
-                Name: "Lesson 4",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (2)",
+                ThumbnailUrl: require('../image/U3L3-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L2P5.mp4",
                 TeacherName: "Nguyễn Thế Viễn",
                 Duration: "00:10:38",
@@ -304,8 +264,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "5",
-                Name: "Lesson 5",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (1)",
+                ThumbnailUrl: require('../image/U3L3-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L2P6.mp4",
                 TeacherName: "Nguyễn Văn A",
                 Duration: "00:35:23",
@@ -313,8 +273,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "6",
-                Name: "Lesson 6",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (2)",
+                ThumbnailUrl: require('../image/U3L3-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L3P7.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:18:56",
@@ -322,8 +282,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "7",
-                Name: "Lesson 7",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (1)",
+                ThumbnailUrl: require('../image/U3L3-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U1L3P8.mp4",
                 TeacherName: "Nguyễn Văn B",
                 Duration: "00:15:30",
@@ -331,8 +291,8 @@ export const dataTheme = [
                 Process: "30"
             }, {
                 Id: "8",
-                Name: "Lesson 8",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (2)",
+                ThumbnailUrl: require('../image/U3L3-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L1P43.mp4",
                 TeacherName: "Bùi Thị Huyền",
                 Duration: "00:23:45",
@@ -341,8 +301,8 @@ export const dataTheme = [
             },
             {
                 Id: "9",
-                Name: "Lesson 9",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (1)",
+                ThumbnailUrl: require('../image/U3L3-1.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P45.mp4",
                 TeacherName: "Võ Thị C",
                 Duration: "00:22:45",
@@ -351,10 +311,38 @@ export const dataTheme = [
             },
             {
                 Id: "10",
-                Name: "Lesson 10",
-                ThumbnailUrl: require('../image/imageVideo.png'),
+                Name: "Lesson 3 (2)",
+                ThumbnailUrl: require('../image/U3L3-2.png'),
                 VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
                 TeacherName: "Lê Văn D",
+                Duration: "00:34:45",
+                LinkShare: "http://dtplnk.com/edhv100",
+                Process: "30"
+            },{
+                Id: "11",
+                Name: "Lesson 3 (2)",
+                ThumbnailUrl: require('../image/U3L3-2.png'),
+                VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
+                TeacherName: "Lê Văn D",
+                Duration: "00:34:45",
+                LinkShare: "http://dtplnk.com/edhv100",
+                Process: "30"
+            },{
+                Id: "12",
+                Name: "Lesson 3 (2)",
+                ThumbnailUrl: require('../image/U3L3-2.png'),
+                VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
+                TeacherName: "Lê Văn Quyết",
+                Duration: "00:29:45",
+                LinkShare: "http://dtplnk.com/edhv100",
+                Process: "30"
+            },
+            {
+                Id: "13",
+                Name: "Lesson 3 (2)",
+                ThumbnailUrl: require('../image/U3L3-2.png'),
+                VideoUrl: "https://media.dtponline.vn/opt/video/TA1/ISS1U7L2P46.mp4",
+                TeacherName: "Lê Văn K",
                 Duration: "00:34:45",
                 LinkShare: "http://dtplnk.com/edhv100",
                 Process: "30"
@@ -981,7 +969,7 @@ export const dataTheme = [
     },{
         Id: "11",
         Name: "Theme 10",
-        Title: "Myhouse",
+        Title: "My house",
         Image: require('../image/image11.gif'),
         ImageBackground: require('../image/bg11.png'),
         Percent: "30",

@@ -2,7 +2,7 @@
   "expo": {
     "name": "Video Lesson",
     "slug": "video_lesson",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

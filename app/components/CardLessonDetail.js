@@ -117,7 +117,7 @@ class CardLessonDetail extends Component {
               }}
             >
               <Image
-                style={{ resizeMode: "stretch", width: "100%", height: "100%" }}
+                style={{ resizeMode: "stretch", width: "100%", height: "100%", borderRadius:10 }}
                 source={item.ThumbnailUrl}
               ></Image>
             </View>
@@ -227,8 +227,8 @@ class CardLessonDetail extends Component {
                   style={{
                     width: "100%",
                     height: this.state.isPortrait
-                      ? 0.022 * height
-                      : 0.026 * heightCard,
+                      ? 0.02315 * height
+                      : 0.027 * heightCard,
                     resizeMode: "cover",
                   }}
                   source={imageProgressVideo}
@@ -298,7 +298,7 @@ class CardLessonDetail extends Component {
               }}
             >
               <Image
-                style={{ resizeMode: "stretch", width: "100%", height: "100%" }}
+                style={{ resizeMode: "stretch", width: "100%", height: "100%",borderRadius:7 }}
                 source={item.ThumbnailUrl}
               ></Image>
             </View>
@@ -408,8 +408,8 @@ class CardLessonDetail extends Component {
                   style={{
                     width: "100%",
                     height: this.state.isPortrait
-                      ? 0.0203 * height
-                      : 0.0276 * heightCard,
+                      ? 0.023 * height
+                      : 0.0343 * heightCard,
                     resizeMode: "cover",
                   }}
                   source={imageProgressVideo}
@@ -428,7 +428,8 @@ const styles = StyleSheet.create({
     width: "30%",
     height: 0.21 * height,
     backgroundColor: "#E8E9EA",
-    padding: 0.004 * width,
+    paddingBottom: 0.001 * width,
+    paddingRight:0.003*width,
     borderRadius: 11,
     // backgroundColor: 'yellow'
     marginRight: 0.04 * width,
