@@ -222,7 +222,7 @@ class CardItemDetail extends Component {
             }}
           >
             <Text style={{ fontSize: 10, color: "#036194", fontWeight: "700" }}>
-              30%
+              {item.Percent + "%"}
             </Text>
             <View style={{ width: "100%" }}>
               <Image
@@ -399,7 +399,7 @@ class CardItemDetail extends Component {
             }}
           >
             <Text style={{ fontSize: 10, color: "#036194", fontWeight: "700" }}>
-              30%
+              {item.Percent + "%"}
             </Text>
             <View style={{ width: "100%" }}>
               <Image

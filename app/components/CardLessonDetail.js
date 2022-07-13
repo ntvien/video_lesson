@@ -117,7 +117,12 @@ class CardLessonDetail extends Component {
               }}
             >
               <Image
-                style={{ resizeMode: "stretch", width: "100%", height: "100%", borderRadius:10 }}
+                style={{
+                  resizeMode: "stretch",
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 10,
+                }}
                 source={item.ThumbnailUrl}
               ></Image>
             </View>
@@ -227,12 +232,29 @@ class CardLessonDetail extends Component {
                   style={{
                     width: "100%",
                     height: this.state.isPortrait
-                      ? 0.02315 * height
-                      : 0.027 * heightCard,
+                      ? 0.02319 * height
+                      : 0.0272 * heightCard,
                     resizeMode: "cover",
                   }}
                   source={imageProgressVideo}
                 ></Image>
+                <Text
+                  style={{
+                    position: "absolute",
+                    color: "#ffffff",
+                    fontSize: this.state.isPortrait
+                      ? 0.015 * widthCard
+                      : 0.008 * width,
+                    top: this.state.isPortrait
+                      ? 0.01 * widthCard
+                      : 0.004 * width,
+                    left: this.state.isPortrait
+                      ? 0.09 * widthCard
+                      : 0.04 * width,
+                  }}
+                >
+                  {item.Process + "%"}
+                </Text>
               </View>
             </View>
           </View>
@@ -298,7 +320,12 @@ class CardLessonDetail extends Component {
               }}
             >
               <Image
-                style={{ resizeMode: "stretch", width: "100%", height: "100%",borderRadius:7 }}
+                style={{
+                  resizeMode: "stretch",
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 7,
+                }}
                 source={item.ThumbnailUrl}
               ></Image>
             </View>
@@ -409,11 +436,28 @@ class CardLessonDetail extends Component {
                     width: "100%",
                     height: this.state.isPortrait
                       ? 0.023 * height
-                      : 0.0343 * heightCard,
+                      : 0.0341 * heightCard,
                     resizeMode: "cover",
                   }}
                   source={imageProgressVideo}
                 ></Image>
+                <Text
+                  style={{
+                    position: "absolute",
+                    color: "#ffffff",
+                    fontSize: this.state.isPortrait
+                      ? 0.015 * widthCard
+                      : 0.008 * width,
+                    top: this.state.isPortrait
+                      ? 0.005 * widthCard
+                      : 0.0037 * width,
+                    left: this.state.isPortrait
+                      ? 0.065 * widthCard
+                      : 0.037 * width,
+                  }}
+                >
+                  {item.Process + "%"}
+                </Text>
               </View>
             </View>
           </View>
@@ -429,7 +473,7 @@ const styles = StyleSheet.create({
     height: 0.21 * height,
     backgroundColor: "#E8E9EA",
     paddingBottom: 0.001 * width,
-    paddingRight:0.003*width,
+    paddingRight: 0.003 * width,
     borderRadius: 11,
     // backgroundColor: 'yellow'
     marginRight: 0.04 * width,
