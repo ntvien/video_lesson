@@ -1,16 +1,4 @@
-## Video Lesson
-
-### Backend
-
-#### Run
-
-    $ yarn start
-
-#### Run dev
-
-    $ yarn run dev
-
-### Frontend
+## Frontend
 
 #### Run
 
