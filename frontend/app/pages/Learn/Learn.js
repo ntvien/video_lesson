@@ -549,7 +549,6 @@ const Learn = ({ navigation }) => {
                       { useNativeDriver: false }
                     )}
                   >
-                
                     <FlatList
                       data={dataTheme}
                       numColumns={orientation1 == "LANDSCAPE" ? 4 : 2}
@@ -582,8 +581,6 @@ const Learn = ({ navigation }) => {
                       }}
                     />
                   </View>
-
-
                 </View>
               </ImageBackground>
             </View>

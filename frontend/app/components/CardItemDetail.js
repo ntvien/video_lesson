@@ -147,11 +147,11 @@ class CardItemDetail extends Component {
                 >
                   <Image
                     style={styles.imageLesson}
-                    source={item.ImageBackground}
+                    source={{ uri: item.ImageBackground }}
                   />
                   <Image
                     style={[styles.imageLesson, { position: "absolute" }]}
-                    source={item.Image}
+                    source={{ uri: item.Image }}
                   />
                 </View>
               </View>
@@ -324,11 +324,11 @@ class CardItemDetail extends Component {
                 >
                   <Image
                     style={styles.imageLesson}
-                    source={item.ImageBackground}
+                    source={{ uri: item.ImageBackground }}
                   />
                   <Image
                     style={[styles.imageLesson, { position: "absolute" }]}
-                    source={item.Image}
+                    source={{ uri: item.Image }}
                   />
                 </View>
               </View>

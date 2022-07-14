@@ -170,7 +170,7 @@ class CardLession extends Component {
                       : 0,
                   },
                 ]}
-                source={item.ImageBackground}
+                source={{uri:item.ImageBackground}}
               />
 
               <Image
@@ -193,7 +193,7 @@ class CardLession extends Component {
                     position: "absolute",
                   },
                 ]}
-                source={item.Image}
+                source={{uri: item.Image}}
               />
             </View>
           </View>
@@ -303,7 +303,7 @@ class CardLession extends Component {
             },
           ]}
           onPress={() => {
-            this.props.navigation.navigate("DetailLearn", { item , index});
+            this.props.navigation.navigate("DetailLearn", { item, index });
           }}
         >
           <View
@@ -393,7 +393,7 @@ class CardLession extends Component {
                       : 0,
                   },
                 ]}
-                source={item.ImageBackground}
+                source={{uri: item.ImageBackground}}
               />
               <Image
                 style={[
@@ -415,7 +415,7 @@ class CardLession extends Component {
                     position: "absolute",
                   },
                 ]}
-                source={item.Image}
+                source={{uri: item.Image}}
               />
             </View>
           </View>

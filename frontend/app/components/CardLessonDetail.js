@@ -123,7 +123,7 @@ class CardLessonDetail extends Component {
                   height: "100%",
                   borderRadius: 10,
                 }}
-                source={item.ThumbnailUrl}
+                source={{ uri: item.ThumbnailUrl }}
               ></Image>
             </View>
 
@@ -326,7 +326,7 @@ class CardLessonDetail extends Component {
                   height: "100%",
                   borderRadius: 7,
                 }}
-                source={item.ThumbnailUrl}
+                source={{ uri: item.ThumbnailUrl }}
               ></Image>
             </View>
 
