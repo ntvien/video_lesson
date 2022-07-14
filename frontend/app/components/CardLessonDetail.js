@@ -116,6 +116,7 @@ class CardLessonDetail extends Component {
                   : 0.01 * widthCard,
               }}
             >
+              {/* image Thumbnail Video of Tablet*/}
               <Image
                 style={{
                   resizeMode: "stretch",
@@ -319,6 +320,7 @@ class CardLessonDetail extends Component {
                   : 0.01 * widthCard,
               }}
             >
+              {/* image Thumbnail Video of Mobile*/}
               <Image
                 style={{
                   resizeMode: "stretch",

@@ -151,6 +151,7 @@ class CardLession extends Component {
             </Text>
 
             <View style={{}}>
+              {/* image background under gif image of Tablet*/}
               <Image
                 style={[
                   styles.imageLesson,
@@ -170,8 +171,10 @@ class CardLession extends Component {
                       : 0,
                   },
                 ]}
-                source={{uri:item.ImageBackground}}
+                source={{ uri: item.ImageBackground }}
               />
+
+              {/* gif image of Tablet*/}
 
               <Image
                 style={[
@@ -193,7 +196,7 @@ class CardLession extends Component {
                     position: "absolute",
                   },
                 ]}
-                source={{uri: item.Image}}
+                source={{ uri: item.Image }}
               />
             </View>
           </View>
@@ -306,6 +309,11 @@ class CardLession extends Component {
             this.props.navigation.navigate("DetailLearn", { item, index });
           }}
         >
+          {/**yiyui
+           * joioj
+           * ioijio
+           *
+           */}
           <View
             style={{
               justifyContent: "space-between",
@@ -374,6 +382,7 @@ class CardLession extends Component {
             </Text>
 
             <View style={{}}>
+              {/* image background under gif image of Mobile*/}
               <Image
                 style={[
                   styles.imageLesson,
@@ -393,8 +402,10 @@ class CardLession extends Component {
                       : 0,
                   },
                 ]}
-                source={{uri: item.ImageBackground}}
+                source={{ uri: item.ImageBackground }}
               />
+
+              {/* gif image of Mobile*/}
               <Image
                 style={[
                   styles.imageLesson,
@@ -415,7 +426,7 @@ class CardLession extends Component {
                     position: "absolute",
                   },
                 ]}
-                source={{uri: item.Image}}
+                source={{ uri: item.Image }}
               />
             </View>
           </View>

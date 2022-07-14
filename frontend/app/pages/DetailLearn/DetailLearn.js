@@ -87,6 +87,7 @@ function DetailLearn({ route, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       {isTablet() ? (
+        // image background of Tablet
         <ImageBackground
           source={image}
           resizeMode="cover"
@@ -304,6 +305,7 @@ function DetailLearn({ route, navigation }) {
                 // backgroundColor: "red"
               }}
             >
+              {/* image hook of Tablet*/}
               <ImageBackground
                 style={{
                   width:
@@ -324,6 +326,8 @@ function DetailLearn({ route, navigation }) {
                 source={hook}
                 resizeMode={orientation.isPortrait ? "stretch" : "stretch"}
               ></ImageBackground>
+
+              {/* image background paper of Tablet*/}
 
               <ImageBackground
                 style={{
@@ -466,6 +470,7 @@ function DetailLearn({ route, navigation }) {
           </View>
         </ImageBackground>
       ) : (
+        // image background of Mobile
         <ImageBackground
           source={image}
           resizeMode="cover"
@@ -683,6 +688,7 @@ function DetailLearn({ route, navigation }) {
                 // backgroundColor: "red"
               }}
             >
+              {/* image hook of Mobile*/}
               <ImageBackground
                 style={{
                   width:
@@ -701,6 +707,8 @@ function DetailLearn({ route, navigation }) {
                 source={hook}
                 resizeMode={orientation.isPortrait ? "stretch" : "stretch"}
               ></ImageBackground>
+
+              {/* image background paper of Mobile*/}
 
               <ImageBackground
                 style={{
