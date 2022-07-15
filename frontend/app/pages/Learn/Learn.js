@@ -105,7 +105,7 @@ const Learn = ({ navigation }) => {
     <SafeAreaView style={[styles.container]}>
       <StatusBar backgroundColor="white" translucent={true} hidden={true} />
 
-      {/* Check device is Tablet */}
+      {/*  // Check and handle device is Tablet */}
       {isTablet() ? (
         // Image background paper of Tablet
         <ImageBackground
@@ -330,7 +330,7 @@ const Learn = ({ navigation }) => {
           </View>
         </ImageBackground>
       ) : (
-        // Check device is Mobile
+        // Check and handle device is Mobile
         <ImageBackground
           source={image}
           resizeMode="cover"
@@ -537,6 +537,7 @@ const Learn = ({ navigation }) => {
                       )}
                     />
                   </ScrollView>
+                  {/* Scroll Bar */}
                   <View style={stylesMobile.viewContentScroll}>
                     <Animated.View
                       style={[

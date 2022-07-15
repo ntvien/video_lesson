@@ -21,10 +21,11 @@ import imageRight from "../../../image/right.png";
 import { TouchableOpacity } from "react-native";
 import CardItemDetail from "../../components/CardItemDetail";
 import CardLessonDetail from "../../components/CardLessonDetail";
-import { dataLessonVideo } from "../../../data/dataVideoLesson";
 import { useOrientation } from "../../hooks/useOrientation";
 import { ScrollView } from "react-native";
 import { isTablet } from "../../responsive/checkOrientation";
+import stylesTablet from "./styles.tablet";
+import stylesMobile from "./styles.mobile";
 
 const width = Math.max(
   Dimensions.get("screen").width,
@@ -38,9 +39,9 @@ const height = Math.min(
 function DetailLearn({ route, navigation }) {
   const itemLesson = route.params.item;
   const indexLesson = route.params.index;
-  console.log("state", route.params);
+  // variable check orientation portrait and landscape
   const orientation = useOrientation();
-
+  // variable check key in Flatlist when render
   const [orientation1, setOrientation] = useState("");
   const window = useWindowDimensions();
   const getOrientation = () => {
@@ -55,7 +56,7 @@ function DetailLearn({ route, navigation }) {
   useEffect(() => {
     getOrientation();
   });
-
+  // Custom scrollBar
   const [completeScrollBarHeight, setCompleteScrollBarHeight] = useState(1);
   const [visibleScrollBarHeight, setVisibleScrollBarHeight] = useState(0);
 
@@ -81,65 +82,51 @@ function DetailLearn({ route, navigation }) {
     extrapolate: "clamp",
   });
 
-  console.log("visibleScrollBarHeight", visibleScrollBarHeight);
-  console.log("completeScrollBarHeight", completeScrollBarHeight);
-
   return (
     <SafeAreaView style={styles.container}>
       {isTablet() ? (
-        // image background of Tablet
+        // Check and handle device is Tablet
         <ImageBackground
           source={image}
           resizeMode="cover"
-          style={styles.imageBackground}
+          style={stylesTablet.imageBackground}
         >
           <View
-            style={{
-              position: "relative",
-              width: "100%",
-              height: orientation.isPortrait ? 0.17 * height : 0.18 * height,
-              backgroundColor: "#00000033",
-              zIndex: 1,
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            style={[
+              stylesTablet.backgroundHeader,
+              {
+                height: orientation.isPortrait ? 0.17 * height : 0.18 * height,
+              },
+            ]}
           >
-            <View
-              style={{
-                width: "100%",
-                height: "100%",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "row",
-              }}
-            >
+            <View style={stylesTablet.containerBgHeader}>
               <View
-                style={{
-                  height: "100%",
-                  top: orientation.isPortrait ? height * 0.015 : 0,
-                  left: orientation.isPortrait ? height * 0.03 : width * 0.02,
-                  justifyContent: "center",
-                  position: "absolute",
-                  zIndex: 1,
-                }}
+                style={[
+                  stylesTablet.ctnImgBack,
+                  {
+                    top: orientation.isPortrait ? height * 0.015 : 0,
+                    left: orientation.isPortrait ? height * 0.03 : width * 0.02,
+                  },
+                ]}
               >
                 <TouchableOpacity
                   onPress={() => {
                     navigation.pop();
                   }}
                 >
-                  <Image style={styles.imageBack} source={imageBack} />
+                  <Image style={stylesTablet.imageBack} source={imageBack} />
                 </TouchableOpacity>
               </View>
 
               <View
-                style={{
-                  alignItems: "center",
-                  marginTop: orientation.isPortrait
-                    ? -0.15 * (0.2 * height)
-                    : -0.3 * (0.2 * height),
-                }}
+                style={[
+                  stylesTablet.ctnTitleContent,
+                  {
+                    marginTop: orientation.isPortrait
+                      ? -0.15 * (0.2 * height)
+                      : -0.3 * (0.2 * height),
+                  },
+                ]}
               >
                 {orientation.isPortrait ? (
                   <View style={{ alignItems: "center" }}>
@@ -158,7 +145,7 @@ function DetailLearn({ route, navigation }) {
                       </Text>
                       <Image
                         style={[
-                          styles.imageRight,
+                          stylesTablet.imageRight,
                           {
                             width: orientation.isPortrait
                               ? 0.012 * width
@@ -183,7 +170,7 @@ function DetailLearn({ route, navigation }) {
                       </Text>
                       <Image
                         style={[
-                          styles.imageRight,
+                          stylesTablet.imageRight,
                           {
                             width: orientation.isPortrait
                               ? 0.012 * width
@@ -223,7 +210,7 @@ function DetailLearn({ route, navigation }) {
                     </Text>
                     <Image
                       style={[
-                        styles.imageRight,
+                        stylesTablet.imageRight,
                         {
                           width: orientation.isPortrait
                             ? 0.015 * width
@@ -247,7 +234,7 @@ function DetailLearn({ route, navigation }) {
                     </Text>
                     <Image
                       style={[
-                        styles.imageRight,
+                        stylesTablet.imageRight,
                         {
                           width: orientation.isPortrait
                             ? 0.015 * width
@@ -274,18 +261,7 @@ function DetailLearn({ route, navigation }) {
               </View>
             </View>
 
-            <View
-              style={{
-                position: "absolute",
-                borderTopLeftRadius: 35,
-                borderTopRightRadius: 35,
-                bottom: 0,
-                width: "100%",
-                backgroundColor: "#B792DD",
-                height: "30%",
-                zIndex: 1,
-              }}
-            ></View>
+            <View style={stylesTablet.backgroundFake}></View>
           </View>
 
           <View style={{ width: "100%", height: "100%", position: "relative" }}>
@@ -331,12 +307,8 @@ function DetailLearn({ route, navigation }) {
 
               <ImageBackground
                 style={{
-                  width:
-                    orientation.isPortrait && isTablet
-                      ? height * 0.925
-                      : "100%",
-                  height:
-                    orientation.isPortrait && isTablet ? width * 0.86 : "100%",
+                  width: orientation.isPortrait ? height * 0.925 : "100%",
+                  height: orientation.isPortrait ? width * 0.86 : "100%",
                 }}
                 source={imageBackgroundPaper2}
                 resizeMode={orientation.isPortrait ? "stretch" : "stretch"}
@@ -352,23 +324,25 @@ function DetailLearn({ route, navigation }) {
                     // backgroundColor: "red"
                   }}
                 >
-                  <View style={styles.leftColumn}>
+                  {/* Left content contain card item */}
+                  <View style={stylesTablet.leftColumn}>
                     <CardItemDetail item={itemLesson} index={indexLesson} />
                   </View>
+                  {/* vertical line */}
                   <View
                     style={[
-                      styles.centerColumn,
+                      stylesTablet.centerColumn,
                       {
-                        height: "82%",
                         marginTop: orientation.isPortrait
                           ? 0.18 * height
                           : 0.1 * height,
                       },
                     ]}
                   />
+                  {/* Right content contain video lesson */}
                   <View
                     style={[
-                      styles.rightColumn,
+                      stylesTablet.rightColumn,
                       {
                         width: orientation.isPortrait ? width : width,
                         height: orientation.isPortrait
@@ -389,6 +363,7 @@ function DetailLearn({ route, navigation }) {
                       },
                     ]}
                   >
+                    {/* Scroll and display list CardLessonDetail by FlatList on Tablet*/}
                     <ScrollView
                       contentContainerStyle={{ paddingRight: 0 }}
                       showsVerticalScrollIndicator={false}
@@ -414,6 +389,7 @@ function DetailLearn({ route, navigation }) {
                         { useNativeDriver: false }
                       )}
                     >
+                      {/* Display each card items */}
                       <FlatList
                         data={itemLesson.DataLesson}
                         numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
@@ -428,30 +404,27 @@ function DetailLearn({ route, navigation }) {
                         )}
                       />
                     </ScrollView>
-                    <View
-                      style={{
-                        height: "100%",
-                        width: 10,
-                        backgroundColor: "#9FBECC99",
-                        borderRadius: 8,
-                      }}
-                    >
+                    {/* Scroll Bar  */}
+                    <View style={stylesTablet.viewContentScroll}>
                       <Animated.View
-                        style={{
-                          width: 10,
-                          borderRadius: 8,
-                          backgroundColor: "#036194E6",
-                          height: scrollIndicatorSize,
-                          transform: [{ translateY: scrollIndicatorPosition }],
-                        }}
+                        style={[
+                          stylesTablet.viewContentTotalScroll,
+                          {
+                            height: scrollIndicatorSize,
+                            transform: [
+                              { translateY: scrollIndicatorPosition },
+                            ],
+                          },
+                        ]}
                       />
                     </View>
                   </View>
                 </View>
 
+                {/* image Ghim1 */}
                 <Image
                   style={[
-                    styles.imageGhim1,
+                    stylesTablet.imageGhim1,
                     {
                       left: orientation.isPortrait
                         ? -0.02 * width
@@ -470,59 +443,48 @@ function DetailLearn({ route, navigation }) {
           </View>
         </ImageBackground>
       ) : (
-        // image background of Mobile
+        // Check and handle device is Mobile
         <ImageBackground
           source={image}
           resizeMode="cover"
-          style={styles.imageBackground}
+          style={stylesMobile.imageBackground}
         >
           <View
-            style={{
-              position: "relative",
-              width: "100%",
-              height: orientation.isPortrait ? 0.18 * height : 0.18 * height,
-              backgroundColor: "#00000033",
-              zIndex: 1,
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            style={[
+              stylesMobile.backgroundHeader,
+              {
+                height: orientation.isPortrait ? 0.18 * height : 0.18 * height,
+              },
+            ]}
           >
-            <View
-              style={{
-                width: "100%",
-                height: "100%",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "row",
-              }}
-            >
+            <View style={stylesMobile.containerBgHeader}>
               <View
-                style={{
-                  height: "100%",
-                  top: orientation.isPortrait ? height * 0.015 : 0,
-                  left: orientation.isPortrait ? height * 0.03 : width * 0.02,
-                  justifyContent: "center",
-                  position: "absolute",
-                  zIndex: 1,
-                }}
+                style={[
+                  stylesMobile.ctnImgBack,
+                  {
+                    top: orientation.isPortrait ? height * 0.015 : 0,
+                    left: orientation.isPortrait ? height * 0.03 : width * 0.02,
+                  },
+                ]}
               >
                 <TouchableOpacity
                   onPress={() => {
                     navigation.pop();
                   }}
                 >
-                  <Image style={styles.imageBack} source={imageBack} />
+                  <Image style={stylesMobile.imageBack} source={imageBack} />
                 </TouchableOpacity>
               </View>
 
               <View
-                style={{
-                  alignItems: "center",
-                  marginTop: orientation.isPortrait
-                    ? -0.15 * (0.2 * height)
-                    : -0.3 * (0.2 * height),
-                }}
+                style={[
+                  stylesMobile.ctnTitleContent,
+                  {
+                    marginTop: orientation.isPortrait
+                      ? -0.15 * (0.2 * height)
+                      : -0.3 * (0.2 * height),
+                  },
+                ]}
               >
                 {orientation.isPortrait ? (
                   <View style={{ alignItems: "center" }}>
@@ -541,7 +503,7 @@ function DetailLearn({ route, navigation }) {
                       </Text>
                       <Image
                         style={[
-                          styles.imageRight,
+                          stylesMobile.imageRight,
                           {
                             width: orientation.isPortrait
                               ? 0.01 * width
@@ -566,7 +528,7 @@ function DetailLearn({ route, navigation }) {
                       </Text>
                       <Image
                         style={[
-                          styles.imageRight,
+                          stylesMobile.imageRight,
                           {
                             width: orientation.isPortrait
                               ? 0.01 * width
@@ -606,7 +568,7 @@ function DetailLearn({ route, navigation }) {
                     </Text>
                     <Image
                       style={[
-                        styles.imageRight,
+                        stylesMobile.imageRight,
                         {
                           width: orientation.isPortrait
                             ? 0.015 * width
@@ -630,7 +592,7 @@ function DetailLearn({ route, navigation }) {
                     </Text>
                     <Image
                       style={[
-                        styles.imageRight,
+                        stylesMobile.imageRight,
                         {
                           width: orientation.isPortrait
                             ? 0.015 * width
@@ -658,16 +620,12 @@ function DetailLearn({ route, navigation }) {
             </View>
 
             <View
-              style={{
-                position: "absolute",
-                borderTopLeftRadius: 35,
-                borderTopRightRadius: 35,
-                bottom: 0,
-                width: "100%",
-                backgroundColor: "#B792DD",
-                height: orientation.isPortrait ? "25%" : "30%",
-                zIndex: 1,
-              }}
+              style={[
+                stylesMobile.backgroundFake,
+                {
+                  height: orientation.isPortrait ? "25%" : "30%",
+                },
+              ]}
             ></View>
           </View>
 
@@ -712,12 +670,8 @@ function DetailLearn({ route, navigation }) {
 
               <ImageBackground
                 style={{
-                  width:
-                    orientation.isPortrait && isTablet
-                      ? height * 0.925
-                      : "100%",
-                  height:
-                    orientation.isPortrait && isTablet ? width * 0.86 : "100%",
+                  width: orientation.isPortrait ? height * 0.925 : "100%",
+                  height: orientation.isPortrait ? width * 0.86 : "100%",
                 }}
                 source={imageBackgroundPaper2}
                 resizeMode={orientation.isPortrait ? "stretch" : "stretch"}
@@ -733,28 +687,31 @@ function DetailLearn({ route, navigation }) {
                     // backgroundColor: "red"
                   }}
                 >
+                  {/* Left content contain card item */}
                   <View
                     style={[
-                      styles.leftColumn,
+                      stylesMobile.leftColumn,
                       { height: orientation.isPortrait ? "80%" : "80%" },
                     ]}
                   >
                     <CardItemDetail item={itemLesson} index={indexLesson} />
                   </View>
+
+                  {/* vertical line */}
                   <View
                     style={[
-                      styles.centerColumn,
+                      stylesMobile.centerColumn,
                       {
-                        height: "82%",
                         marginTop: orientation.isPortrait
                           ? 0.18 * height
                           : 0.1 * height,
                       },
                     ]}
                   />
+                  {/* Right content contain video lesson */}
                   <View
                     style={[
-                      styles.rightColumn,
+                      stylesMobile.rightColumn,
                       {
                         width: orientation.isPortrait ? width : width,
                         height: orientation.isPortrait
@@ -775,6 +732,7 @@ function DetailLearn({ route, navigation }) {
                       },
                     ]}
                   >
+                    {/* Scroll and display list CardLessonDetail by FlatList on Mobile*/}
                     <ScrollView
                       contentContainerStyle={{ paddingRight: 0 }}
                       showsVerticalScrollIndicator={false}
@@ -800,6 +758,7 @@ function DetailLearn({ route, navigation }) {
                         { useNativeDriver: false }
                       )}
                     >
+                      {/* Display each card items */}
                       <FlatList
                         data={itemLesson.DataLesson}
                         numColumns={orientation1 == "LANDSCAPE" ? 3 : 2}
@@ -814,30 +773,25 @@ function DetailLearn({ route, navigation }) {
                         )}
                       />
                     </ScrollView>
-                    <View
-                      style={{
-                        height: "100%",
-                        width: 7,
-                        backgroundColor: "#9FBECC99",
-                        borderRadius: 8,
-                      }}
-                    >
+                    <View style={stylesMobile.viewContentScroll}>
                       <Animated.View
-                        style={{
-                          width: 7,
-                          borderRadius: 8,
-                          backgroundColor: "#036194E6",
-                          height: scrollIndicatorSize,
-                          transform: [{ translateY: scrollIndicatorPosition }],
-                        }}
+                        style={[
+                          stylesMobile.viewContentTotalScroll,
+                          {
+                            height: scrollIndicatorSize,
+                            transform: [
+                              { translateY: scrollIndicatorPosition },
+                            ],
+                          },
+                        ]}
                       />
                     </View>
                   </View>
                 </View>
-
+                {/* image Ghim1 */}
                 <Image
                   style={[
-                    styles.imageGhim1,
+                    stylesMobile.imageGhim1,
                     {
                       left: orientation.isPortrait
                         ? -0.02 * width
@@ -862,61 +816,9 @@ function DetailLearn({ route, navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: "#B792DD",
-    flex: 1,
     height: height,
-  },
-  imageBackground: {
-    flex: 1,
-  },
-  image: {
-    flex: 1,
-    justifyContent: "center",
-    // backgroundColor: "white",
-    borderTopLeftRadius: 40,
-    borderTopRightRadius: 40,
-  },
-  imageBack: {
-    width: (0.1 * width) / 3,
-    height: (0.1 * width) / 3,
-    resizeMode: "cover",
-    marginTop: -0.3 * (0.2 * height),
-  },
-  imageRight: {
-    width: 10,
-    height: 10,
-    marginHorizontal: 0.03 * width,
-    resizeMode: "contain",
-  },
-  imageGhim1: {
-    width: 0.07 * width,
-    height: 0.07 * width,
-    resizeMode: "cover",
-    position: "absolute",
-    zIndex: 1,
-  },
-  leftColumn: {
-    flex: 1,
-    height: "80%",
-    position: "relative",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  centerColumn: {
-    borderRightColor: "#036194",
-    borderRightWidth: 2,
-  },
-  rightColumn: {
-    flex: 2,
-    width: width,
-    height: height - height * 0.3,
-    paddingLeft: 0.05 * width,
-    paddingRight: 0.07 * width,
-    paddingTop: 0.04 * height,
-    // backgroundColor: "red"
-  },
-  gridView: {
-    flex: 1,
   },
 });
 

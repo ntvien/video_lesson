@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import imageBackgroundCard from "../../image/backgroundCard.png";
 import { isTablet } from "../../app/responsive/checkOrientation";
-import { dataTheme } from "../../data/dataTheme";
 
 const width = Math.max(
   Dimensions.get("screen").width,
@@ -26,6 +25,7 @@ const heightCard = (height - 2 * (height * 0.07)) * 0.6;
 class CardLession extends Component {
   constructor(props) {
     super(props);
+    // declare function selectCard
     this.selectCard = this.selectCard.bind(this);
     this.state = {
       screenInfo: Dimensions.get("screen"),
@@ -47,6 +47,7 @@ class CardLession extends Component {
     });
   };
 
+  // function select Card
   selectCard = (index) => {
     debugger;
     this.setState({ cardActive: index });
@@ -55,6 +56,8 @@ class CardLession extends Component {
   render() {
     const { item, index } = this.props;
     return isTablet() ? (
+      // Check and handle device is Tablet
+      // image card
       <ImageBackground
         style={[
           styles.imageCard,
@@ -74,6 +77,7 @@ class CardLession extends Component {
         source={imageBackgroundCard}
         resizeMode="stretch"
       >
+        {/* navigation to Detail screen */}
         <TouchableOpacity
           style={[
             styles.container,
@@ -85,6 +89,7 @@ class CardLession extends Component {
             this.props.navigation.navigate("DetailLearn", { item, index });
           }}
         >
+          {/* Two Circle  */}
           <View
             style={{
               justifyContent: "space-between",
@@ -134,6 +139,7 @@ class CardLession extends Component {
                 : 0.013 * widthCard,
             }}
           >
+            {/* Title */}
             <Text
               style={[
                 styles.text,
@@ -201,6 +207,7 @@ class CardLession extends Component {
             </View>
           </View>
 
+          {/* handle display theme and crown */}
           {index == 0 ? (
             <View
               style={{
@@ -279,6 +286,7 @@ class CardLession extends Component {
         </TouchableOpacity>
       </ImageBackground>
     ) : (
+      // Check and handle device is Mobile
       <ImageBackground
         style={[
           styles.imageCard,
@@ -298,6 +306,7 @@ class CardLession extends Component {
         source={imageBackgroundCard}
         resizeMode="stretch"
       >
+        {/* navigation to Detail Screen */}
         <TouchableOpacity
           style={[
             styles.container,
@@ -309,11 +318,7 @@ class CardLession extends Component {
             this.props.navigation.navigate("DetailLearn", { item, index });
           }}
         >
-          {/**yiyui
-           * joioj
-           * ioijio
-           *
-           */}
+          {/* Two circle */}
           <View
             style={{
               justifyContent: "space-between",
@@ -353,7 +358,6 @@ class CardLession extends Component {
               }}
             ></View>
           </View>
-
           <View
             style={{
               justifyContent: "center",
@@ -365,6 +369,7 @@ class CardLession extends Component {
                 : 0.013 * widthCard,
             }}
           >
+            {/* Title */}
             <Text
               style={[
                 styles.text,
@@ -430,7 +435,7 @@ class CardLession extends Component {
               />
             </View>
           </View>
-
+          {/* handle display theme and crown */}
           {index == 0 ? (
             <View
               style={{
@@ -521,23 +526,14 @@ const styles = StyleSheet.create({
     width: widthCard * 0.75,
     height: heightCard * 0.6,
   },
-  image: {
-    flex: 1,
-    justifyContent: "center",
-  },
   text: {
     color: "#036194",
-
     fontWeight: "bold",
   },
   imageLesson: {
-    width: widthCard * 0.75,
-    height: heightCard * 0.3,
     resizeMode: "contain",
   },
   imageCrown: {
-    width: 15,
-    height: 10,
     resizeMode: "cover",
     position: "absolute",
   },

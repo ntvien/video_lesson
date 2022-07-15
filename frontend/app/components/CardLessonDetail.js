@@ -3,12 +3,10 @@ import {
   StyleSheet,
   Text,
   View,
-  ImageBackground,
   Image,
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import imageVideo from "../../image/imageVideo.png";
 import imagePersonal from "../../image/personal.png";
 import imageTimeVideo from "../../image/timeVideo.png";
 import imageShare from "../../image/share.png";
@@ -58,6 +56,7 @@ class CardLessonDetail extends Component {
   render() {
     const { item, index } = this.props;
     return isTablet() ? (
+      // Check and handle device is Tablet
       <TouchableOpacity
         style={[
           styles.container,
@@ -262,6 +261,7 @@ class CardLessonDetail extends Component {
         </View>
       </TouchableOpacity>
     ) : (
+      // Check and handle device is Mobile
       <TouchableOpacity
         style={[
           styles.container,

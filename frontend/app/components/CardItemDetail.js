@@ -5,7 +5,6 @@ import {
   View,
   ImageBackground,
   Image,
-  TouchableOpacity,
   Dimensions,
 } from "react-native";
 import imageBackgroundCard from "../../image/backgroundCard.png";
@@ -24,7 +23,6 @@ const height = Math.min(
 );
 
 class CardItemDetail extends Component {
-  // orientation = useOrientation();
   constructor(props) {
     super(props);
     this.selectCard = this.selectCard.bind(this);
@@ -55,6 +53,7 @@ class CardItemDetail extends Component {
   render() {
     const { item, index } = this.props;
     return isTablet() ? (
+      // Check and handle device is Tablet
       <View
         style={{
           width: this.state.isPortrait ? "70%" : "70%",
@@ -71,6 +70,7 @@ class CardItemDetail extends Component {
               justifyContent: "space-between",
             }}
           >
+            {/* image background Card */}
             <ImageBackground
               style={styles.container}
               source={imageBackgroundCard}
@@ -85,6 +85,7 @@ class CardItemDetail extends Component {
                   top: this.state.isPortrait ? "-2%" : "-1%",
                 }}
               >
+                {/* image left label */}
                 <Image
                   style={{
                     width: 0.04 * width,
@@ -96,6 +97,7 @@ class CardItemDetail extends Component {
                   }}
                   source={imageLeftLabel}
                 ></Image>
+                {/* image right label */}
                 <Image
                   style={{
                     width: 0.04 * width,
@@ -108,7 +110,7 @@ class CardItemDetail extends Component {
                   source={imageRightLabel}
                 ></Image>
               </View>
-
+              {/* Title */}
               <View
                 style={{
                   justifyContent: "center",
@@ -133,7 +135,7 @@ class CardItemDetail extends Component {
                 >
                   {item.Title}
                 </Text>
-
+                {/* image Video Lesson */}
                 <View
                   style={{
                     width: "100%",
@@ -156,6 +158,7 @@ class CardItemDetail extends Component {
                 </View>
               </View>
 
+              {/* handle and display theme and crown */}
               {index == 0 ? (
                 <View
                   style={{
@@ -187,7 +190,6 @@ class CardItemDetail extends Component {
                     style={[
                       styles.imageCrown,
                       {
-                        top: "-25%",
                         width: this.state.isPortrait
                           ? 0.013 * width
                           : 0.02 * width,
@@ -214,6 +216,7 @@ class CardItemDetail extends Component {
             </ImageBackground>
           </View>
 
+          {/* Progress Seen Video */}
           <View
             style={{
               justifyContent: "center",
@@ -238,6 +241,7 @@ class CardItemDetail extends Component {
         </View>
       </View>
     ) : (
+      // Check and handle device is Mobile
       <View
         style={{
           width: this.state.isPortrait ? "70%" : "67%",
@@ -254,6 +258,7 @@ class CardItemDetail extends Component {
               justifyContent: "space-between",
             }}
           >
+            {/* image background of Card */}
             <ImageBackground
               style={styles.container}
               source={imageBackgroundCard}
@@ -268,6 +273,7 @@ class CardItemDetail extends Component {
                   top: this.state.isPortrait ? "-2%" : "-1%",
                 }}
               >
+                {/* image left label */}
                 <Image
                   style={{
                     width: 0.04 * width,
@@ -279,6 +285,7 @@ class CardItemDetail extends Component {
                   }}
                   source={imageLeftLabel}
                 ></Image>
+                {/* image right label */}
                 <Image
                   style={{
                     width: 0.04 * width,
@@ -313,7 +320,7 @@ class CardItemDetail extends Component {
                 >
                   {item.Title}
                 </Text>
-
+                {/* handle image video lessonn */}
                 <View
                   style={{
                     width: "100%",
@@ -333,6 +340,7 @@ class CardItemDetail extends Component {
                 </View>
               </View>
 
+              {/* Handle display theme and crown */}
               {index == 0 ? (
                 <View
                   style={{
@@ -364,7 +372,6 @@ class CardItemDetail extends Component {
                     style={[
                       styles.imageCrown,
                       {
-                        top: "-25%",
                         width: this.state.isPortrait
                           ? 0.012 * width
                           : 0.02 * width,
@@ -391,6 +398,7 @@ class CardItemDetail extends Component {
             </ImageBackground>
           </View>
 
+          {/* Progress seen video */}
           <View
             style={{
               justifyContent: "center",
@@ -428,13 +436,8 @@ const styles = StyleSheet.create({
     left: 0,
     position: "absolute",
   },
-  image: {
-    flex: 1,
-    justifyContent: "center",
-  },
   text: {
     color: "#036194",
-    fontSize: 9,
     fontWeight: "bold",
   },
   imageLesson: {
@@ -445,8 +448,6 @@ const styles = StyleSheet.create({
   },
   imageCrown: {
     top: "-25%",
-    width: 15,
-    height: 10,
     resizeMode: "cover",
     position: "absolute",
   },
