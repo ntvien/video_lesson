@@ -224,7 +224,15 @@ class CardItemDetail extends Component {
               width: "100%",
             }}
           >
-            <Text style={{ fontSize: 10, color: "#036194", fontWeight: "700" }}>
+            <Text
+              style={{
+                fontSize: this.state.isPortrait
+                  ? 0.0125 * width
+                  : 0.016 * width,
+                color: "#036194",
+                fontWeight: "700",
+              }}
+            >
               {item.Percent + "%"}
             </Text>
             <View style={{ width: "100%" }}>
@@ -406,7 +414,15 @@ class CardItemDetail extends Component {
               width: "100%",
             }}
           >
-            <Text style={{ fontSize: 10, color: "#036194", fontWeight: "700" }}>
+            <Text
+              style={{
+                fontSize: this.state.isPortrait
+                  ? 0.0125 * width
+                  : 0.016 * width,
+                color: "#036194",
+                fontWeight: "700",
+              }}
+            >
               {item.Percent + "%"}
             </Text>
             <View style={{ width: "100%" }}>

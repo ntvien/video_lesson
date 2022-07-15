@@ -473,7 +473,7 @@ class CardLession extends Component {
                   : width * 0.005,
                 top: this.state.isPortrait
                   ? -0.03 * widthCard
-                  : -0.01 * heightCard,
+                  : -0.005 * heightCard,
                 left: this.state.isPortrait
                   ? 0.06 * heightCard
                   : 0.06 * widthCard,

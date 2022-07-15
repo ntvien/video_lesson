@@ -158,16 +158,23 @@ function DetailLearn({ route, navigation }) {
                         ]}
                         source={imageRight}
                       />
-                      <Text
-                        style={{
-                          color: "#ffffff",
-                          fontSize: orientation.isPortrait
-                            ? (0.03 * width) / 2
-                            : (0.035 * width) / 2,
+                      <TouchableOpacity
+                        onPress={() => {
+                          navigation.pop();
                         }}
                       >
-                        Video Lesson
-                      </Text>
+                        <Text
+                          style={{
+                            color: "#ffffff",
+                            fontSize: orientation.isPortrait
+                              ? (0.03 * width) / 2
+                              : (0.035 * width) / 2,
+                          }}
+                        >
+                          Video Lesson
+                        </Text>
+                      </TouchableOpacity>
+
                       <Image
                         style={[
                           stylesTablet.imageRight,
@@ -222,16 +229,24 @@ function DetailLearn({ route, navigation }) {
                       ]}
                       source={imageRight}
                     />
-                    <Text
-                      style={{
-                        color: "#ffffff",
-                        fontSize: orientation.isPortrait
-                          ? (0.035 * width) / 2
-                          : (0.035 * width) / 2,
+
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.pop();
                       }}
                     >
-                      Video Lesson
-                    </Text>
+                      <Text
+                        style={{
+                          color: "#ffffff",
+                          fontSize: orientation.isPortrait
+                            ? (0.035 * width) / 2
+                            : (0.035 * width) / 2,
+                        }}
+                      >
+                        Video Lesson
+                      </Text>
+                    </TouchableOpacity>
+
                     <Image
                       style={[
                         stylesTablet.imageRight,
@@ -516,16 +531,23 @@ function DetailLearn({ route, navigation }) {
                         ]}
                         source={imageRight}
                       />
-                      <Text
-                        style={{
-                          color: "#ffffff",
-                          fontSize: orientation.isPortrait
-                            ? (0.03 * width) / 2
-                            : (0.035 * width) / 2,
+                      <TouchableOpacity
+                        onPress={() => {
+                          navigation.pop();
                         }}
                       >
-                        Video Lesson
-                      </Text>
+                        <Text
+                          style={{
+                            color: "#ffffff",
+                            fontSize: orientation.isPortrait
+                              ? (0.03 * width) / 2
+                              : (0.035 * width) / 2,
+                          }}
+                        >
+                          Video Lesson
+                        </Text>
+                      </TouchableOpacity>
+
                       <Image
                         style={[
                           stylesMobile.imageRight,
@@ -580,16 +602,23 @@ function DetailLearn({ route, navigation }) {
                       ]}
                       source={imageRight}
                     />
-                    <Text
-                      style={{
-                        color: "#ffffff",
-                        fontSize: orientation.isPortrait
-                          ? (0.035 * width) / 2
-                          : (0.035 * width) / 2,
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.pop();
                       }}
                     >
-                      Video Lesson
-                    </Text>
+                      <Text
+                        style={{
+                          color: "#ffffff",
+                          fontSize: orientation.isPortrait
+                            ? (0.035 * width) / 2
+                            : (0.035 * width) / 2,
+                        }}
+                      >
+                        Video Lesson
+                      </Text>
+                    </TouchableOpacity>
+
                     <Image
                       style={[
                         stylesMobile.imageRight,
