@@ -23,3 +23,8 @@
     $ cd frontend
 
     $ expo build:android -t apk
+
+npx react-native run-android --port 8088
+
+server: {port: 8088}, in
+metro.config.js
