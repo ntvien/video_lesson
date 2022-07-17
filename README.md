@@ -16,6 +16,20 @@
 
     $ cd frontend
 
+    $ npm uninstall -g react-native-cli
+
+    $ Add "server: {port: 8088}" in file metro.config.js
+
+    $ px react-native run-android --port 8088
+
+    $ npx react-native start
+
+### Frontend_expo (Expo)
+
+#### Run
+
+    $ cd frontend
+
     $ yarn start
 
 #### Build file apk
@@ -26,5 +40,4 @@
 
 npx react-native run-android --port 8088
 
-server: {port: 8088}, in
-metro.config.js
+npm uninstall -g react-native-cli
