@@ -20,7 +20,7 @@
 
     $ Add "server: {port: 8088}" in file metro.config.js
 
-    $ px react-native run-android --port 8088
+    $ npx react-native run-android --port 8088
 
     $ npx react-native start
 
