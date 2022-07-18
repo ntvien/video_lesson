@@ -24,6 +24,16 @@
 
     $ npx react-native start
 
+### Facing issue "Failed to install the app"
+
+    $ cd android && ./gradlew clean
+
+    $ chmod +x gradlew
+
+### In the root of your project:
+
+    $ npx react-native start --reset-cache
+
 ### Frontend_expo (Expo)
 
 #### Run
