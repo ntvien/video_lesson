@@ -24,8 +24,8 @@ import {ScrollView} from 'react-native';
 import {dataTheme} from '../../../data/dataTheme';
 import stylesTablet from './styles.tablet';
 import stylesMobile from './styles.mobile';
-// import firebase from 'firebase/database';
-
+import {db} from '../../../config/firebase-config.js';
+import {ref, onValue} from 'firebase/database';
 import SQLite from 'react-native-sqlite-storage';
 
 const width = Math.max(
@@ -56,6 +56,8 @@ const Learn = ({navigation}) => {
   const orientation = useOrientation();
   // variable check key in Flatlist when render
   const [orientation1, setOrientation] = useState('');
+
+  const [data, setData] = useState('');
   const window = useWindowDimensions();
 
   const getOrientation = () => {
@@ -104,25 +106,27 @@ const Learn = ({navigation}) => {
     extrapolate: 'clamp',
   });
 
-  // const firebaseConfig = {
-  //   apiKey: 'AIzaSyAvr67KjtRJ--RSJwjS9zfQsHF_8ylncmU',
-  //   authDomain: 'video-lesson-b2bab.firebaseapp.com',
-  //   projectId: 'video-lesson-b2bab',
-  //   storageBucket: 'video-lesson-b2bab.appspot.com',
-  //   messagingSenderId: '844694490398',
-  //   appId: '1:844694490398:web:83e86049cec050bbc84d0f',
-  // };
+  function getData() {
+    return onValue(ref(db, '/dataTheme'), function (snapshot) {
+      let array = [];
+      snapshot.forEach(function (childSnapshot) {
+        var childData = childSnapshot.val();
+        array.push({
+          Id: childSnapshot.Id,
+          Image: childData.Image,
+          ImageBackground: childData.ImageBackground,
+          Title: childData.Title,
+          Percent: childData.Percent,
+          Name: childData.Name,
+          DataLesson: childData.DataLesson,
+        });
+      });
+      console.log(array);
+      // setData(array);
+    });
+  }
 
-  // initializeApp(firebaseConfig);
-
-  // function getData() {
-  //   firebase
-  //     .database()
-  //     .ref('dataTheme/')
-  //     .on('value', function (snapshot) {
-  //       snapshot.val();
-  //     });
-  // }
+  console.log('ccccc', getData());
 
   return (
     <SafeAreaView style={[styles.container]}>
