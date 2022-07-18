@@ -24,6 +24,9 @@ import {ScrollView} from 'react-native';
 import {dataTheme} from '../../../data/dataTheme';
 import stylesTablet from './styles.tablet';
 import stylesMobile from './styles.mobile';
+// import firebase from 'firebase/database';
+
+import SQLite from 'react-native-sqlite-storage';
 
 const width = Math.max(
   Dimensions.get('screen').width,
@@ -33,6 +36,17 @@ const height = Math.min(
   Dimensions.get('screen').width,
   Dimensions.get('screen').height,
 );
+
+// const db = SQLite.openDatabase(
+//   {
+//     name: 'dataTheme',
+//     location: 'default',
+//   },
+//   () => {},
+//   error => {
+//     console.log(error);
+//   },
+// );
 
 const Learn = ({navigation}) => {
   // disable warning display in debug
@@ -55,7 +69,14 @@ const Learn = ({navigation}) => {
 
   useEffect(() => {
     getOrientation();
+    // getData();
   });
+
+  // const getData = () => {
+  //   db.transaction(tx => {
+  //     tx.executeSql('SELECT * FROM dataTheme');
+  //   });
+  // };
 
   // Custom scrollBar
   const [completeScrollBarHeight, setCompleteScrollBarHeight] = useState(1);
@@ -84,12 +105,12 @@ const Learn = ({navigation}) => {
   });
 
   // const firebaseConfig = {
-  //   apiKey: "AIzaSyAvr67KjtRJ--RSJwjS9zfQsHF_8ylncmU",
-  //   authDomain: "video-lesson-b2bab.firebaseapp.com",
-  //   projectId: "video-lesson-b2bab",
-  //   storageBucket: "video-lesson-b2bab.appspot.com",
-  //   messagingSenderId: "844694490398",
-  //   appId: "1:844694490398:web:83e86049cec050bbc84d0f",
+  //   apiKey: 'AIzaSyAvr67KjtRJ--RSJwjS9zfQsHF_8ylncmU',
+  //   authDomain: 'video-lesson-b2bab.firebaseapp.com',
+  //   projectId: 'video-lesson-b2bab',
+  //   storageBucket: 'video-lesson-b2bab.appspot.com',
+  //   messagingSenderId: '844694490398',
+  //   appId: '1:844694490398:web:83e86049cec050bbc84d0f',
   // };
 
   // initializeApp(firebaseConfig);
@@ -97,8 +118,8 @@ const Learn = ({navigation}) => {
   // function getData() {
   //   firebase
   //     .database()
-  //     .ref("dataTheme/")
-  //     .on("value", function (snapshot) {
+  //     .ref('dataTheme/')
+  //     .on('value', function (snapshot) {
   //       snapshot.val();
   //     });
   // }
