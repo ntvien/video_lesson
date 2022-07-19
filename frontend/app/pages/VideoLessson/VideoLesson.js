@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {useOrientation} from '../../hooks/useOrientation';
 import {isTablet} from '../../responsive/checkOrientation';
-// import WebView from "react-native-webview";
+import WebView from 'react-native-webview';
 
 const width = Math.max(
   Dimensions.get('screen').width,
@@ -35,10 +35,10 @@ const VideoLesson = ({route, navigation}) => {
             width: orientation.isPortrait ? height : width,
             flex: 1,
           }}>
-          {/* <WebView
-            source={{ uri: itemVideo.VideoUrl }}
+          <WebView
+            source={{uri: itemVideo.VideoUrl}}
             allowsBackForwardNavigationGestures
-          /> */}
+          />
         </View>
       ) : (
         <View
@@ -47,10 +47,10 @@ const VideoLesson = ({route, navigation}) => {
             width: orientation.isPortrait ? height : width,
             flex: 1,
           }}>
-          {/* <WebView
-            source={{ uri: itemVideo.VideoUrl }}
+          <WebView
+            source={{uri: itemVideo.VideoUrl}}
             allowsBackForwardNavigationGestures
-          /> */}
+          />
         </View>
       )}
     </SafeAreaView>
