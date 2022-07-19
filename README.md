@@ -34,6 +34,10 @@
 
     $ npx react-native start --reset-cache
 
+### Add dependencies on Android
+
+    $ android/app/build.gradle
+
 ### Frontend_expo (Expo)
 
 #### Run
@@ -47,7 +51,3 @@
     $ cd frontend
 
     $ expo build:android -t apk
-
-npx react-native run-android --port 8088
-
-npm uninstall -g react-native-cli
