@@ -14,7 +14,7 @@ import {
 import {ImageBackground, Animated} from 'react-native';
 import image from '../../../image/eduhome.png';
 import imageBackgroundPaper from '../../../image/backgroundpaper.png';
-import {imageGhim} from '../../../image/ghim1.png';
+import imageGhim from '../../../image/ghim1.png';
 import imageBack from '../../../image/back.png';
 import imageRight from '../../../image/right.png';
 import CardLession from '../../components/CardLesson';
