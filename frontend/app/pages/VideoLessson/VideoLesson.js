@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -19,7 +19,7 @@ const height = Math.min(
   Dimensions.get('screen').height,
 );
 
-const VideoLesson = ({route, navigation}) => {
+const VideoLesson = ({route}) => {
   const itemVideo = route.params.item;
   console.disableYellowBox = true;
   const orientation = useOrientation();
