@@ -7,3 +7,7 @@
 ### Export file apk
 
     $ cd android && ./gradlew assembleRelease
+
+    OR:
+
+    $ npx react-native run-android --variant=release
