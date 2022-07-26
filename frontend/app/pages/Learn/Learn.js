@@ -9,6 +9,7 @@ import {
   FlatList,
   StyleSheet,
   useWindowDimensions,
+  TouchableOpacity,
   LogBox,
 } from 'react-native';
 import {ImageBackground, Animated} from 'react-native';
@@ -157,7 +158,12 @@ const Learn = ({navigation}) => {
                     left: orientation.isPortrait ? height * 0.03 : width * 0.02,
                   },
                 ]}>
-                <Image style={stylesTablet.imageBack} source={imageBack} />
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.pop();
+                  }}>
+                  <Image style={stylesTablet.imageBack} source={imageBack} />
+                </TouchableOpacity>
               </View>
 
               {/* Title content */}
@@ -369,7 +375,12 @@ const Learn = ({navigation}) => {
                     left: orientation.isPortrait ? height * 0.03 : width * 0.02,
                   },
                 ]}>
-                <Image style={stylesMobile.imageBack} source={imageBack} />
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.pop();
+                  }}>
+                  <Image style={stylesTablet.imageBack} source={imageBack} />
+                </TouchableOpacity>
               </View>
 
               <View

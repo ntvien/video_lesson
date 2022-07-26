@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
-import { StyleSheet, Dimensions } from "react-native";
+import React, {useState, useEffect, useRef} from 'react';
+import {StyleSheet, Dimensions} from 'react-native';
 
 const width = Math.max(
-  Dimensions.get("screen").width,
-  Dimensions.get("screen").height
+  Dimensions.get('screen').width,
+  Dimensions.get('screen').height,
 );
 const height = Math.min(
-  Dimensions.get("screen").width,
-  Dimensions.get("screen").height
+  Dimensions.get('screen').width,
+  Dimensions.get('screen').height,
 );
 
 export default StyleSheet.create({
@@ -15,82 +15,82 @@ export default StyleSheet.create({
     flex: 1,
   },
   backgroundHeader: {
-    position: "relative",
-    width: "100%",
-    backgroundColor: "#00000033",
+    position: 'relative',
+    width: '100%',
+    backgroundColor: '#00000033',
     zIndex: -1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   containerBgHeader: {
-    width: "100%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   ctnImgBack: {
-    height: "100%",
-    justifyContent: "center",
-    position: "absolute",
+    height: '100%',
+    justifyContent: 'center',
+    position: 'absolute',
     zIndex: 1,
   },
   imageBack: {
     width: (0.1 * width) / 3,
     height: (0.1 * width) / 3,
-    resizeMode: "cover",
+    resizeMode: 'cover',
     marginTop: -0.3 * (0.2 * height),
   },
   ctnTitleContent: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   imageRight: {
     marginHorizontal: 0.03 * width,
-    resizeMode: "contain",
+    resizeMode: 'contain',
   },
   backgroundFake: {
-    position: "absolute",
+    position: 'absolute',
     borderTopLeftRadius: 35,
     borderTopRightRadius: 35,
     bottom: 0,
-    width: "100%",
-    backgroundColor: "#B792DD",
-    height: "30%",
+    width: '100%',
+    backgroundColor: '#B792DD',
+    height: '30%',
     zIndex: 1,
   },
   imageGhim: {
     width: width * 0.06,
     height: width * 0.06,
-    resizeMode: "cover",
-    position: "absolute",
+    resizeMode: 'cover',
+    position: 'absolute',
     zIndex: 1,
   },
   styleRectangle: {
-    backgroundColor: "#35ABEB",
+    backgroundColor: '#35ABEB',
     borderWidth: width * 0.0075,
-    borderColor: "#ffffff",
+    borderColor: '#ffffff',
     borderRadius: width * 0.035,
-    position: "absolute",
+    position: 'absolute',
   },
   styleRectangle1: {
-    backgroundColor: "#35ABEB",
+    backgroundColor: '#35ABEB',
     borderWidth: width * 0.01,
-    borderColor: "#ffffff",
+    borderColor: '#ffffff',
     borderRadius: width * 0.08,
-    transform: [{ rotate: "3.5deg" }],
-    position: "absolute",
+    transform: [{rotate: '3.5deg'}],
+    position: 'absolute',
   },
   viewContentScroll: {
-    height: "100%",
+    height: '100%',
     width: 10,
-    backgroundColor: "#9FBECC99",
+    backgroundColor: '#9FBECC99',
     borderRadius: 8,
   },
   viewContentTotalScroll: {
     width: 10,
     borderRadius: 8,
-    backgroundColor: "#036194E6",
+    backgroundColor: '#036194E6',
   },
 });
