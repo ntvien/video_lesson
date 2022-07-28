@@ -6,6 +6,7 @@ import DetailLearn from '../pages/DetailLearn/DetailLearn';
 import VideoLesson from '../pages/VideoLessson/VideoLesson';
 import Home from '../pages/Home/Home';
 import ITSScreen from '../pages/ITSScreen/ITSScreen';
+import DHAScreen from '../pages/DHAScreen/DHAScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,8 @@ const AppNavigator = () => {
       screenOptions={{headerShown: false}}
       initialRouteName="Home">
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="DHAScreen" component={DHAScreen} />
+
       <Stack.Screen
         name="ITSScreen"
         component={ITSScreen}

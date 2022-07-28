@@ -1,6 +1,14 @@
 export const dataHome = [
   {
     Id: '1',
+    Name: 'DHAScreen',
+    Title: 'DHA',
+    Image:
+      'http://eduhome.dtpds.com/Content/CoverAllTheme/04414cec-0b11-445c-bebd-8a4bf51b9f86.png',
+    ColorBackground: '#B792DD',
+  },
+  {
+    Id: '1',
     Name: 'Learn',
     Title: 'Video Lesson',
     Image:
