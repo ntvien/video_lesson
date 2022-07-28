@@ -1,35 +1,51 @@
-import React, {useState, useEffect, useRef} from 'react';
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  StatusBar,
-  Dimensions,
-} from 'react-native';
+import React from 'react';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import DHAReport from './DHAReport';
 
-const width = Math.max(
-  Dimensions.get('screen').width,
-  Dimensions.get('screen').height,
-);
-const height = Math.min(
-  Dimensions.get('screen').width,
-  Dimensions.get('screen').height,
-);
+import {StatusBar, Image, StyleSheet} from 'react-native';
+import DHALearnScreen from './DHALearnScreen';
 
-function DHAScreen({route, navigation}) {
-  return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="white" translucent={true} hidden={true} />
-    </SafeAreaView>
-  );
-}
+const Tab = createMaterialTopTabNavigator();
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-    height: height,
+    paddingTop: 50,
+  },
+  tinyLogo: {
+    width: 60,
+    height: 35,
   },
 });
+
+const DHAScreen = () => {
+  return (
+    <Tab.Navigator style={{paddingTop: StatusBar.currentHeight}}>
+      <Tab.Screen
+        options={{
+          title: ({color, focused}) => (
+            <Image
+              style={styles.tinyLogo}
+              source={require('../../../image/learn.png')}
+            />
+          ),
+        }}
+        component={DHALearnScreen}
+        name="DHALearnScreen"
+      />
+      <Tab.Screen
+        options={{
+          title: ({color, focused}) => (
+            <Image
+              style={styles.tinyLogo}
+              source={require('../../../image/report.png')}
+            />
+          ),
+        }}
+        component={DHAReport}
+        name="DHAReport"
+      />
+    </Tab.Navigator>
+  );
+};
 
 export default DHAScreen;

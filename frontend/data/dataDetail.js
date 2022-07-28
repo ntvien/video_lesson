@@ -1,0 +1,50 @@
+export const data = [
+    {
+        categoryName: 'Sách bài học kỹ thuật số',
+        courseName: 'Video lecture',
+        imageUrl: require('../image/video_lecture.png'),
+        imageBackground: require('../image/bg1.png'),
+        colorBackground: "#8ADEFF",
+    },
+    {
+        categoryName: 'Sách bài học kỹ thuật số',
+        courseName: 'Listen & Find',
+        imageUrl: require('../image/listen_and_find.png'),
+        imageBackground: require('../image/bg2.png'),
+        colorBackground: "#8ADEFF",
+    },
+    {
+        categoryName: 'Sách bài học kỹ thuật số',
+        courseName: 'Listen & Spell',
+        imageUrl: require('../image/listen_and_spell.png'),
+        imageBackground: require('../image/bg3.png'),
+        colorBackground: "#8ADEFF",
+    },
+    {
+        categoryName: 'Sách bài học kỹ thuật số',
+        courseName: 'Tag',
+        imageUrl: require('../image/tag.png'),
+        imageBackground: require('../image/bg4.png'),
+        colorBackground: "#8ADEFF",
+    },
+    {
+        categoryName: 'Sách bài học kỹ thuật số',
+        courseName: 'Grammar',
+        imageUrl: require('../image/grammar.png'),
+        imageBackground: require('../image/bg5.png'),
+        colorBackground: "#8ADEFF",
+    },
+    {
+        categoryName: 'Sách bài học kỹ thuật số',
+        courseName: 'Song',
+        imageUrl: require('../image/song.png'),
+        imageBackground: require('../image/bg6.png'),
+        colorBackground: "#8ADEFF",
+    }, {
+        categoryName: 'Sách bài học kỹ thuật số',
+        courseName: 'Phonics',
+        imageUrl: require('../image/phonics.png'),
+        imageBackground: require('../image/bg7.png'),
+        colorBackground: "#8ADEFF",
+    },
+]
