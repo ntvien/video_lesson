@@ -8,7 +8,7 @@ export const dataHome = [
     ColorBackground: '#B792DD',
   },
   {
-    Id: '1',
+    Id: '2',
     Name: 'Learn',
     Title: 'Video Lesson',
     Image:
@@ -16,7 +16,23 @@ export const dataHome = [
     ColorBackground: '#B792DD',
   },
   {
-    Id: '2',
+    Id: '3',
+    Name: 'ITSScreen',
+    Title: 'ITS',
+    Image:
+      'http://eduhome.dtpds.com/Content/CoverAllTheme/4279774a-a804-42d5-bb5f-0077d78eeb1a.png',
+    ColorBackground: '#B792DD',
+  },
+  {
+    Id: '4',
+    Name: 'ITSScreen',
+    Title: 'ITS',
+    Image:
+      'http://eduhome.dtpds.com/Content/CoverAllTheme/4279774a-a804-42d5-bb5f-0077d78eeb1a.png',
+    ColorBackground: '#B792DD',
+  },
+  {
+    Id: '5',
     Name: 'ITSScreen',
     Title: 'ITS',
     Image:

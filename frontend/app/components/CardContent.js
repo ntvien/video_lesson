@@ -59,7 +59,8 @@ class CardContent extends Component {
         style={{
           width: '50%',
           height: '100%',
-          marginRight: 30,
+          marginRight: 10,
+          marginBottom: 30,
           //   backgroundColor: 'red',
         }}>
         <TouchableOpacity
@@ -68,19 +69,19 @@ class CardContent extends Component {
           }}>
           <View
             style={{
-              width: this.state.isPortrait ? height * 0.03 : width * 0.2,
-              height: this.state.isPortrait ? height * 0.03 : width * 0.21,
+              width: this.state.isPortrait ? height * 0.15 : width * 0.15,
+              height: this.state.isPortrait ? height * 0.16 : width * 0.16,
               backgroundColor: '#80808038',
               borderRadius: this.state.isPortrait
                 ? height * 0.03
                 : width * 0.03,
-              left: this.state.isPortrait ? height * 0.03 : width * 0.008,
-              top: this.state.isPortrait ? height * 0.03 : width * 0.008,
+              left: this.state.isPortrait ? height * 0.008 : width * 0.008,
+              top: this.state.isPortrait ? height * 0.008 : width * 0.008,
             }}></View>
           <View
             style={{
-              width: this.state.isPortrait ? height * 0.03 : width * 0.2,
-              height: this.state.isPortrait ? height * 0.03 : width * 0.2,
+              width: this.state.isPortrait ? height * 0.15 : width * 0.15,
+              height: this.state.isPortrait ? height * 0.16 : width * 0.16,
               backgroundColor: item.ColorBackground,
               justifyContent: 'center',
               alignItems: 'center',
@@ -91,8 +92,8 @@ class CardContent extends Component {
             }}>
             <Image
               style={{
-                width: this.state.isPortrait ? '80%' : '80%',
-                height: this.state.isPortrait ? '80%' : '80%',
+                width: this.state.isPortrait ? '60%' : '70%',
+                height: this.state.isPortrait ? '60%' : '70%',
               }}
               source={{
                 uri: item.Image,
@@ -100,7 +101,7 @@ class CardContent extends Component {
               resizeMode="contain"></Image>
             <Text
               style={{
-                fontSize: this.state.isPortrait ? height * 0.03 : width * 0.02,
+                fontSize: this.state.isPortrait ? height * 0.02 : width * 0.02,
                 color: '#ffffff',
                 fontWeight: 'bold',
               }}>

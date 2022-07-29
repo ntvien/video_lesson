@@ -36,6 +36,19 @@ function Home({navigation}) {
   const orientation = useOrientation();
   const [orientation1, setOrientation] = useState('');
 
+  const getOrientation = () => {
+    if (window.height < window.width) {
+      setOrientation('LANDSCAPE');
+    } else {
+      setOrientation('PORTRAIT');
+    }
+    return orientation1;
+  };
+
+  useEffect(() => {
+    getOrientation();
+  });
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="white" translucent={true} hidden={true} />
@@ -52,8 +65,8 @@ function Home({navigation}) {
           }}>
           <View
             style={{
-              width: orientation.isPortrait ? height : width * 0.5,
-              height: orientation.isPortrait ? width : height * 0.2,
+              width: orientation.isPortrait ? height * 0.4 : width * 0.5,
+              height: orientation.isPortrait ? width * 0.2 : height * 0.2,
               backgroundColor: '#ffffff',
               justifyContent: 'center',
               alignItems: 'center',
@@ -63,7 +76,7 @@ function Home({navigation}) {
             <Text
               style={{
                 color: '#000000',
-                fontSize: orientation.isPortrait ? width : height * 0.05,
+                fontSize: orientation.isPortrait ? width * 0.05 : height * 0.05,
                 fontWeight: 'bold',
               }}>
               Home
@@ -71,8 +84,8 @@ function Home({navigation}) {
           </View>
           <View
             style={{
-              width: orientation.isPortrait ? height : width * 0.5,
-              height: orientation.isPortrait ? width : height * 0.5,
+              width: orientation.isPortrait ? height * 0.4 : width * 0.4,
+              height: orientation.isPortrait ? width * 0.6 : height * 0.6,
               // backgroundColor: 'blue',
             }}>
             <FlatList
