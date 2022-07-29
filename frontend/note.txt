@@ -1,0 +1,21 @@
+"prop-types": "^15.7.2" -> error -> cập nhật phiên bản mới
+
+package android.support.annotation does not exist
+
+-> 	yarn add --dev jetifier
+	yarn run jetify
+
+Chuột phải app -> open module settings -> thay đổi version gradle
+
+Android Gradle Plugin Version: 4.0.1
+Gradle Version: 6.4.1
+
+
+If you are sure the module exists, try these steps:
+ 1. Clear watchman watches: watchman watch-del-all
+ 2. Delete node_modules and run yarn install
+ 3. Reset Metro's cache: yarn start --reset-cache
+ 4. Remove the cache: rm -rf /tmp/metro-*
+
+
+

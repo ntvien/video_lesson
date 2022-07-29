@@ -1,0 +1,25 @@
+- Hoàn thành:
+ + Đã xây dựng được hoàn chỉnh bản web và mobile.
+ + Sử dụng navigator Tab để chuyển đổi qua lại giữa những màn hình.
+ + Sử dụng navigator Stack để khi click vào mỗi item sẽ chuyển sang màn hình tiếp theo.
+ + Sử dụng FlatGrid, FlatList để tạo bố cục sắp xếp các mục với nhau.
+ + Web có sử dụng Component Card của thư viện để tạo các bài học.
+ 
+
+- Hiểu được:
+ + Cách thực hiện build web bằng ReactJs và mobile bằng React Native
+ + Thực hiện code, search và sửa lỗi những lúc thực hiện và có sự hướng dẫn của anh Bi.
+ 
+
+
+- Error:
+ + Về web:
+ + Về mobile:
+  * Bước đầu tạo project theo document của React Native bằng React Native CLI
+    nhưng lúc tạo về mặt môi trường thực thi đã có một số lỗi jdk, CLI và gradle sdk
+    của android studio và không tương thích với hệ điều hành device thật vì device 
+    thật có phiên bản thấp hơn.
+  * Khắc phục đã tạo project bằng Expo CLI, sau khi đã tạo thành công và chạy nhờ trên
+    Metro Bundler quản ký các thiết bị kết nối và đã tạo, chạy thành công. 
+  * Lúc tạo project và có chạy thử những thư viện ở ngoài để sử dụng thì bị lỗi 
+    lúc import do môi trường và đã search tìm nguyên nhân và khắc phục được.  
